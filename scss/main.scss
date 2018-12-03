@@ -1,5 +1,6 @@
 @import "config";
 @import "menu";
+@import "responsive";
 
 html {
   font-size: 15px;
@@ -15,7 +16,7 @@ body {
   color: white;
   height: 100%;
   margin: 0;
-  font-family: 'Vollkorn', serif;
+  font-family: "Vollkorn", serif;
   line-height: 1.5;
 }
 
