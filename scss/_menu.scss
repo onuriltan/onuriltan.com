@@ -67,4 +67,35 @@
       transform: translate3d(0, 0, 0);
     }
   }
+  //Branding Side
+  &-branding {
+     background: $primary-color;
+     transform: translate3d(0, 100%, 0);
+     @include easeOut;
+
+     &.show {
+       //slide in from bottom
+       transform: translate3d(0, 0, 0);
+     }
+
+     &-portrait {
+       width: 250px;
+       height: 250px;
+       background: url('../img/portrait.jpg');
+       border-radius: 50%;
+       border: solid 3px $secondary-color;
+       background-size: cover;
+     }
+  }
+  
+  &-nav-item {
+    transform: translate3d(600px, 0, 0);
+    @include easeOut;
+
+    &.show {
+      //slide in from right
+      transform: translate3d(0,0,0)
+    }
+  }
+  
 }
