@@ -94,8 +94,40 @@
 
     &.show {
       //slide in from right
-      transform: translate3d(0,0,0)
+      transform: translate3d(0,0,0);
     }
+
+    &.current > a {
+      //slide in from right
+      color: $secondary-color;
+    }
+    
   }
+
+  &-nav-link {
+   display: inline-block;
+   position: relative;
+   font-size: 30px;
+   text-transform: uppercase;
+   padding: 2rem 0;
+   font-weight: bold;
+   color: white;
+   text-decoration: none; 
+   @include easeOut;
+
+   &:hover {
+     color: $secondary-color;
+     opacity: 0.5;
+   }
+    
+  }
+
   
 }
+//delay each nav item slie by 0.1s
+@for $x from 1 through 4 {
+  .menu-nav-item:nth-child(#{$x}){
+    transition-delay: $x * 0.1s;
+  } 
+}
+
