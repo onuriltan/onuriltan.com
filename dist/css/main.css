@@ -73,7 +73,7 @@
     text-transform: uppercase;
     padding: 2rem 0;
     font-weight: bold;
-    color: white;
+    color: #fff;
     text-decoration: none;
     transition: all 0.5s ease-out; }
     .menu-nav-link:hover {
@@ -132,7 +132,7 @@ html {
 
 body {
   background: #444;
-  color: white;
+  color: #fff;
   height: 100%;
   margin: 0;
   font-family: "Vollkorn", serif;

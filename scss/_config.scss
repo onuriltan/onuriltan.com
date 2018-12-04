@@ -28,7 +28,18 @@ $background-opacity: 0.8;
   }
 }
 
-//Media query mixins
+// Set Text Color Based on Background
+@function set-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return #000;
+  }
+  @else {
+    @return #fff;
+  }
+}
+
+
+// Media query mixins
 @mixin mediaSm {
   @media screen and (max-width: 500px) {
     @content;

@@ -13,7 +13,7 @@ html {
 body {
   @include background;
   background: $primary-color;
-  color: white;
+  color: set-text-color($primary-color);
   height: 100%;
   margin: 0;
   font-family: "Vollkorn", serif;
