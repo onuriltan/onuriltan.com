@@ -160,13 +160,7 @@ h3 {
   h2.lg-heading,
   h3.lg-heading {
     font-size: 6rem;
-    margin-bottom: 50px; }
-  h1.sm-heading,
-  h2.sm-heading,
-  h3.sm-heading {
-    margin-bottom: 2rem;
-    padding: 0.2rem 1rem;
-    background: rgba(5, 5, 5, 0.5); }
+    margin-bottom: 20px; }
 
 a {
   color: #fff;
@@ -333,9 +327,7 @@ main .projects {
 
 @media screen and (max-width: 500px) {
   main .lg-heading {
-    margin-top: 7vh; }
-  main .sm-heading {
-    padding: 0 1rem; }
+    margin-top: 5vh; }
   main .social-icons {
     display: flex;
     justify-content: center;

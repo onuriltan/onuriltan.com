@@ -75,11 +75,9 @@
 @include mediaSm {
   main {
     .lg-heading {
-      margin-top: 7vh;
+      margin-top: 5vh;
     }
-    .sm-heading {
-      padding: 0 1rem;
-    }
+
     .social-icons {
       display: flex;
       justify-content: center;
