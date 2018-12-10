@@ -15,12 +15,13 @@
 //Tablets & Small Laptops
 @include mediaMd {
   main {
-    align-items: center;
-    text-align: center;
-
+    padding: 2rem;
+    #home h1 {
+      margin-top: 10vh;
+    }
     .lg-heading {
-      line-height: 1;
-      margin-bottom: 1rem;
+      margin-top: 1rem;
+      font-size: 5rem;
     }
   }
   .menu-nav,
@@ -74,7 +75,22 @@
 @include mediaSm {
   main {
     .lg-heading {
-      margin-top: 10vh;
+      margin-top: 7vh;
+    }
+    .sm-heading {
+      padding: 0 1rem;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      a {
+        margin: 5px;
+      }
+    }
+
+    .projects {
+      grid-template-columns: 1fr;
     }
   }
 }
