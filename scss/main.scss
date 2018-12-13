@@ -154,8 +154,9 @@ main {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 0.7rem;
+
     .item {
-      margin-bottom: 30px;
+      margin: 0 30px 30px 30px;
     }
 
     img {

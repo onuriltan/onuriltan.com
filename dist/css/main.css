@@ -217,7 +217,7 @@ main .projects {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 0.7rem; }
   main .projects .item {
-    margin-bottom: 30px; }
+    margin: 0 30px 30px 30px; }
   main .projects img {
     width: 100%;
     border: 3px white solid; }
