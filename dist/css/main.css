@@ -218,6 +218,13 @@ main .projects {
   grid-gap: 0.7rem; }
   main .projects .item {
     margin: 0 30px 30px 30px; }
+    main .projects .item .buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%; }
+      main .projects .item .buttons .link-button {
+        width: 50%; }
   main .projects img {
     width: 100%;
     border: 3px white solid; }

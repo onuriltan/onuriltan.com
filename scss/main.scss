@@ -157,6 +157,16 @@ main {
 
     .item {
       margin: 0 30px 30px 30px;
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        .link-button {
+          width: 50%;
+        }
+      }
     }
 
     img {
