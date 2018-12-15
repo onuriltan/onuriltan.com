@@ -76,6 +76,7 @@
   main {
     .lg-heading {
       margin-top: 5vh;
+      font-size: 3.5rem;
     }
 
     .social-icons {
@@ -87,8 +88,24 @@
       }
     }
 
+    .about-info {
+      .bio {
+        font-size: 1.2rem;
+      }
+    }
+
+    .boxes {
+      a {
+        font-size: 1rem;
+      }
+    }
+
     .projects {
       grid-template-columns: 1fr;
+
+      .item {
+        margin: 0 15px 15px 15px;
+      }
     }
   }
 }
