@@ -20,6 +20,20 @@
     .menu-bttn.close .menu-bttn-line:nth-child(3) {
       transform: rotate(-45deg) translate(7px, -6px); }
 
+.language {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  font-size: 20px;
+  cursor: pointer; }
+  .language a {
+    text-decoration: none; }
+  .language__picker {
+    margin: 0; }
+  .language__active {
+    display: block; }
+
 .menu {
   position: fixed;
   top: 0;

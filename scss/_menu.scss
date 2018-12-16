@@ -34,6 +34,25 @@
   }
 }
 
+//language selector
+.language {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  font-size: 20px;
+  a {
+    text-decoration: none;
+  }
+
+  cursor: pointer;
+  &__picker {
+    margin: 0;
+  }
+  &__active {
+    display: block;
+  }
+}
 //Menu Overlay
 .menu {
   position: fixed;
