@@ -151,35 +151,48 @@ main {
 main {
   .projects {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     grid-gap: 0.7rem;
 
     .item {
       margin: 0 30px 30px 30px;
+      display: flex;
+      align-items: flex-start;
 
-      .buttons {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        .preview-button {
-          width: 60%;
-          label {
-            font-size: 12px;
+      .image-wrapper {
+        width: 33.3%;
+        padding: 10px;
+        .buttons {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          .preview-button {
+            width: 60%;
+            label {
+              font-size: 12px;
+            }
+          }
+          .github-button {
+            width: 40%;
+            label {
+              font-size: 12px;
+            }
           }
         }
-        .github-button {
-          width: 40%;
-          label {
-            font-size: 12px;
-          }
+      }
+      .item-info {
+        text-align: center;
+        width: 33.3%;
+        padding: 10px;
+        .project-name {
+          color: $secondary-color;
         }
       }
     }
 
     img {
       width: 100%;
-      border: 3px white solid;
       &:hover {
         opacity: 0.5;
         border-color: $secondary-color;
