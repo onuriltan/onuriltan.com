@@ -238,6 +238,19 @@ main .projects {
     main .projects .item .image-wrapper {
       width: 33.3%;
       padding: 10px; }
+      main .projects .item .image-wrapper .buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%; }
+        main .projects .item .image-wrapper .buttons .preview-button {
+          width: 60%; }
+          main .projects .item .image-wrapper .buttons .preview-button label {
+            font-size: 12px; }
+        main .projects .item .image-wrapper .buttons .github-button {
+          width: 40%; }
+          main .projects .item .image-wrapper .buttons .github-button label {
+            font-size: 12px; }
     main .projects .item .item-info {
       text-align: center;
       width: 33.3%;
@@ -245,8 +258,7 @@ main .projects {
       main .projects .item .item-info .project-name {
         color: #eece1a; }
   main .projects img {
-    width: 100%;
-    border: 3px white solid; }
+    width: 100%; }
     main .projects img:hover {
       opacity: 0.5;
       border-color: #eece1a;
