@@ -9,6 +9,18 @@
 @include mediaLg {
   .projects {
     grid-template-columns: repeat(3, 1fr);
+    .item {
+      display: inline-block !important;
+      .image-wrapper {
+        width: 100% !important;
+      }
+      .item-info {
+        width: 100% !important;
+      }
+      .technologies {
+        width: 100% !important;
+      }
+    }
   }
 }
 
@@ -67,6 +79,18 @@
 
     .projects {
       grid-template-columns: 1fr;
+      .item {
+        display: inline-block !important;
+        .image-wrapper {
+          width: 100% !important;
+        }
+        .item-info {
+          width: 100% !important;
+        }
+        .technologies {
+          width: 100% !important;
+        }
+      }
     }
   }
 }
@@ -102,9 +126,17 @@
 
     .projects {
       grid-template-columns: 1fr;
-
       .item {
-        margin: 0 15px 15px 15px;
+        display: inline-block !important;
+        .image-wrapper {
+          width: 100% !important;
+        }
+        .item-info {
+          width: 100% !important;
+        }
+        .technologies {
+          width: 100% !important;
+        }
       }
     }
   }
