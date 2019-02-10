@@ -168,13 +168,13 @@ main {
           align-items: center;
           width: 100%;
           .preview-button {
-            width: 60%;
+            width: 50%;
             label {
               font-size: 12px;
             }
           }
           .github-button {
-            width: 40%;
+            width: 50%;
             label {
               font-size: 12px;
             }
@@ -258,14 +258,14 @@ main {
 
 .btn-dark {
   @extend .btn;
-  background: lighten($primary-color, 30);
-  color: #fff;
+  background: black;
+  color: $secondary-color;
 }
 
 .btn-light {
   @extend .btn;
-  background: lighten($primary-color, 70);
-  color: #333;
+  background: black;
+  color: $secondary-color;
 }
 
 #main-footer {
