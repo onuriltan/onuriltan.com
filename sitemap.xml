@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
   <url>
-    <loc>https://onuriltan.com/index</loc> 
-    <loc>https://onuriltan.com/about</loc> 
-    <loc>https//onuriltan.com/work</loc> 
-    <loc>https://onuriltan.com/contact</loc> 
+    <loc>https://onuriltan.com/index.html</loc>
+    <loc>https://onuriltan.com/about.html</loc>
+    <loc>https//onuriltan.com/work.html</loc>
+    <loc>https://onuriltan.com/contact.html</loc>
   </url>
 </urlset>
