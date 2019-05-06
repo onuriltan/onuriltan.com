@@ -93,6 +93,12 @@ main {
   padding: 4rem;
   height: 100%;
 
+  .projects {
+    img {
+      border-radius: 2px;
+    }
+  }
+
   .icons {
     margin-top: 1rem;
 
