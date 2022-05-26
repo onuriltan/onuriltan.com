@@ -231,8 +231,7 @@ main .about-info {
     grid-area: job1; }
   main .about-info .job-2 {
     grid-area: job2; }
-  main .about-info .job-3 {
-    grid-area: job3; }
+
   main .about-info .job {
     background-color: #333333;
     padding: 0.5rem;
