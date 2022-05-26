@@ -147,9 +147,16 @@ main {
   padding: 4rem;
   min-height: calc( 100vh - 60px); }
   main .social-icons {
-    margin-top: 1rem; }
+    margin-top: 2rem;
+    display: flex; }
+    main .social-icons-name {
+      margin-right: 5px; }
     main .social-icons a {
-      padding: 0.4rem; }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.4rem;
+      margin-right: 15px; }
       main .social-icons a:hover {
         color: #eece1a;
         transition: all 0.5s ease-out; }
@@ -194,6 +201,8 @@ header {
 main {
   padding: 4rem;
   height: 100%; }
+  main .projects img {
+    border-radius: 2px; }
   main .icons {
     margin-top: 1rem; }
     main .icons a {
@@ -222,6 +231,8 @@ main .about-info {
     grid-area: job1; }
   main .about-info .job-2 {
     grid-area: job2; }
+  main .about-info .job-3 {
+    grid-area: job3; }
   main .about-info .job {
     background-color: #333333;
     padding: 0.5rem;
@@ -263,26 +274,6 @@ main .projects {
       opacity: 0.5;
       border-color: #eece1a;
       transition: all 0.5s ease-out; }
-
-.boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 1rem; }
-  .boxes a {
-    font-size: 2rem;
-    border: 2px white solid;
-    padding: 1.5rem 2.5rem;
-    margin-bottom: 3rem;
-    transition: all 0.5s ease-out; }
-    .boxes a:hover {
-      cursor: arrow;
-      padding: 0.5rem 1.5rem;
-      background: #eece1a;
-      color: #000; }
-      .boxes a:hover span {
-        color: #000; }
 
 .btn, .btn-dark, .btn-light {
   display: flex;
@@ -392,7 +383,8 @@ main .projects {
     justify-content: center;
     align-items: center; }
     main .social-icons a {
-      margin: 5px; }
+      margin: 20px;
+      margin-right: 30px; }
   main .about-info .bio {
     font-size: 1.2rem; }
   main .boxes a {

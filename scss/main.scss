@@ -34,15 +34,24 @@ main {
     100vh - 60px
   ); //viewport whole height minus footer height to make footer stick to bottom
   .social-icons {
-    margin-top: 1rem;
+    margin-top: 2rem;
+    display: flex;
+    &-name {
+      margin-right: 5px;
+    }
     a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: 0.4rem;
+      margin-right: 15px;
       &:hover {
         color: $secondary-color;
         @include easeOut();
       }
     }
   }
+  
   &#home {
     overflow: hidden;
     display: flex;
