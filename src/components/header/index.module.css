@@ -1,29 +1,37 @@
 .header {
   width: 100%;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  height: var(--header-height);
+  border-bottom: 1px solid rgb(var(--foreground-color));
+  background-color: rgb(var(--background-start-color));
+}
+
+.container {
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 20px;
-  height: var(--header-height);
 }
 
 .hamburger {
   visibility: hidden;
   font-size: 1.6rem;
+  transition: color 0.3s ease;
 }
 
 .links {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  list-style-type: none;
   font-size: 1.2rem;
 }
 .link {
   margin-right: 24px;
-  transition: color 0.5s ease;
+  transition: color 0.3s ease;
 }
 .activelink {
   color: rgb(var(--foreground-color-secondary));
@@ -38,5 +46,9 @@
   }
   .hamburger {
     visibility: visible;
+  }
+  .hamburger:hover {
+    cursor: pointer;
+    color: rgb(var(--foreground-color-secondary));
   }
 }

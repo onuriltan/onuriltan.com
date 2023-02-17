@@ -3,6 +3,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
   padding: 6rem;
   min-height: calc(100vh - var(--header-height));
 }
@@ -36,7 +38,7 @@
 .link {
   display: flex;
   align-items: center;
-  transition: color 0.5s ease;
+  transition: color 0.3s ease;
 }
 .link:hover {
   color: rgb(var(--foreground-color-secondary));

@@ -1,15 +1,21 @@
+import { useEffect } from "react";
+import type { AppProps } from "next/app";
+import Head from "next/head";
+import { Vollkorn } from "@next/font/google";
+
 import "@fortawesome/fontawesome-free";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { far } from "@fortawesome/free-regular-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { fab } from "@fortawesome/free-brands-svg-icons";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 library.add(far, fas, fab);
 
-import { useEffect } from "react";
-import type { AppProps } from "next/app";
-import "@fortawesome/fontawesome-svg-core/styles.css";
 import "@/styles/globals.css";
 import Header from "@components/header";
+import Footer from "@components/footer";
+
+const font = Vollkorn({ subsets: ["latin"] });
 
 const App = ({ Component, pageProps }: AppProps) => {
   const switchIcon = (
@@ -51,8 +57,25 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   return (
     <>
+      <style jsx global>{`
+        html {
+          font-family: ${font.style.fontFamily};
+        }
+      `}</style>
+      <Head>
+        <title>Onur Iltan</title>
+        <meta name="description" content="Onur Iltan" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon-dark/favicon.ico" id="favicon" />
+        <link
+          rel="manifest"
+          href="/favicon-dark/site.webmanifest"
+          id="manifest"
+        />
+      </Head>
       <Header />
       <Component {...pageProps} />
+      <Footer />
     </>
   );
 };

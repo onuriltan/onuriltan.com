@@ -1,11 +1,12 @@
 import styles from "./index.module.css";
-import Head from "next/head";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   IconDefinition,
   findIconDefinition,
 } from "@fortawesome/fontawesome-svg-core";
+
+import Config from "@/config";
 
 const githubIcon: IconDefinition = findIconDefinition({
   prefix: "fab",
@@ -41,20 +42,10 @@ const links = [
 const Home = () => {
   return (
     <>
-      <Head>
-        <title>Onur Iltan</title>
-        <meta name="description" content="Onur Iltan" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon-dark/favicon.ico" id="favicon" />
-        <link
-          rel="manifest"
-          href="/favicon-dark/site.webmanifest"
-          id="manifest"
-        />
-      </Head>
       <main className={styles.main}>
         <div className={styles.title}>
-          V. Onur <span className={styles.surname}>Iltan</span>
+          {Config.name}
+          <span className={styles.surname}> {Config.surname}</span>
         </div>
         <div className={styles.description}>Senior Sofware Engineer</div>
         <div className={styles.links}>
