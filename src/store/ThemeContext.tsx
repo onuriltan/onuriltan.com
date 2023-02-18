@@ -15,10 +15,10 @@ export function ThemeContextProvider(props: ThemePropsInterface): ReactElement {
   useEffect(() => {
     const currentTime = new Date();
     const hour = currentTime.getHours();
-    localStorage.setItem("theme", hour > 18 && hour < 7 ? "light" : "dark");
+    localStorage.setItem("theme", hour > 18 || hour < 7 ? "light" : "dark");
     const r = document.querySelector(":root") as HTMLElement;
     const currentTheme = localStorage.getItem("theme");
-    if (r && currentTheme) {
+    if (r) {
       if (currentTheme === "dark") {
         setIsDarkTheme(false);
         localStorage.setItem("theme", "light");
@@ -38,7 +38,7 @@ export function ThemeContextProvider(props: ThemePropsInterface): ReactElement {
   const toggleThemeHandler = () => {
     const r = document.querySelector(":root") as HTMLElement;
     const currentTheme = localStorage.getItem("theme");
-    if (r && currentTheme) {
+    if (r) {
       if (currentTheme === "dark") {
         setIsDarkTheme(false);
         localStorage.setItem("theme", "light");
