@@ -11,7 +11,7 @@ if (env === "development") {
     reactStrictMode: true,
     images: {
       loader: "akamai",
-      path: "",
+      path: "/",
     },
   };
 }
