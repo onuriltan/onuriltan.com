@@ -51,6 +51,18 @@
   color: rgb(var(--foreground-color-secondary));
 }
 
+.right_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timezone {
+  margin-left: 4px;
+  font-size: 0.7rem;
+  margin-bottom: 7px;
+}
+
 @media only screen and (max-width: 600px) {
   .header {
     justify-content: flex-end;

@@ -32,6 +32,15 @@ const Header = () => {
     themeCtx.toggleThemeHandler();
   };
 
+  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+  const getTime = () => {
+    const shouldAddZero = new Date().getMinutes() < 10;
+    return `${new Date().getHours()}${":"}${
+      shouldAddZero ? "0" : ""
+    }${new Date().getMinutes()}`;
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -64,11 +73,19 @@ const Header = () => {
             <Link href="/corporate">Corporate Work</Link>
           </li>
         </ul>
-        <div className={styles.sun_btn} onClick={toggleThemeHandler}>
-          <span className={styles.sun_icon}>
-            <FontAwesomeIcon icon={themeCtx.isDarkTheme ? moonIcon : sunIcon} />
-          </span>
-        </div>
+        <button className={styles.right_item} onClick={toggleThemeHandler}>
+          <div className={styles.sun_btn}>
+            <span className={styles.sun_icon}>
+              <FontAwesomeIcon
+                icon={themeCtx.isDarkTheme ? moonIcon : sunIcon}
+              />
+            </span>
+          </div>
+          <div className={styles.timezone}>
+            <div> {timezone}</div>
+            <div>{getTime()}</div>
+          </div>
+        </button>
       </div>
     </header>
   );
