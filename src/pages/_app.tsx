@@ -14,6 +14,7 @@ library.add(far, fas, fab);
 import "@/styles/globals.css";
 import Header from "@components/header";
 import Footer from "@components/footer";
+import { ThemeContextProvider } from "@/store/ThemeContext";
 
 const font = Vollkorn({ subsets: ["latin"] });
 
@@ -55,29 +56,8 @@ const App = ({ Component, pageProps }: AppProps) => {
     switchIcon(usesDarkMode, favicon, manifest);
   }, []);
 
-  useEffect(() => {
-    const currentTime = new Date();
-    const hour = currentTime.getHours();
-    localStorage.setItem("theme", hour > 18 && hour < 7 ? "light" : "dark");
-    const r = document.querySelector(":root") as HTMLElement;
-    const currentTheme = localStorage.getItem("theme");
-    if (r && currentTheme) {
-      if (currentTheme === "dark") {
-        localStorage.setItem("theme", "light");
-        r.style.setProperty("--background-color", "245, 222, 179");
-        r.style.setProperty("--foreground-color", "0, 0, 0");
-        r.style.setProperty("--foreground-color-secondary", "128, 0, 128");
-      } else {
-        localStorage.setItem("theme", "dark");
-        r.style.setProperty("--background-color", "36, 52, 71");
-        r.style.setProperty("--foreground-color", "255, 255, 255");
-        r.style.setProperty("--foreground-color-secondary", "238, 206, 26");
-      }
-    }
-  }, []);
-
   return (
-    <>
+    <ThemeContextProvider>
       <style jsx global>{`
         html {
           font-family: ${font.style.fontFamily};
@@ -97,7 +77,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       <Header />
       <Component {...pageProps} />
       <Footer />
-    </>
+    </ThemeContextProvider>
   );
 };
 

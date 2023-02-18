@@ -7,6 +7,8 @@ import {
   findIconDefinition,
 } from "@fortawesome/fontawesome-svg-core";
 import classNames from "classnames";
+import { useContext } from "react";
+import ThemeContext from "@/store/ThemeContext";
 
 const Header = () => {
   const router = useRouter();
@@ -19,23 +21,15 @@ const Header = () => {
     prefix: "fas",
     iconName: "sun",
   });
+  const moonIcon: IconDefinition = findIconDefinition({
+    prefix: "fas",
+    iconName: "moon",
+  });
 
-  const switchTheme = () => {
-    const r = document.querySelector(":root") as HTMLElement;
-    const currentTheme = localStorage.getItem("theme");
-    if (r && currentTheme) {
-      if (currentTheme === "dark") {
-        localStorage.setItem("theme", "light");
-        r.style.setProperty("--background-color", "245, 222, 179");
-        r.style.setProperty("--foreground-color", "0, 0, 0");
-        r.style.setProperty("--foreground-color-secondary", "128, 0, 128");
-      } else {
-        localStorage.setItem("theme", "dark");
-        r.style.setProperty("--background-color", "36, 52, 71");
-        r.style.setProperty("--foreground-color", "255, 255, 255");
-        r.style.setProperty("--foreground-color-secondary", "238, 206, 26");
-      }
-    }
+  const themeCtx = useContext(ThemeContext);
+
+  const toggleThemeHandler = () => {
+    themeCtx.toggleThemeHandler();
   };
 
   return (
@@ -70,9 +64,9 @@ const Header = () => {
             <Link href="/corporate">Corporate Work</Link>
           </li>
         </ul>
-        <div className={styles.sun_btn} onClick={switchTheme}>
+        <div className={styles.sun_btn} onClick={toggleThemeHandler}>
           <span className={styles.sun_icon}>
-            <FontAwesomeIcon icon={sunIcon} />
+            <FontAwesomeIcon icon={themeCtx.isDarkTheme ? moonIcon : sunIcon} />
           </span>
         </div>
       </div>
