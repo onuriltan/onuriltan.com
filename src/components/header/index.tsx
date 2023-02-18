@@ -15,6 +15,28 @@ const Header = () => {
     prefix: "fas",
     iconName: "bars",
   });
+  const sunIcon: IconDefinition = findIconDefinition({
+    prefix: "fas",
+    iconName: "sun",
+  });
+
+  const switchTheme = () => {
+    const r = document.querySelector(":root") as HTMLElement;
+    const currentTheme = localStorage.getItem("theme");
+    if (r && currentTheme) {
+      if (currentTheme === "dark") {
+        localStorage.setItem("theme", "light");
+        r.style.setProperty("--background-color", "245, 222, 179");
+        r.style.setProperty("--foreground-color", "0, 0, 0");
+        r.style.setProperty("--foreground-color-secondary", "128, 0, 128");
+      } else {
+        localStorage.setItem("theme", "dark");
+        r.style.setProperty("--background-color", "36, 52, 71");
+        r.style.setProperty("--foreground-color", "255, 255, 255");
+        r.style.setProperty("--foreground-color-secondary", "238, 206, 26");
+      }
+    }
+  };
 
   return (
     <header className={styles.header}>
@@ -48,6 +70,11 @@ const Header = () => {
             <Link href="/corporate">Corporate Work</Link>
           </li>
         </ul>
+        <div className={styles.sun_btn} onClick={switchTheme}>
+          <span className={styles.sun_icon}>
+            <FontAwesomeIcon icon={sunIcon} />
+          </span>
+        </div>
       </div>
     </header>
   );

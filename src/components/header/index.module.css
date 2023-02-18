@@ -5,7 +5,7 @@
   top: 0;
   height: var(--header-height);
   border-bottom: 1px solid rgb(var(--foreground-color));
-  background-color: rgb(var(--background-start-color));
+  background-color: rgb(var(--background-color));
 }
 
 .container {
@@ -19,6 +19,20 @@
 
 .hamburger {
   visibility: hidden;
+  font-size: 1.6rem;
+  transition: color 0.3s ease;
+}
+
+.sun_btn {
+  font-size: 1.6rem;
+  transition: color 0.3s ease;
+  background-color: unset;
+}
+.sun_btn:hover {
+  cursor: pointer;
+}
+
+.sun_icon {
   font-size: 1.6rem;
   transition: color 0.3s ease;
 }

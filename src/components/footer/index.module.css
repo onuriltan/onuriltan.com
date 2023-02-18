@@ -3,7 +3,7 @@
   padding: 0 20px;
   height: var(--header-height);
   border-top: 1px solid rgb(var(--foreground-color));
-  background-color: rgb(var(--background-start-color));
+  background-color: rgb(var(--background-color));
 }
 
 .container {
