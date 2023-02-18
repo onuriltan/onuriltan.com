@@ -17,6 +17,27 @@
   margin: 0 auto;
 }
 
+.left {
+  width: 33.3%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.middle {
+  width: 33.3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right {
+  width: 33.3%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .hamburger {
   visibility: hidden;
   font-size: 1.6rem;
@@ -59,7 +80,7 @@
 
 .timezone {
   margin-left: 4px;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   margin-bottom: 7px;
 }
 

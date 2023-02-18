@@ -44,48 +44,46 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <span className={styles.hamburger}>
-          <FontAwesomeIcon icon={githubIcon} />
-        </span>
-        <ul className={styles.links}>
-          <li
-            className={classNames(
-              styles.link,
-              router.pathname == "/" ? styles.activelink : ""
-            )}
-          >
-            <Link href="/">Home</Link>
-          </li>
-          <li
-            className={classNames(
-              styles.link,
-              router.pathname == "/freelance" ? styles.activelink : ""
-            )}
-          >
-            <Link href="/freelance">Freealance Work</Link>
-          </li>
-          <li
-            className={classNames(
-              styles.link,
-              router.pathname == "/corporate" ? styles.activelink : ""
-            )}
-          >
-            <Link href="/corporate">Corporate Work</Link>
-          </li>
-        </ul>
-        <button className={styles.right_item} onClick={toggleThemeHandler}>
-          <div className={styles.sun_btn}>
-            <span className={styles.sun_icon}>
-              <FontAwesomeIcon
-                icon={themeCtx.isDarkTheme ? moonIcon : sunIcon}
-              />
-            </span>
-          </div>
-          <div className={styles.timezone}>
-            <div> {timezone}</div>
-            <div>{getTime()}</div>
-          </div>
-        </button>
+        <div className={styles.left}>
+          <span className={styles.hamburger}>
+            <FontAwesomeIcon icon={githubIcon} />
+          </span>
+        </div>
+        <div className={styles.middle}>
+          <ul className={styles.links}>
+            <li
+              className={classNames(
+                styles.link,
+                router.pathname == "/" ? styles.activelink : ""
+              )}
+            >
+              <Link href="/">Home</Link>
+            </li>
+            <li
+              className={classNames(
+                styles.link,
+                router.pathname == "/work" ? styles.activelink : ""
+              )}
+            >
+              <Link href="/work">Work</Link>
+            </li>
+          </ul>
+        </div>
+        <div className={styles.right}>
+          <button className={styles.right_item} onClick={toggleThemeHandler}>
+            <div className={styles.sun_btn}>
+              <span className={styles.sun_icon}>
+                <FontAwesomeIcon
+                  icon={themeCtx.isDarkTheme ? moonIcon : sunIcon}
+                />
+              </span>
+            </div>
+            <div className={styles.timezone}>
+              <div> {timezone}</div>
+              <div>{getTime()}</div>
+            </div>
+          </button>
+        </div>
       </div>
     </header>
   );

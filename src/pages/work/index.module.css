@@ -18,9 +18,6 @@
   border-bottom: 0.5px solid rgb(var(--foreground-color));
   transition: background-color 0.3s ease;
 }
-.container:hover {
-  background-color: rgb(var(--foreground-color-secondary), 0.3);
-}
 
 .image {
   width: 100%;
