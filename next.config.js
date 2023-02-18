@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-const env = process.env.APP_ENV || false;
+const env = process.env.APP_ENV;
 
 if (env === "development") {
   module.exports = {
