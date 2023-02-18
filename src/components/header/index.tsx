@@ -7,11 +7,22 @@ import {
   findIconDefinition,
 } from "@fortawesome/fontawesome-svg-core";
 import classNames from "classnames";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import ThemeContext from "@/store/ThemeContext";
 
 const Header = () => {
+  const getTime = () => {
+    const shouldAddZero = new Date().getMinutes() < 10;
+    return `${new Date().getHours()}${":"}${
+      shouldAddZero ? "0" : ""
+    }${new Date().getMinutes()}`;
+  };
+
   const router = useRouter();
+  const [time, setTime] = useState(getTime());
+  const [timezone, setTimezone] = useState(
+    Intl.DateTimeFormat().resolvedOptions().timeZone
+  );
 
   const githubIcon: IconDefinition = findIconDefinition({
     prefix: "fas",
@@ -32,14 +43,16 @@ const Header = () => {
     themeCtx.toggleThemeHandler();
   };
 
-  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
-  const getTime = () => {
-    const shouldAddZero = new Date().getMinutes() < 10;
-    return `${new Date().getHours()}${":"}${
-      shouldAddZero ? "0" : ""
-    }${new Date().getMinutes()}`;
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      setTimezone(timezone);
+      setTime(getTime());
+    }, 1000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
 
   return (
     <header className={styles.header}>
@@ -80,7 +93,7 @@ const Header = () => {
             </div>
             <div className={styles.timezone}>
               <div> {timezone}</div>
-              <div>{getTime()}</div>
+              <div>{time}</div>
             </div>
           </button>
         </div>
