@@ -9,6 +9,7 @@ import {
 import classNames from "classnames";
 import { useContext, useEffect, useState } from "react";
 import ThemeContext from "@/store/ThemeContext";
+import Sidebar from "../sidebar";
 
 const Header = () => {
   const getTime = () => {
@@ -20,11 +21,12 @@ const Header = () => {
 
   const router = useRouter();
   const [time, setTime] = useState(getTime());
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [timezone, setTimezone] = useState(
     Intl.DateTimeFormat().resolvedOptions().timeZone
   );
 
-  const githubIcon: IconDefinition = findIconDefinition({
+  const hamburgerIcon: IconDefinition = findIconDefinition({
     prefix: "fas",
     iconName: "bars",
   });
@@ -43,6 +45,10 @@ const Header = () => {
     themeCtx.toggleThemeHandler();
   };
 
+  const onHamburgerClick = ({ value }: { value?: boolean }) => {
+    setSidebarOpen(value ? value : !sidebarOpen);
+  };
+
   useEffect(() => {
     const interval = setInterval(() => {
       const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -58,8 +64,11 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.left}>
-          <span className={styles.hamburger}>
-            <FontAwesomeIcon icon={githubIcon} />
+          <span
+            className={styles.hamburger}
+            onClick={() => onHamburgerClick({ value: undefined })}
+          >
+            <FontAwesomeIcon icon={hamburgerIcon} />
           </span>
         </div>
         <div className={styles.middle}>
@@ -98,6 +107,10 @@ const Header = () => {
           </button>
         </div>
       </div>
+      <Sidebar
+        open={sidebarOpen}
+        onClose={() => onHamburgerClick({ value: false })}
+      />
     </header>
   );
 };
