@@ -14,13 +14,12 @@ type Props = {
   onClose: () => void;
 };
 
-const CloseIcon: IconDefinition = findIconDefinition({
-  prefix: "fas",
-  iconName: "close",
-});
-
 const Sidebar = ({ open, onClose }: Props) => {
   const router = useRouter();
+  const CloseIcon: IconDefinition = findIconDefinition({
+    prefix: "fas",
+    iconName: "close",
+  });
 
   return (
     <div className={`${open && styles.open} ${styles.container}`}>
