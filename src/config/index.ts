@@ -20,7 +20,7 @@ const Config = {
         "Trendyol Assistant is an app which uses Chatbot and Livechat to understand and give solutions to customers' problems about their orders and general questions. You need to be logged in to your Trendyol account to see the chat app when you click the link.",
       technologies: [
         "Node.js",
-        "React",
+        "React.js",
         "React Hooks",
         "SSCS",
         "Jest and React Testing Library",

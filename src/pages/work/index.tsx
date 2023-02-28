@@ -15,16 +15,18 @@ const Freelance = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <Image
-                src={item.image}
-                alt={item.title}
-                className={styles.image}
-              />
+              <div className={styles.image_container}>
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  className={styles.image}
+                />
+              </div>
               <div>
                 <p className={styles.title}>{item.title}</p>
                 <p>{item.description}</p>
               </div>
-              <div>
+              <div className={styles.left}>
                 <p className={styles.title}>Technologies</p>
                 <ul className={styles.list}>
                   {item.technologies.map((item) => {
@@ -44,16 +46,18 @@ const Freelance = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <Image
-                src={item.image}
-                alt={item.title}
-                className={styles.image}
-              />
+              <div className={styles.image_container}>
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  className={styles.image}
+                />
+              </div>
               <div>
                 <p className={styles.title}>{item.title}</p>
                 <p>{item.description}</p>
               </div>
-              <div>
+              <div className={styles.left}>
                 <p className={styles.title}>Technologies</p>
                 <ul className={styles.list}>
                   {item.technologies.map((item) => {

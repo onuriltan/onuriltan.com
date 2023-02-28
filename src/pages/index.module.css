@@ -51,7 +51,7 @@
   font-size: 1rem;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) and (min-width: 0px) {
   .main {
     padding: 2rem;
   }
