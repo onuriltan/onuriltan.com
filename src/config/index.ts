@@ -21,13 +21,20 @@ const Config = {
       technologies: [
         "Node.js",
         "React.js",
-        "React Hooks",
         "SSCS",
         "Jest and React Testing Library",
         "Sonarqube",
       ],
       url: "https://www.trendyol.com/yardim/sorular/liveChat=True",
       image: Assets.TrendyolAsistan,
+    },
+    {
+      title: "Nuri Onboarding",
+      description:
+        "Nuri Onboarding is the signup application that users see before they are using Nuri's banking and crypto products. We are collecting users information, identify them via KYC(Know Your Customer) third party service and eventually create account for them.",
+      technologies: ["Node.js", "React.js", "Typescript", "Apollo GraphQL"],
+      url: "https://app.nuri.com/onboarding",
+      image: Assets.NuriOnboarding,
     },
   ],
 };
