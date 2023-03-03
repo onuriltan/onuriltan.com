@@ -17,7 +17,7 @@ const Config = {
     {
       title: "Cyberfolio",
       description:
-        "Cyberfolio is an app where you can conenct with Metamask and track your tokens in different chains. You can also add Centralized Exchanged like Binance Account to your account as well.",
+        "Cyberfolio is an app where you can connect with Metamask and track your tokens and coins in different chains. You can also add Centralized Exchanges like Binance to your account as well.",
       technologies: ["Node.js", "React.js", "Ethers.js", "Typescript", "SSCS"],
       url: "https://app.cyberfolio.xyz",
       image: Assets.Cyberfolio,
