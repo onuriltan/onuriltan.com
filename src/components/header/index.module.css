@@ -56,6 +56,7 @@
 .sun_icon {
   font-size: 1.6rem;
   transition: color 0.3s ease;
+  margin-right: 5px;
 }
 
 .links {

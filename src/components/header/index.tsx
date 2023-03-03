@@ -52,7 +52,8 @@ const Header = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-      setTimezone(timezone);
+      const city = timezone.split("/").pop();
+      setTimezone(city ? city : timezone);
       setTime(getTime());
     }, 1000);
     return () => {
