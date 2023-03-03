@@ -15,6 +15,14 @@ const Config = {
   ],
   corporate: [
     {
+      title: "Cyberfolio",
+      description:
+        "Cyberfolio is an app where you can conenct with Metamask and track your tokens in different chains. You can also add Centralized Exchanged like Binance Account to your account as well.",
+      technologies: ["Node.js", "React.js", "Ethers.js", "Typescript", "SSCS"],
+      url: "https://app.cyberfolio.xyz",
+      image: Assets.Cyberfolio,
+    },
+    {
       title: "Trendyol Assistant",
       description:
         "Trendyol Assistant is an app which uses Chatbot and Livechat to understand and give solutions to customers' problems about their orders and general questions. You need to be logged in to your Trendyol account to see the chat app when you click the link.",
