@@ -1,7 +1,7 @@
-export type Blog = {
+export type BlogEntry = {
   title: string;
   content: any;
-  date: Date;
+  date: string;
 };
 
 const Blogs = {
@@ -14,8 +14,8 @@ const Blogs = {
       },
       description: "",
     },
-    date: new Date("03-05-2023"),
+    date: "03-05-2023",
   },
-} as { [key: number]: Blog | undefined };
+} as { [key: number]: BlogEntry | undefined };
 
 export default Blogs;

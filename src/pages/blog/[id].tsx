@@ -1,22 +1,27 @@
-import { Blog } from "@constants/blogs";
+import { BlogEntry } from "@constants/blogs";
 import Constants from "@constants/index";
 import { useRouter } from "next/router";
 import styles from "./index.module.css";
 
-export async function getServerSideProps({ params }: { params: any }) {
+export async function getStaticProps({ params }: { params: any }) {
   const blog = Constants.Blogs[Number(params?.id)];
   return { props: { blog } };
 }
 
+export async function getStaticPaths() {
+  const paths = Object.keys(Constants.Blogs).map((id) => ({
+    params: { id: String(id) },
+  }));
+  return { paths, fallback: false };
+}
+
 type Props = {
-  blog: Blog;
+  blog: BlogEntry;
 };
+
 const Blog = ({ blog }: Props) => {
-  const router = useRouter();
-  if (!blog) {
-    router.push("/404");
-    return;
-  }
+  console.log(blog);
+  //   console.log(props);
   return (
     <>
       <main className={styles.main}>
