@@ -22,9 +22,7 @@ const Header = () => {
   const router = useRouter();
   const [time, setTime] = useState(getTime());
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [timezone, setTimezone] = useState(
-    Intl.DateTimeFormat().resolvedOptions().timeZone
-  );
+  const [timezone, setTimezone] = useState("");
 
   const hamburgerIcon: IconDefinition = findIconDefinition({
     prefix: "fas",
@@ -49,11 +47,16 @@ const Header = () => {
     setSidebarOpen(value ? value : !sidebarOpen);
   };
 
+  const setTimeZoneCity = () => {
+    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const city = timezone.split("/").pop();
+    setTimezone(city ? city : timezone);
+  };
+
   useEffect(() => {
+    setTimeZoneCity();
     const interval = setInterval(() => {
-      const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-      const city = timezone.split("/").pop();
-      setTimezone(city ? city : timezone);
+      setTimeZoneCity();
       setTime(getTime());
     }, 1000);
     return () => {

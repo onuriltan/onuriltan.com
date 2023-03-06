@@ -1,9 +1,11 @@
 :root {
+  /* Dimensions */
   --max-width: 1100px;
   --border-radius: 12px;
   --header-height: 70px;
   --app-width: 1280px;
 
+  /* Colors */
   --background-color: 245, 222, 179;
   --foreground-color: 0, 0, 0;
   --foreground-color-secondary: 128, 0, 128;
@@ -46,15 +48,4 @@ input[type="reset"] {
   font: inherit;
   cursor: pointer;
   outline: inherit;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  :root {
-    --background-color: 36, 52, 71;
-    --foreground-color: 255, 255, 255;
-    --foreground-color-secondary: 238, 206, 26;
-  }
 }

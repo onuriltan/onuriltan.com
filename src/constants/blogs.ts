@@ -1,16 +1,19 @@
-type Blog = {
-  id: number;
+export type Blog = {
   title: string;
-  description: string;
+  content: any;
   date: Date;
 };
 
 const Blogs = {
   1: {
-    id: 1,
     title: "How to authenticate users with Ethers.js",
-    description:
-      "In this aricticle, I explained how you can authenticate users without knowing their identity or getting their personal data.",
+    content: {
+      title: {
+        text: "How to authenticate users with Ethers.js",
+        type: "h1",
+      },
+      description: "",
+    },
     date: new Date("03-05-2023"),
   },
 } as { [key: number]: Blog | undefined };
