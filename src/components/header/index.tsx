@@ -90,6 +90,14 @@ const Header = () => {
             >
               <Link href="/work">Work</Link>
             </li>
+            <li
+              className={classNames(
+                styles.link,
+                router.pathname == "/blog" ? styles.activelink : ""
+              )}
+            >
+              <Link href="/blog">Blog</Link>
+            </li>
           </ul>
         </div>
         <div className={styles.right}>

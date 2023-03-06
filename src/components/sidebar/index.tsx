@@ -45,6 +45,15 @@ const Sidebar = ({ open, onClose }: Props) => {
             Work
           </Link>
         </li>
+        <li
+          className={classNames(
+            router.pathname == "/blog" ? styles.activelink : styles.link
+          )}
+        >
+          <Link href="/blog" onClick={onClose}>
+            Blog
+          </Link>
+        </li>
       </ul>
     </div>
   );

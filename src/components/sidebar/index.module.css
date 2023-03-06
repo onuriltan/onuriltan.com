@@ -14,18 +14,6 @@
   width: 250px;
 }
 
-.container a {
-  text-decoration: none;
-  font-size: 25px;
-  color: rgb(var(--background-color));
-  display: block;
-  transition: 0.2s;
-}
-
-.container a:hover {
-  color: rgb(var(--foreground-color-secondary));
-}
-
 .closebtn {
   position: absolute;
   top: 5px;
@@ -43,16 +31,23 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-size: 1.2rem;
 }
 .link {
   transition: color 0.3s ease;
   color: rgb(var(--background-color));
   margin-bottom: 18px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.link:hover {
+  color: rgb(var(--foreground-color-secondary));
 }
 .activelink {
-  color: rgb(var(--foreground-color-secondary));
+  transition: color 0.3s ease;
+  color: rgb(var(--foreground-color-secondary)) !important;
   margin-bottom: 18px;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 @media screen and (max-height: 450px) {
