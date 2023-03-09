@@ -22,7 +22,7 @@ const Config = {
         "Ethers.js",
         "Twitter API, Discord API",
       ],
-      url: "https://rotaoptimizasyonu.com/",
+      url: "https://custompremint.onuriltan.com",
       image: Assets.CustomPremint,
     },
   ],
