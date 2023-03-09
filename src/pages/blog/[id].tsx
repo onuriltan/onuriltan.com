@@ -1,7 +1,7 @@
 import { BlogEntry } from "@constants/blogs";
 import Constants from "@constants/index";
 import { useRouter } from "next/router";
-import styles from "./index.module.css";
+import styles from "./[id].module.css";
 
 export async function getStaticProps({ params }: { params: any }) {
   const blog = Constants.Blogs[Number(params?.id)];
@@ -26,6 +26,15 @@ const Blog = ({ blog }: Props) => {
     <>
       <main className={styles.main}>
         <div className={styles.title_row}>
+          <p className={styles.hidden}>
+            {String(
+              Intl.DateTimeFormat("en", {
+                year: "numeric",
+                month: "long",
+                day: "2-digit",
+              }).format(new Date(blog.date))
+            )}
+          </p>
           <h2 className={styles.title}>{blog.title}</h2>
           <p>
             {String(

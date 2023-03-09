@@ -20,6 +20,9 @@
 .row:hover {
   cursor: pointer;
 }
+.hidden {
+  visibility: hidden;
+}
 
 .title_row {
   display: flex;

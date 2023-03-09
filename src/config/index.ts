@@ -12,6 +12,19 @@ const Config = {
       url: "https://rotaoptimizasyonu.com/",
       image: Assets.RotaOptimizasyonu,
     },
+    {
+      title: "Custom Premint",
+      description:
+        "Custom Premint is an app for NFT Projects where people can connect via Metamask and connect their Twitter and Discord accounts to get special roles in Discord Server and checks if people are following projects official Twitter accounts.",
+      technologies: [
+        "React.js",
+        "Node.js",
+        "Ethers.js",
+        "Twitter API, Discord API",
+      ],
+      url: "https://rotaoptimizasyonu.com/",
+      image: Assets.CustomPremint,
+    },
   ],
   corporate: [
     {
