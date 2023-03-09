@@ -25,6 +25,19 @@ const Config = {
       url: "https://custompremint.onuriltan.com",
       image: Assets.CustomPremint,
     },
+    {
+      title: "Notemanager",
+      description:
+        "Notemanager is an app where you can login via Google or Facebook account and start taking notes.  In this app I practised OAuth 2.0 flows.",
+      technologies: [
+        "Vue.js",
+        "Node.js",
+        "Typescript",
+        "Google API, Facebook API",
+      ],
+      url: "https://notemanager.onuriltan.com",
+      image: Assets.NoteManager,
+    },
   ],
   corporate: [
     {
