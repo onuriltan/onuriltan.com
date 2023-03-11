@@ -1,5 +1,5 @@
 .main {
-  max-width: var(--app-width);
+  max-width: calc(var(--app-width) - 200px);
   min-height: calc(100vh - var(--header-height));
   display: flex;
   justify-content: flex-start;
@@ -50,5 +50,13 @@
   p {
     padding: 20px 0;
     font-size: 1.2rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: rgb(var(--foreground-color-secondary));
+    padding: 10px 0;
   }
 }

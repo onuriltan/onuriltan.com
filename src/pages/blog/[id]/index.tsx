@@ -24,7 +24,7 @@ const Blog = ({ blog }: Props) => {
       <main className={styles.main}>
         <div className={styles.title_row}>
           <div />
-          <h2 className={styles.title}>{blog.title}</h2>
+          <h1 className={styles.title}>{blog.title}</h1>
           <p>
             {String(
               Intl.DateTimeFormat("en", {
