@@ -13,7 +13,7 @@ export type BlogEntry = {
 
 const Blogs = {
   1: {
-    title: "How to authenticate users with Ethers.js",
+    title: "How to authenticate users without storing their name and password",
     date: "03-05-2023",
     content: [
       {
@@ -84,9 +84,9 @@ const Blogs = {
       {
         text: `
         The solution is to create a key(consist of 12 random words) in the digital world and store it in a database(blockchain) which only you can access it with your key. 
-        This key is called a private key. To create this key, you need to install a software called Metamask(others work too but this is the most used one), 
-        it will create a key for you and store it in your digital wallet.
-        In this case, Metamask is the Locksmith that creates a key for you and you only know it. 
+        This key is called a private key. To create this key, you need to install a browser extension called Metamask(others work too but this is the most used one), 
+        it will create a private key for you and store it in your digital wallet.
+        In this case, Metamask is the Locksmith that creates a private key for you and only you know it. 
         `,
         tag: "p" as Typography,
       },
@@ -99,7 +99,7 @@ const Blogs = {
         tag: "p" as Typography,
       },
       {
-        text: `Code Example
+        text: `Code example
         `,
         tag: "h2" as Typography,
       },
@@ -109,6 +109,10 @@ const Blogs = {
         do not need to store private key of the user, but it will ask Ethereum Blockhain to verify the signed message.
         `,
         tag: "p" as Typography,
+      },
+      {
+        text: ``,
+        tag: "code" as Typography,
       },
     ],
   },
