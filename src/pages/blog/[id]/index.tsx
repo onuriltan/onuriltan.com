@@ -1,7 +1,6 @@
 import { BlogEntry } from "@constants/blogs";
 import Constants from "@constants/index";
-import { useRouter } from "next/router";
-import styles from "./[id].module.css";
+import styles from "./index.module.scss";
 
 export async function getStaticProps({ params }: { params: any }) {
   const blog = Constants.Blogs[Number(params?.id)];
@@ -20,21 +19,11 @@ type Props = {
 };
 
 const Blog = ({ blog }: Props) => {
-  console.log(blog);
-  //   console.log(props);
   return (
     <>
       <main className={styles.main}>
         <div className={styles.title_row}>
-          <p className={styles.hidden}>
-            {String(
-              Intl.DateTimeFormat("en", {
-                year: "numeric",
-                month: "long",
-                day: "2-digit",
-              }).format(new Date(blog.date))
-            )}
-          </p>
+          <div />
           <h2 className={styles.title}>{blog.title}</h2>
           <p>
             {String(
@@ -45,6 +34,17 @@ const Blog = ({ blog }: Props) => {
               }).format(new Date(blog.date))
             )}
           </p>
+        </div>
+        <div className={styles.content}>
+          {blog.content.map((content) => {
+            const CustomTag = `${content.tag}`;
+            return (
+              // @ts-ignore
+              <CustomTag key={JSON.stringify(content)}>
+                {content.text}
+              </CustomTag>
+            );
+          })}
         </div>
       </main>
     </>
