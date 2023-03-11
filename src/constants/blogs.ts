@@ -23,7 +23,7 @@ const Blogs = {
       },
       {
         text: `
-        You have a home and you are using you keys to unlock the door to get inside. If I want to get inside your home, I need 
+        You have a home and you are using your keys to unlock the door to get inside. If I want to get inside your home, I need 
         your keys to unlock the door. This is authentication. You are authenticating yourself to get inside your home. 
         `,
         tag: "p" as Typography,
@@ -33,7 +33,7 @@ const Blogs = {
         Now, let's think about this in a digital world. You have a Amazon account and you want to authenticate yourself to check where 
         is your shipment etc. You need to enter your username password this time instead of physical keys to authenticate yourself. 
         This process is not physical but logical, when you open an account with an username and a password, servers are storing your username 
-        and password inside a databas. When you enter them from a web browser or mobile app, server checks if your username and passowrd is a match,
+        and password inside a databas. When you enter them from a web browser or mobile app, server checks if your username and password is a match,
         then it lets you read the data inside your account.
         `,
         tag: "p" as Typography,
@@ -76,7 +76,7 @@ const Blogs = {
         This key is called a private key. To create this key, you need to install a software called Metamask, it will create a key for you and store it in your digital wallet.
         In this case, Metamask is the Locksmith that creates a key for you and you only know it. After you have your 
         key, you can use it to sign a message and send it to the server. The server will verify the message with your key and if it is a match and returns the data
-        your account. This way, Amazon will not store your keys but will store your last signed message and your public key. To sign a message, you need a private key which
+        of your account. This way, Amazon will not store your keys but will store your last signed message and your public key. To sign a message, you need a private key which
         is only held by you, so you are responsible for your account, amazon only verifies it by asking to the blockchain.
         `,
         tag: "p" as Typography,
