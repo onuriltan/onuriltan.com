@@ -110,10 +110,6 @@ const Blogs = {
         `,
         tag: "p" as Typography,
       },
-      {
-        text: ``,
-        tag: "code" as Typography,
-      },
     ],
   },
 } as { [key: number]: BlogEntry };
