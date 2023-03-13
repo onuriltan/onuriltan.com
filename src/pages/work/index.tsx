@@ -5,7 +5,7 @@ import Image from "next/image";
 const Freelance = () => {
   return (
     <>
-      <main className={styles.main}>
+      <div className={styles.main}>
         {Config.corporate.map((item) => {
           return (
             <a
@@ -68,7 +68,7 @@ const Freelance = () => {
             </a>
           );
         })}
-      </main>
+      </div>
     </>
   );
 };

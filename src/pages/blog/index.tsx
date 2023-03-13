@@ -5,7 +5,7 @@ import styles from "./index.module.css";
 const Blog = () => {
   return (
     <>
-      <main className={styles.main}>
+      <div className={styles.main}>
         {Constants.BlogList.map((blog) => {
           return (
             <Link
@@ -29,7 +29,7 @@ const Blog = () => {
             </Link>
           );
         })}
-      </main>
+      </div>
     </>
   );
 };

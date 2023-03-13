@@ -1,6 +1,7 @@
 import styles from "./index.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { Vollkorn } from "@next/font/google";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   IconDefinition,
@@ -10,6 +11,8 @@ import classNames from "classnames";
 import { useContext, useEffect, useState } from "react";
 import ThemeContext from "@/store/ThemeContext";
 import Sidebar from "../sidebar";
+
+const font = Vollkorn({ subsets: ["latin"] });
 
 const Header = () => {
   const getTime = () => {
@@ -65,7 +68,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${font.className}`}>
       <div className={styles.container}>
         <div className={styles.left}>
           <span

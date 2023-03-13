@@ -49,21 +49,16 @@ const App = ({ Component, pageProps }: AppProps) => {
       alert("There is no favicon or manifest.");
       return;
     }
+    switchIcon(usesDarkMode, favicon, manifest);
     window
       .matchMedia("(prefers-color-scheme: dark)")
       .addEventListener("change", (e) =>
         switchIcon(e.matches, favicon, manifest)
       );
-    switchIcon(usesDarkMode, favicon, manifest);
   }, []);
 
   return (
     <ThemeContextProvider>
-      <style jsx global>{`
-        html {
-          font-family: ${font.style.fontFamily};
-        }
-      `}</style>
       <Head>
         <title>Onur Iltan</title>
         <meta name="description" content="Onur Iltan" />
@@ -74,10 +69,11 @@ const App = ({ Component, pageProps }: AppProps) => {
           href="/favicon-dark/site.webmanifest"
           id="manifest"
         />
-        <script src="/prism.js" async />
       </Head>
       <Header />
-      <Component {...pageProps} />
+      <main className={font.className}>
+        <Component {...pageProps} />
+      </main>
       <Footer />
     </ThemeContextProvider>
   );

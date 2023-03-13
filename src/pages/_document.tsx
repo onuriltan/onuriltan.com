@@ -8,6 +8,7 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
+        <Script src="/prism.js" strategy="beforeInteractive" />
       </body>
     </Html>
   );

@@ -21,7 +21,7 @@ type Props = {
 const Blog = ({ blog }: Props) => {
   return (
     <>
-      <main className={styles.main}>
+      <div className={styles.main}>
         <div className={styles.title_row}>
           <div />
           <h1 className={styles.title}>{blog.title}</h1>
@@ -49,7 +49,7 @@ const Blog = ({ blog }: Props) => {
             );
           })}
         </div>
-      </main>
+      </div>
     </>
   );
 };

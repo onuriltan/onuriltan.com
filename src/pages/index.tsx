@@ -42,7 +42,7 @@ const links = [
 const Home = () => {
   return (
     <>
-      <main className={styles.main}>
+      <div className={styles.main}>
         <div className={styles.title}>
           {Config.name}
           <span className={styles.surname}> {Config.surname}</span>
@@ -64,7 +64,7 @@ const Home = () => {
             );
           })}
         </div>
-      </main>
+      </div>
     </>
   );
 };
