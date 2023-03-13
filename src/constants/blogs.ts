@@ -112,7 +112,7 @@ const Blogs = {
         tag: "p" as Typography,
       },
       {
-        text: `I assume you have a playground React project, so first we need to install Ethers.js to your playground project.`,
+        text: `I assume you have installed Metamask and created an Ethereum wallet and also you have a playground React project, so first we need to install Ethers.js to your playground project.`,
         tag: "p" as Typography,
       },
       {
@@ -160,7 +160,7 @@ const Blogs = {
 
           return(
             <div>  
-              <button>Click to sign in</button>  
+              <button onClick={signAndVerifyMessage}>Click to sign in</button>  
             </div>
           );
         }

@@ -28,11 +28,11 @@ const App = ({ Component, pageProps }: AppProps) => {
     if (!favicon || !manifest) return;
 
     if (usesDarkMode) {
-      favicon.href = "./favicon-dark/favicon.ico";
-      manifest.href = "./favicon-dark/site.webmanifest";
+      favicon.href = "/favicon-dark/favicon.ico";
+      manifest.href = "/favicon-dark/site.webmanifest";
     } else {
-      favicon.href = "./favicon-light/favicon.ico";
-      manifest.href = "./favicon-light/site.webmanifest";
+      favicon.href = "/favicon-light/favicon.ico";
+      manifest.href = "/favicon-light/site.webmanifest";
     }
   };
 
