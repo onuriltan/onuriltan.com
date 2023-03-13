@@ -11,7 +11,8 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 library.add(far, fas, fab);
 
-import "@/styles/globals.css";
+import "@/styles/globals.scss";
+
 import Header from "@components/header";
 import Footer from "@components/footer";
 import { ThemeContextProvider } from "@/store/ThemeContext";
@@ -73,6 +74,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           href="/favicon-dark/site.webmanifest"
           id="manifest"
         />
+        <script src="/prism.js" async />
       </Head>
       <Header />
       <Component {...pageProps} />

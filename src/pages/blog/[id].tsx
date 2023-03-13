@@ -1,6 +1,6 @@
 import { BlogEntry } from "@constants/blogs";
 import Constants from "@constants/index";
-import styles from "./index.module.scss";
+import styles from "./[id].module.scss";
 
 export async function getStaticProps({ params }: { params: any }) {
   const blog = Constants.Blogs[Number(params?.id)];
@@ -40,7 +40,10 @@ const Blog = ({ blog }: Props) => {
             const CustomTag = `${content.tag}`;
             return (
               // @ts-ignore
-              <CustomTag key={JSON.stringify(content)}>
+              <CustomTag
+                key={JSON.stringify(content)}
+                className={content.className ? content.className : ""}
+              >
                 {content.text}
               </CustomTag>
             );

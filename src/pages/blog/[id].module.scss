@@ -49,7 +49,7 @@
   display: block;
   p {
     padding: 20px 0;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   h1,
   h2,
@@ -58,5 +58,8 @@
   h5 {
     color: rgb(var(--foreground-color-secondary));
     padding: 10px 0;
+  }
+  code {
+    white-space: pre-wrap !important;
   }
 }

@@ -3,6 +3,7 @@ import { Typography } from "@app-types/index";
 export type BlogEntryItem = {
   text: string;
   tag: Typography;
+  className?: string;
 };
 
 export type BlogEntry = {
@@ -104,10 +105,71 @@ const Blogs = {
         tag: "h2" as Typography,
       },
       {
-        text: `For a basic demo, I'm going to use Ethers.js, a library for interacting with Ethereum blockchain, React.js is used for the frontend and Node.js is used for the backend. 
+        text: `For a basic demo code, I'm going to use Ethers.js, a library for interacting with Ethereum blockchain, React.js is used for the frontend and Node.js and Express.js is used for the backend. 
         User will sign a message with Metamask browser extension and send it to the server. The server will verify the message via Ethers.js and return the data of the user. This way, the server
         do not need to store private key of the user, but it will ask Ethereum Blockhain to verify the signed message.
         `,
+        tag: "p" as Typography,
+      },
+      {
+        text: `I assume you have a playground React project, so first we need to install Ethers.js to your playground project.`,
+        tag: "p" as Typography,
+      },
+      {
+        text: `yarn add ethers`,
+        tag: "code" as Typography,
+        className: "language-shell",
+      },
+      {
+        text: `First, we need to install Ethers.js and Metamask extension to our browser. Then, we need to create a wallet and get the private key of the wallet.`,
+        tag: "p" as Typography,
+      },
+      {
+        text: `
+        import ethers from "ethers";
+        import AuthSercice from "./AuthService";
+
+        const app = () => {
+          const signAndVerifyMessage = async () => {
+            try {
+              // Connect Metamask
+              const provider = new ethers.providers.Web3Provider(window.ethereum);
+              const evmWalletAddresses = await provider.send("eth_requestAccounts", []);
+        
+              // Sign Message
+              const signer = provider.getSigner();
+              const nonce = await AuthService.getNonce({ evmAddress: evmWalletAddresses[0] });
+              const signature = await signer.signMessage(nonce);
+              const evmAddress = await signer.getAddress();
+        
+              // Verify  Message
+              const signerAddress = ethers.utils.verifyMessage(nonce, signature);
+              if (signerAddress !== evmAddress) {
+                throw new Error("Your message could not be verified!");
+              }
+              const user = await AuthService.validateSignature({
+                evmAddress,
+                nonce,
+                signature,
+              });
+              console.log("You are logged in!");
+            } catch (error) {
+              console.error(error.message);
+            }
+          };
+
+          return(
+            <div>  
+              <button>Click to sign in</button>  
+            </div>
+          );
+        }
+        export default app;`,
+        tag: "code" as Typography,
+        className: "language-js",
+      },
+      {
+        text: `Now, we need to create a server to verify the signed message. I assume you have a playground node.js and express project, so we need to only install Ethers.js to our project same way as you did in React project.`,
         tag: "p" as Typography,
       },
     ],
