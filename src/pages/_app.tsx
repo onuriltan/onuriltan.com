@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import Script from "next/script";
 import { Vollkorn } from "@next/font/google";
 
 import "@fortawesome/fontawesome-free";
@@ -72,6 +73,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       </Head>
       <Header />
       <main className={font.className}>
+        <Script src="/prism.js" strategy="beforeInteractive" />
         <Component {...pageProps} />
       </main>
       <Footer />

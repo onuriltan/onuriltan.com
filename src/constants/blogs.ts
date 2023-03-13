@@ -188,8 +188,6 @@ const Blogs = {
         app.use(bodyParser.json());
         app.use(cookieParser());
 
-        app.use('/api/auth', auth);
-
         app.post('/login/validate-signature', async (req: express.Request, res: express.Response, next) => {
           let { evmAddress } = req.body;
           const { signature } = req.body;
@@ -210,10 +208,10 @@ const Blogs = {
                 nonce,
               });
             }
-            const { keyIdentifier } = user;
+            const { evmAddress } = user;
         
             // set jwt to the user's browser cookies
-            const token = jwtConfig.signJwt(user.keyIdentifier);
+            const token = jwtConfig.signJwt(user.evmAddress);
             const jwtExpiryInDays = Number(process.env.JWT_EXPIRY_IN_DAYS);
             res.cookie('token', token, {
               secure: process.env.NODE_ENV !== 'development',
