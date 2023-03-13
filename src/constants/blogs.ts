@@ -3,7 +3,9 @@ import { Typography } from "@app-types/index";
 export type BlogEntryItem = {
   text: string;
   tag: Typography;
-  className?: string;
+  tag2?: Typography;
+  parentClassName?: string;
+  subClassName?: string;
 };
 
 export type BlogEntry = {
@@ -117,8 +119,10 @@ const Blogs = {
       },
       {
         text: `yarn add ethers`,
-        tag: "code" as Typography,
-        className: "language-shell",
+        tag: "pre" as Typography,
+        tag2: "code" as Typography,
+        parentClassName: "language-js",
+        subClassName: "language-js",
       },
       {
         text: `First, we need to install Ethers.js and Metamask extension to our browser. Then, we need to create a wallet and get the private key of the wallet.`,
@@ -129,7 +133,7 @@ const Blogs = {
         import ethers from "ethers";
         import AuthSercice from "./AuthService";
 
-        const app = () => {
+        const App = () => {
           const signAndVerifyMessage = async () => {
             try {
               // Connect Metamask
@@ -164,13 +168,72 @@ const Blogs = {
             </div>
           );
         }
-        export default app;`,
-        tag: "code" as Typography,
-        className: "language-js",
+        export default App;`,
+        tag: "pre" as Typography,
+        tag2: "code" as Typography,
+        parentClassName: "language-js",
+        subClassName: "language-js",
       },
       {
         text: `Now, we need to create a server to verify the signed message. I assume you have a playground node.js and express project, so we need to only install Ethers.js to our project same way as you did in React project.`,
         tag: "p" as Typography,
+      },
+      {
+        text: `
+        import express from 'express';
+        import cookieParser from 'cookie-parser';
+        import bodyParser from 'body-parser';
+
+        const app = express();
+        app.use(bodyParser.json());
+        app.use(cookieParser());
+
+        app.use('/api/auth', auth);
+
+        app.post('/login/validate-signature', async (req: express.Request, res: express.Response, next) => {
+          let { evmAddress } = req.body;
+          const { signature } = req.body;
+          const { nonce } = req.body;
+          evmAddress = evmAddress.toLowerCase();
+          try {
+            const signerAddress = ethers.utils.verifyMessage(nonce, signature);
+            if (signerAddress.toLocaleLowerCase() !== evmAddress) {
+              throw new Error('Signature validation failed');
+            }
+            const user = await getUserByEvmAddressAndNonce({
+              evmAddress,
+              nonce,
+            });
+            if (!user) {
+              await createUser({
+                evmAddress,
+                nonce,
+              });
+            }
+            const { keyIdentifier } = user;
+        
+            // set jwt to the user's browser cookies
+            const token = jwtConfig.signJwt(user.keyIdentifier);
+            const jwtExpiryInDays = Number(process.env.JWT_EXPIRY_IN_DAYS);
+            res.cookie('token', token, {
+              secure: process.env.NODE_ENV !== 'development',
+              httpOnly: true,
+              maxAge: jwtExpiryInDays * 24 * 60 * 60 * 1000,
+            });
+        
+            const verifiedUser = await getUserByEvmAddressAndNonce({
+              evmAddress,
+              nonce,
+            });
+            res.status(200).send('You are logged in!');
+          } catch (e) {
+            next(e);
+          }
+        });`,
+        tag: "pre" as Typography,
+        tag2: "code" as Typography,
+        parentClassName: "language-js",
+        subClassName: "language-js",
       },
     ],
   },

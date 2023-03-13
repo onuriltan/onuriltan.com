@@ -35,14 +35,33 @@ const Blog = ({ blog }: Props) => {
             )}
           </p>
         </div>
-        <div className={styles.content}>
+        <div className={`${styles.content} docs`}>
           {blog.content.map((content) => {
             const CustomTag = `${content.tag}`;
+            const CustomTag2 = content.tag2;
+            const parentClassName = content.parentClassName;
+            const subClassName = content.subClassName;
+            if (parentClassName && subClassName && CustomTag2) {
+              return (
+                // @ts-ignore
+                <CustomTag
+                  key={JSON.stringify(content)}
+                  className={content.parentClassName}
+                >
+                  {/* @ts-ignore */}
+                  <CustomTag2 className={content.subClassName}>
+                    {content.text}
+                  </CustomTag2>
+                </CustomTag>
+              );
+            }
             return (
               // @ts-ignore
               <CustomTag
                 key={JSON.stringify(content)}
-                className={content.className ? content.className : ""}
+                className={
+                  content.parentClassName ? content.parentClassName : ""
+                }
               >
                 {content.text}
               </CustomTag>
