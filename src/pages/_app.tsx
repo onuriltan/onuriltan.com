@@ -73,7 +73,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       </Head>
       <Header />
       <main className={font.className}>
-        <Script src="/prism.js" strategy="beforeInteractive" />
+        <Script src="/prism.js" strategy="afterInteractive" />
         <Component {...pageProps} />
       </main>
       <Footer />
