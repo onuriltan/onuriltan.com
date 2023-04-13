@@ -1,3 +1,5 @@
+import "@/styles/globals.scss";
+
 import { useEffect } from "react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
@@ -11,8 +13,6 @@ import { fas } from "@fortawesome/free-solid-svg-icons";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 library.add(far, fas, fab);
-
-import "@/styles/globals.scss";
 
 import Header from "@components/header";
 import Footer from "@components/footer";

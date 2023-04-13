@@ -125,50 +125,55 @@ const Blogs = {
         subClassName: "language-js",
       },
       {
-        text: `First, we need to install Ethers.js and Metamask extension to our browser. Then, we need to create a wallet and get the private key of the wallet.`,
+        text: `Secondly, we need to install  Metamask extension to our browser. Then, we need to create a wallet save the private key to a secure place.`,
         tag: "p" as Typography,
       },
       {
         text: `
-        import ethers from "ethers";
-        import AuthSercice from "./AuthService";
+import ethers from "ethers";
+import AuthSercice from "./AuthService";
 
-        const App = () => {
-          const signAndVerifyMessage = async () => {
-            try {
-              // Connect Metamask
-              const provider = new ethers.providers.Web3Provider(window.ethereum);
-              const evmWalletAddresses = await provider.send("eth_requestAccounts", []);
-        
-              // Sign Message
-              const signer = provider.getSigner();
-              const nonce = await AuthService.getNonce({ evmAddress: evmWalletAddresses[0] });
-              const signature = await signer.signMessage(nonce);
-              const evmAddress = await signer.getAddress();
-        
-              // Verify  Message
-              const signerAddress = ethers.utils.verifyMessage(nonce, signature);
-              if (signerAddress !== evmAddress) {
-                throw new Error("Your message could not be verified!");
-              }
-              const user = await AuthService.validateSignature({
-                evmAddress,
-                nonce,
-                signature,
-              });
-              console.log("You are logged in!");
-            } catch (error) {
-              console.error(error.message);
-            }
-          };
+const App = () => {
 
-          return(
-            <div>  
-              <button onClick={signAndVerifyMessage}>Click to sign in</button>  
-            </div>
-          );
-        }
-        export default App;`,
+  const signAndVerifyMessage = async () => {
+    try {
+      // Connect Metamask
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const evmWalletAddresses = await provider.send("eth_requestAccounts", []);
+
+      // Sign Message
+      const signer = provider.getSigner();
+      const nonce = await AuthService.getNonce({ evmAddress: evmWalletAddresses[0] });
+      const signature = await signer.signMessage(nonce);
+      const evmAddress = await signer.getAddress();
+
+      // Verify  Message
+      const signerAddress = ethers.utils.verifyMessage(nonce, signature);
+      if (signerAddress !== evmAddress) {
+        throw new Error("Your message could not be verified!");
+      }
+      const user = await AuthService.validateSignature({
+        evmAddress,
+        nonce,
+        signature,
+      });
+
+      // If verified, user is logged in and authentication cookies are set to the browser
+      console.log("You are logged in!");
+    } catch (error) {
+      // If not verified, error message is going to appear in the 
+      // console and authentication cookies will not set to the browser
+      console.error(error.message);
+    }
+  };
+
+  return(
+    <div>  
+      <button onClick={signAndVerifyMessage}>Click to sign in</button>  
+    </div>
+  );
+}
+export default App;`,
         tag: "pre" as Typography,
         tag2: "code" as Typography,
         parentClassName: "language-js",
@@ -180,54 +185,54 @@ const Blogs = {
       },
       {
         text: `
-        import express from 'express';
-        import cookieParser from 'cookie-parser';
-        import bodyParser from 'body-parser';
+import express from 'express';
+import cookieParser from 'cookie-parser';
+import bodyParser from 'body-parser';
 
-        const app = express();
-        app.use(bodyParser.json());
-        app.use(cookieParser());
+const app = express();
+app.use(bodyParser.json());
+app.use(cookieParser());
 
-        app.post('/login/validate-signature', async (req: express.Request, res: express.Response, next) => {
-          let { evmAddress } = req.body;
-          const { signature } = req.body;
-          const { nonce } = req.body;
-          evmAddress = evmAddress.toLowerCase();
-          try {
-            const signerAddress = ethers.utils.verifyMessage(nonce, signature);
-            if (signerAddress.toLocaleLowerCase() !== evmAddress) {
-              throw new Error('Signature validation failed');
-            }
-            const user = await getUserByEvmAddressAndNonce({
-              evmAddress,
-              nonce,
-            });
-            if (!user) {
-              await createUser({
-                evmAddress,
-                nonce,
-              });
-            }
-            const { evmAddress } = user;
-        
-            // set jwt to the user's browser cookies
-            const token = jwtConfig.signJwt(user.evmAddress);
-            const jwtExpiryInDays = Number(process.env.JWT_EXPIRY_IN_DAYS);
-            res.cookie('token', token, {
-              secure: process.env.NODE_ENV !== 'development',
-              httpOnly: true,
-              maxAge: jwtExpiryInDays * 24 * 60 * 60 * 1000,
-            });
-        
-            const verifiedUser = await getUserByEvmAddressAndNonce({
-              evmAddress,
-              nonce,
-            });
-            res.status(200).send('You are logged in!');
-          } catch (e) {
-            next(e);
-          }
-        });`,
+app.post('/login/validate-signature', async (req: express.Request, res: express.Response, next) => {
+  let { evmAddress } = req.body;
+  const { signature } = req.body;
+  const { nonce } = req.body;
+  evmAddress = evmAddress.toLowerCase();
+  try {
+    const signerAddress = ethers.utils.verifyMessage(nonce, signature);
+    if (signerAddress.toLocaleLowerCase() !== evmAddress) {
+      throw new Error('Signature validation failed');
+    }
+    const user = await getUserByEvmAddressAndNonce({
+      evmAddress,
+      nonce,
+    });
+    if (!user) {
+      await createUser({
+        evmAddress,
+        nonce,
+      });
+    }
+    const { evmAddress } = user;
+
+    // Set jwt to the user's browser cookies
+    const token = jwtConfig.signJwt(user.evmAddress);
+    const jwtExpiryInDays = Number(process.env.JWT_EXPIRY_IN_DAYS);
+    res.cookie('token', token, {
+      secure: process.env.NODE_ENV !== 'development',
+      httpOnly: true,
+      maxAge: jwtExpiryInDays * 24 * 60 * 60 * 1000,
+    });
+
+    const verifiedUser = await getUserByEvmAddressAndNonce({
+      evmAddress,
+      nonce,
+    });
+    return res.status(200).send('You are logged in!');
+  } catch (e) {
+    next(e);
+  }
+});`,
         tag: "pre" as Typography,
         tag2: "code" as Typography,
         parentClassName: "language-js",

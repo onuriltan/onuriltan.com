@@ -4,6 +4,7 @@ import NuriOnboarding from "./images/nuri-onboarding.png";
 import Cyberfolio from "./images/cyberfolio.png";
 import CustomPremint from "./images/custom-premint.png";
 import NoteManager from "./images/notemanager.png";
+import CryptioColossal from "./images/cryptio-colossal.png";
 
 const Assets = {
   TrendyolAsistan,
@@ -12,6 +13,7 @@ const Assets = {
   Cyberfolio,
   CustomPremint,
   NoteManager,
+  CryptioColossal,
 };
 
 export default Assets;

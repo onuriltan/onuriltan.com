@@ -5,6 +5,14 @@ const Config = {
   surname: "Iltan",
   freelance: [
     {
+      title: "Cryptio Colossal Landing Page",
+      description:
+        "Landing page design implementation for Cryptio's new product update which is Colossal.",
+      technologies: ["React.js", "Next.js", "Typescript", "CSS Modules"],
+      url: "https://cryptio.co/colossal",
+      image: Assets.CryptioColossal,
+    },
+    {
       title: "Rota Optimizasyonu",
       description:
         "Website for route optimization company. Rotamat is a company where you optimize your routes if you are a large distribution company.",
