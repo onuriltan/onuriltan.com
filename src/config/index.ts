@@ -21,9 +21,23 @@ const Config = {
       image: Assets.RotaOptimizasyonu,
     },
     {
+      title: "Verification Gate",
+      description:
+        "Verification Gate is an app which people can connect via Metamask and connect their Twitter and Discord accounts to get free tokens to play in play.eternity.io. Also app header image and icon and the twitter, discord and email verification are customizable by the admin app.",
+      technologies: [
+        "React.js",
+        "Node.js",
+        "Typescript",
+        "Ethers.js",
+        "Twitter API, Discord API",
+      ],
+      url: "https://stage-gate.eternity.io",
+      image: Assets.VerificationGate,
+    },
+    {
       title: "Custom Premint",
       description:
-        "Custom Premint is an app for NFT Projects where people can connect via Metamask and connect their Twitter and Discord accounts to get special roles in Discord Server and checks if people are following projects official Twitter accounts.",
+        "Custom Premint is an app for NFT Projects which people can connect via Metamask and connect their Twitter and Discord accounts to get special roles in Discord Server and checks if people are following projects official Twitter accounts.",
       technologies: [
         "React.js",
         "Node.js",

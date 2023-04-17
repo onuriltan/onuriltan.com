@@ -5,6 +5,7 @@ import Cyberfolio from "./images/cyberfolio.png";
 import CustomPremint from "./images/custom-premint.png";
 import NoteManager from "./images/notemanager.png";
 import CryptioColossal from "./images/cryptio-colossal.png";
+import VerificationGate from "./images/verification-gate.png";
 
 const Assets = {
   TrendyolAsistan,
@@ -14,6 +15,7 @@ const Assets = {
   CustomPremint,
   NoteManager,
   CryptioColossal,
+  VerificationGate,
 };
 
 export default Assets;
