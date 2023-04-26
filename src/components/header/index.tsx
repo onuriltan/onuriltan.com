@@ -12,8 +12,6 @@ import { useContext, useEffect, useState } from "react";
 import ThemeContext from "@/store/ThemeContext";
 import Sidebar from "../sidebar";
 
-const font = Vollkorn({ subsets: ["latin"] });
-
 const Header = () => {
   const getTime = () => {
     const shouldAddZero = new Date().getMinutes() < 10;
@@ -68,7 +66,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`${styles.header} ${font.className}`}>
+    <header className={`${styles.header}`}>
       <div className={styles.container}>
         <div className={styles.left}>
           <span

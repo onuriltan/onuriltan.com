@@ -25,12 +25,14 @@ export function ThemeContextProvider(props: ThemePropsInterface): ReactElement {
         r.style.setProperty("--background-color", "245, 222, 179");
         r.style.setProperty("--foreground-color", "0, 0, 0");
         r.style.setProperty("--foreground-color-secondary", "128, 0, 128");
+        r.style.setProperty("--foreground-color-third", "245, 222, 179");
       } else {
         setIsDarkTheme(true);
         localStorage.setItem("theme", "dark");
         r.style.setProperty("--background-color", "36, 52, 71");
         r.style.setProperty("--foreground-color", "255, 255, 255");
         r.style.setProperty("--foreground-color-secondary", "238, 206, 26");
+        r.style.setProperty("--foreground-color-third", "0, 0, 0");
       }
     }
   }, []);

@@ -2,11 +2,9 @@ import styles from "./index.module.css";
 import Config from "@/config";
 import { Vollkorn } from "@next/font/google";
 
-const font = Vollkorn({ subsets: ["latin"] });
-
 const Footer = () => {
   return (
-    <footer className={`${styles.main} ${font.className}`}>
+    <footer className={`${styles.main}`}>
       <div></div>
       <div className={styles.container}>
         <p className={styles.item}>

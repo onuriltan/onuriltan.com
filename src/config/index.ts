@@ -5,12 +5,13 @@ const Config = {
   surname: "Iltan",
   freelance: [
     {
-      title: "Cryptio Colossal Landing Page",
+      title: "Cryptio Website",
       description:
-        "Landing page design implementation for Cryptio's new product update which is Colossal.",
+        "Colossal Landing page design and homepage design implementation.",
       technologies: ["React.js", "Next.js", "Typescript", "CSS Modules"],
-      url: "https://cryptio.co/colossal",
+      url: "https://cryptio.co",
       image: Assets.CryptioColossal,
+      type: "Freelance",
     },
     {
       title: "Rota Optimizasyonu",
@@ -19,6 +20,7 @@ const Config = {
       technologies: ["React.js", "Next.js", "CSS3"],
       url: "https://rotaoptimizasyonu.com/",
       image: Assets.RotaOptimizasyonu,
+      type: "Freelance",
     },
     {
       title: "Verification Gate",
@@ -33,42 +35,18 @@ const Config = {
       ],
       url: "https://stage-gate.eternity.io",
       image: Assets.VerificationGate,
-    },
-    {
-      title: "Custom Premint",
-      description:
-        "Custom Premint is an app for NFT Projects which people can connect via Metamask and connect their Twitter and Discord accounts to get special roles in Discord Server and checks if people are following projects official Twitter accounts.",
-      technologies: [
-        "React.js",
-        "Node.js",
-        "Ethers.js",
-        "Twitter API, Discord API",
-      ],
-      url: "https://custompremint.onuriltan.com",
-      image: Assets.CustomPremint,
-    },
-    {
-      title: "Notemanager",
-      description:
-        "Notemanager is an app where you can login via Google or Facebook account and start taking notes.  In this app I practised OAuth 2.0 flows.",
-      technologies: [
-        "Vue.js",
-        "Node.js",
-        "Typescript",
-        "Google API, Facebook API",
-      ],
-      url: "https://notemanager.onuriltan.com",
-      image: Assets.NoteManager,
+      type: "Freelance",
     },
   ],
   corporate: [
     {
-      title: "Cyberfolio",
+      title: "Nuri Onboarding",
       description:
-        "Cyberfolio is an app where you can connect with Metamask and track your tokens and coins in different chains. You can also add Centralized Exchanges like Binance to your account as well.",
-      technologies: ["Node.js", "React.js", "Ethers.js", "Typescript", "SSCS"],
-      url: "https://app.cyberfolio.xyz",
-      image: Assets.Cyberfolio,
+        "Nuri Onboarding is the signup application that users see before they are using Nuri's banking and crypto products. We are collecting users information, identify them via KYC(Know Your Customer) third party service and eventually create account for them.",
+      technologies: ["Node.js", "React.js", "Typescript", "Apollo GraphQL"],
+      url: "https://app.nuri.com/onboarding",
+      image: Assets.NuriOnboarding,
+      type: "Corporate",
     },
     {
       title: "Trendyol Assistant",
@@ -83,14 +61,46 @@ const Config = {
       ],
       url: "https://www.trendyol.com/yardim/sorular/liveChat=True",
       image: Assets.TrendyolAsistan,
+      type: "Corporate",
+    },
+  ],
+  hobby: [
+    {
+      title: "Cyberfolio",
+      description:
+        "Cyberfolio is an app where you can connect with Metamask and track your tokens and coins in different chains. You can also add Centralized Exchanges like Binance to your account as well.",
+      technologies: ["Node.js", "React.js", "Ethers.js", "Typescript", "SSCS"],
+      url: "https://app.cyberfolio.xyz",
+      image: Assets.Cyberfolio,
+      type: "Hobby",
     },
     {
-      title: "Nuri Onboarding",
+      title: "Custom Premint",
       description:
-        "Nuri Onboarding is the signup application that users see before they are using Nuri's banking and crypto products. We are collecting users information, identify them via KYC(Know Your Customer) third party service and eventually create account for them.",
-      technologies: ["Node.js", "React.js", "Typescript", "Apollo GraphQL"],
-      url: "https://app.nuri.com/onboarding",
-      image: Assets.NuriOnboarding,
+        "Custom Premint is an app for NFT Projects which people can connect via Metamask and connect their Twitter and Discord accounts to get special roles in Discord Server and checks if people are following projects official Twitter accounts.",
+      technologies: [
+        "React.js",
+        "Node.js",
+        "Ethers.js",
+        "Twitter API, Discord API",
+      ],
+      url: "https://custompremint.onuriltan.com",
+      image: Assets.CustomPremint,
+      type: "Hobby",
+    },
+    {
+      title: "Notemanager",
+      description:
+        "Notemanager is an app where you can login via Google or Facebook account and start taking notes.  In this app I practised OAuth 2.0 flows.",
+      technologies: [
+        "Vue.js",
+        "Node.js",
+        "Typescript",
+        "Google API, Facebook API",
+      ],
+      url: "https://notemanager.onuriltan.com",
+      image: Assets.NoteManager,
+      type: "Hobby",
     },
   ],
 };

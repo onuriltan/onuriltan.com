@@ -18,7 +18,7 @@ import Header from "@components/header";
 import Footer from "@components/footer";
 import { ThemeContextProvider } from "@/store/ThemeContext";
 
-const font = Vollkorn({ subsets: ["latin"] });
+const font = Vollkorn({ subsets: ["latin"], weight: ["400", "600", "900"] });
 
 const App = ({ Component, pageProps }: AppProps) => {
   const switchIcon = (
@@ -74,6 +74,11 @@ const App = ({ Component, pageProps }: AppProps) => {
       <Header />
       <main className={font.className}>
         <Script src="/prism.js" strategy="afterInteractive" />
+        <style jsx global>{`
+          html {
+            font-family: ${font.style.fontFamily};
+          }
+        `}</style>
         <Component {...pageProps} />
       </main>
       <Footer />
