@@ -6,8 +6,7 @@ const Config = {
   freelance: [
     {
       title: "Cryptio Website",
-      description:
-        "Colossal Landing page design and homepage design implementation.",
+      description: "Colossal and homepage design implementation.",
       technologies: ["React.js", "Next.js", "Typescript", "CSS Modules"],
       url: "https://cryptio.co",
       image: Assets.CryptioColossal,
