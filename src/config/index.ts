@@ -3,10 +3,11 @@ import Assets from "@/assets";
 const Config = {
   name: "V. Onur",
   surname: "Iltan",
-  freelance: [
+  projects: [
     {
       title: "Cryptio Website",
-      description: "Colossal and homepage design implementation.",
+      description:
+        "Maintaining and adding new features to the website of Cryptio.",
       technologies: ["React.js", "Next.js", "Typescript", "CSS Modules"],
       url: "https://cryptio.co",
       image: Assets.CryptioColossal,
@@ -36,8 +37,6 @@ const Config = {
       image: Assets.VerificationGate,
       type: "Freelance",
     },
-  ],
-  corporate: [
     {
       title: "Nuri Onboarding",
       description:
@@ -62,8 +61,6 @@ const Config = {
       image: Assets.TrendyolAsistan,
       type: "Corporate",
     },
-  ],
-  hobby: [
     {
       title: "Cyberfolio",
       description:

@@ -20,6 +20,10 @@ const stackoverflowIcon: IconDefinition = findIconDefinition({
   prefix: "fab",
   iconName: "stack-overflow",
 });
+const workIcon: IconDefinition = findIconDefinition({
+  prefix: "fas",
+  iconName: "building",
+});
 
 const links = [
   {
@@ -37,6 +41,11 @@ const links = [
     name: "Stackoverflow",
     url: "https://stackoverflow.com/users/3756237/onuriltan",
   },
+  {
+    icon: <FontAwesomeIcon icon={workIcon} />,
+    name: "My Work",
+    url: "/work",
+  },
 ];
 
 const Home = () => {
@@ -48,13 +57,24 @@ const Home = () => {
           <span className={styles.surname}> {Config.surname}</span>
         </div>
         <div className={styles.description}>Senior Sofware Engineer</div>
+        <div className={styles.description_2}>
+          Hello, I'm a Software Engineer and enthusiast who enjoys writing clean
+          and maintainable code with new and mature technologies. My expertise
+          are{" "}
+          <span className={styles.description_2_highlight}>
+            creating web apps end to end, Javascript, Typescript React.js,
+            Node.js, MongoDB and SQL.
+          </span>
+          Lets get to know each other better! If you have any questions, feel
+          free to contact me from my links below.
+        </div>
         <div className={styles.links}>
           {links.map((link) => {
             return (
               <a
                 className={styles.link}
                 key={JSON.stringify(link)}
-                target="_blank"
+                target={link.url === "/work" ? "_self" : "_blank"}
                 rel="noreferrer"
                 href={link.url}
               >
