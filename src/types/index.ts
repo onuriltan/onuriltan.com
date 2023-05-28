@@ -22,3 +22,10 @@ export type Typography = (HeadingType | ParagraphType | SpanType) & {
     | "overline"
     | "button";
 };
+
+export enum WorkType {
+  CORPORATE = "Corporate",
+  FREELANCE = "Freelance",
+  HOBBY = "Hobby",
+  ALL = "All",
+}

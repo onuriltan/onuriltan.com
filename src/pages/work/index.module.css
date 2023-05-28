@@ -10,6 +10,18 @@
   align-items: center;
   flex-direction: column;
 }
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.select_label {
+  margin-top: 0;
+  margin-right: 5px;
+}
+.select {
+  outline: 0;
+}
 
 .container {
   display: grid;
@@ -20,11 +32,6 @@
   padding: 24px 0;
   border-bottom: 0.5px solid rgb(var(--foreground-color));
   transition: background-color 0.3s ease;
-}
-
-.select {
-  margin-bottom: 20px;
-  display: none;
 }
 
 .left {
@@ -58,7 +65,7 @@
     padding: 0rem;
     width: 90%;
     margin: 0 auto;
-    margin-top: 4rem;
+    margin-top: 5rem;
   }
   .container {
     grid-template-columns: 1fr;

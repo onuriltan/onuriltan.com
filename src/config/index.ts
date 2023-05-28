@@ -1,4 +1,5 @@
 import Assets from "@/assets";
+import { WorkType } from "@app-types/index";
 
 const Config = {
   name: "V. Onur",
@@ -11,7 +12,7 @@ const Config = {
       technologies: ["React.js", "Next.js", "Typescript", "CSS Modules"],
       url: "https://cryptio.co",
       image: Assets.CryptioColossal,
-      type: "Freelance",
+      type: WorkType.FREELANCE,
     },
     {
       title: "Rota Optimizasyonu",
@@ -20,7 +21,7 @@ const Config = {
       technologies: ["React.js", "Next.js", "CSS3"],
       url: "https://rotaoptimizasyonu.com/",
       image: Assets.RotaOptimizasyonu,
-      type: "Freelance",
+      type: WorkType.FREELANCE,
     },
     {
       title: "Verification Gate",
@@ -35,7 +36,7 @@ const Config = {
       ],
       url: "https://stage-gate.eternity.io",
       image: Assets.VerificationGate,
-      type: "Freelance",
+      type: WorkType.FREELANCE,
     },
     {
       title: "Nuri Onboarding",
@@ -44,7 +45,7 @@ const Config = {
       technologies: ["Node.js", "React.js", "Typescript", "Apollo GraphQL"],
       url: "https://app.nuri.com/onboarding",
       image: Assets.NuriOnboarding,
-      type: "Corporate",
+      type: WorkType.CORPORATE,
     },
     {
       title: "Trendyol Assistant",
@@ -59,7 +60,7 @@ const Config = {
       ],
       url: "https://www.trendyol.com/yardim/sorular/liveChat=True",
       image: Assets.TrendyolAsistan,
-      type: "Corporate",
+      type: WorkType.CORPORATE,
     },
     {
       title: "Cyberfolio",
@@ -68,7 +69,7 @@ const Config = {
       technologies: ["Node.js", "React.js", "Ethers.js", "Typescript", "SSCS"],
       url: "https://app.cyberfolio.xyz",
       image: Assets.Cyberfolio,
-      type: "Hobby",
+      type: WorkType.HOBBY,
     },
     {
       title: "Custom Premint",
@@ -82,7 +83,7 @@ const Config = {
       ],
       url: "https://custompremint.onuriltan.com",
       image: Assets.CustomPremint,
-      type: "Hobby",
+      type: WorkType.HOBBY,
     },
     {
       title: "Notemanager",
@@ -96,7 +97,7 @@ const Config = {
       ],
       url: "https://notemanager.onuriltan.com",
       image: Assets.NoteManager,
-      type: "Hobby",
+      type: WorkType.HOBBY,
     },
   ],
 };
