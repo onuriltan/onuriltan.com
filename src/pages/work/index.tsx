@@ -1,50 +1,66 @@
+import { TechnologyType, WorkType } from "@app-types/index";
 import styles from "./index.module.css";
 import Config from "@/config";
 import Badge from "@components/badge";
 import Image from "next/image";
 import { useState } from "react";
 
-enum WorkType {
-  CORPORATE = "Corporate",
-  FREELANCE = "Freelance",
-  HOBBY = "Hobby",
-  ALL = "All",
-}
-
-const WorkTypes: WorkType[] = [
-  WorkType.CORPORATE,
-  WorkType.FREELANCE,
-  WorkType.HOBBY,
-  WorkType.ALL,
-];
-
 const Work = () => {
-  const [activeTab, setActiveTab] = useState<WorkType>(WorkType.ALL);
+  const [workType, setWorkType] = useState<WorkType>(WorkType.ALL);
+  const [technology, setTechnology] = useState<TechnologyType>(
+    TechnologyType.ALL
+  );
 
   return (
     <div className={styles.main}>
       <div className={styles.header}>
-        <label htmlFor="active-tab" className={styles.select_label}>
-          Work Type
-        </label>
-        <select
-          value={activeTab}
-          className={styles.select}
-          onChange={(e) => setActiveTab(e.target.value as WorkType)}
-          id="active-tab"
-        >
-          {WorkTypes.map((item) => {
-            return (
-              <option value={item} key={item}>
-                {item}
-              </option>
-            );
-          })}
-        </select>
+        <div className={styles.header_item}>
+          <label htmlFor="active-tab" className={styles.select_label}>
+            Work Type
+          </label>
+          <select
+            value={workType}
+            className={styles.select}
+            onChange={(e) => setWorkType(e.target.value as WorkType)}
+            id="active-tab"
+          >
+            {Object.values(WorkType).map((item) => {
+              return (
+                <option value={item} key={item}>
+                  {item}
+                </option>
+              );
+            })}
+          </select>
+        </div>
+        <div className={styles.header_item}>
+          <label htmlFor="technology" className={styles.select_label}>
+            Technology Type
+          </label>
+          <select
+            value={technology}
+            className={styles.select}
+            onChange={(e) => setTechnology(e.target.value as TechnologyType)}
+            id="technology"
+          >
+            {Object.values(TechnologyType).map((item) => {
+              return (
+                <option value={item} key={item}>
+                  {item}
+                </option>
+              );
+            })}
+          </select>
+        </div>
       </div>
 
       {Config.projects
-        .filter((item) => item.type === activeTab || activeTab === WorkType.ALL)
+        .filter((item) => item.type === workType || workType === WorkType.ALL)
+        .filter(
+          (item) =>
+            item.technologies.includes(technology) ||
+            technology === TechnologyType.ALL
+        )
         .map((item) => {
           return (
             <a

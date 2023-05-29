@@ -58,9 +58,9 @@ const Home = () => {
         </div>
         <div className={styles.description}>Senior Sofware Engineer</div>
         <div className={styles.description_2}>
-          Hello, I'm a Software Engineer and enthusiast who enjoys writing clean
-          and maintainable code with new and mature technologies. My expertise
-          are{" "}
+          Hello, I&apos;m a Software Engineer and enthusiast who enjoys writing
+          clean and maintainable code with new and mature technologies. My
+          expertise are{" "}
           <span className={styles.description_2_highlight}>
             creating web apps end to end, Javascript, Typescript React.js,
             Node.js, MongoDB and SQL.
