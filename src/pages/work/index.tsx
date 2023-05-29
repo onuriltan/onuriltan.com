@@ -75,6 +75,7 @@ const Work = () => {
                   src={item.image}
                   alt={item.title}
                   className={styles.image}
+                  priority
                 />
               </div>
               <div>
