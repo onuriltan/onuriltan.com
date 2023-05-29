@@ -122,6 +122,7 @@ const Config = {
         TechnologyType.TYPESCRIPT,
         TechnologyType.GOOGLEAPI,
         TechnologyType.FACEBOOKAPI,
+        TechnologyType.MONGODB,
       ],
       url: "https://notemanager.onuriltan.com",
       image: Assets.NoteManager,
