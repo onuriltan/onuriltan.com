@@ -16,7 +16,16 @@ const Config = {
         TechnologyType.CSSMODULES,
       ],
       url: "https://cryptio.co",
-      image: Assets.CryptioColossal,
+      images: [
+        {
+          image: Assets.Images.CryptioColossal,
+          url: "https://cryptio.co/colossal",
+        },
+        {
+          image: Assets.Images.CryptioColossal,
+          url: "https://cryptio.co/colossal",
+        },
+      ],
       type: WorkType.FREELANCE,
     },
     {
@@ -29,7 +38,16 @@ const Config = {
         TechnologyType.CSSMODULES,
       ],
       url: "https://rotaoptimizasyonu.com/",
-      image: Assets.RotaOptimizasyonu,
+      images: [
+        {
+          image: Assets.Images.RotaOptimizasyonu,
+          url: "https://rotaoptimizasyonu.com/",
+        },
+        {
+          image: Assets.Images.RotaOptimizasyonu,
+          url: "https://rotaoptimizasyonu.com/",
+        },
+      ],
       type: WorkType.FREELANCE,
     },
     {
@@ -46,7 +64,16 @@ const Config = {
         TechnologyType.POSTGRESQL,
       ],
       url: "https://stage-gate.eternity.io",
-      image: Assets.VerificationGate,
+      images: [
+        {
+          image: Assets.Images.VerificationGate,
+          url: "https://stage-gate.eternity.io",
+        },
+        {
+          image: Assets.Images.VerificationGate,
+          url: "https://stage-gate.eternity.io",
+        },
+      ],
       type: WorkType.FREELANCE,
     },
     {
@@ -61,7 +88,16 @@ const Config = {
         TechnologyType.MONGODB,
       ],
       url: "https://app.nuri.com/onboarding",
-      image: Assets.NuriOnboarding,
+      images: [
+        {
+          image: Assets.Images.NuriOnboarding,
+          url: "https://app.nuri.com/onboarding",
+        },
+        {
+          image: Assets.Images.NuriOnboarding,
+          url: "https://app.nuri.com/onboarding",
+        },
+      ],
       type: WorkType.CORPORATE,
     },
     {
@@ -77,7 +113,16 @@ const Config = {
         TechnologyType.SONARQUBE,
       ],
       url: "https://www.trendyol.com/yardim/sorular/liveChat=True",
-      image: Assets.TrendyolAsistan,
+      images: [
+        {
+          image: Assets.Images.TrendyolAsistan,
+          url: "https://www.trendyol.com/yardim/sorular/liveChat=True",
+        },
+        {
+          image: Assets.Images.TrendyolAsistan,
+          url: "https://www.trendyol.com/yardim/sorular/liveChat=True",
+        },
+      ],
       type: WorkType.CORPORATE,
     },
     {
@@ -93,7 +138,9 @@ const Config = {
         TechnologyType.MONGODB,
       ],
       url: "https://app.cyberfolio.xyz",
-      image: Assets.Cyberfolio,
+      images: [
+        { image: Assets.Images.Cyberfolio, url: "https://app.cyberfolio.xyz" },
+      ],
       type: WorkType.HOBBY,
     },
     {
@@ -109,7 +156,16 @@ const Config = {
         TechnologyType.MONGODB,
       ],
       url: "https://custompremint.onuriltan.com",
-      image: Assets.CustomPremint,
+      images: [
+        {
+          image: Assets.Images.CustomPremint,
+          url: "https://custompremint.onuriltan.com",
+        },
+        {
+          image: Assets.Images.CustomPremint,
+          url: "https://custompremint.onuriltan.com",
+        },
+      ],
       type: WorkType.HOBBY,
     },
     {
@@ -125,7 +181,16 @@ const Config = {
         TechnologyType.MONGODB,
       ],
       url: "https://notemanager.onuriltan.com",
-      image: Assets.NoteManager,
+      images: [
+        {
+          image: Assets.Images.Notemanager,
+          url: "https://notemanager.onuriltan.com",
+        },
+        {
+          image: Assets.Images.Notemanager,
+          url: "https://notemanager.onuriltan.com",
+        },
+      ],
       type: WorkType.HOBBY,
     },
   ],

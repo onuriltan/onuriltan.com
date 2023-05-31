@@ -4,15 +4,80 @@ import Config from "@/config";
 import Badge from "@components/badge";
 import Image from "next/image";
 import { useState } from "react";
+import Slider from "react-slick";
+import Icons from "@/assets/icons";
+
+const NextArrow = (props: any) => {
+  const { onClick, style, className } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, zIndex: 20 }}
+      onClick={onClick}
+    >
+      <Image src={Icons.ArrowRight} alt="ArrowRight" />
+    </div>
+  );
+};
+
+const PrevArrow = (props: any) => {
+  const { onClick, style, className } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, zIndex: 20 }}
+      onClick={onClick}
+    >
+      <Image src={Icons.ArrowLeft} alt="ArrowLeft" />
+    </div>
+  );
+};
+const defaultSliderSettings = {
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  adaptiveHeight: true,
+  dots: true,
+  nextArrow: <NextArrow />,
+  prevArrow: <PrevArrow />,
+};
 
 const Work = () => {
   const [workType, setWorkType] = useState<WorkType>(WorkType.ALL);
   const [technology, setTechnology] = useState<TechnologyType>(
     TechnologyType.ALL
   );
+  const [sliderSettings, setSliderSettings] = useState(defaultSliderSettings);
 
   return (
     <div className={styles.main}>
+      <style jsx global>
+        {`
+          .slick-slide {
+            margin: 100%px;
+          }
+          .slick-slide > div {
+            margin: 10px;
+          }
+          .slick-slide > div > div {
+            height: 400px;
+          }
+          // .slick-list {
+          //   margin: -25px;
+          // }
+          .slick-prev {
+            left: -15px;
+          }
+          .slick-next {
+            right: -22px;
+          }
+          .slick-prev:before,
+          .slick-next:before {
+            content: "" !important;
+          }
+        `}
+      </style>
       <div className={styles.header}>
         <div className={styles.header_item}>
           <label htmlFor="active-tab" className={styles.select_label}>
@@ -63,20 +128,27 @@ const Work = () => {
         )
         .map((item) => {
           return (
-            <a
+            <div
               key={JSON.stringify(item)}
               className={styles.container}
-              href={item.url}
-              target="_blank"
-              rel="noreferrer"
+              // href={item.url}
+              // target="_blank"
+              // rel="noreferrer"
             >
               <div className={styles.image_container}>
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  className={styles.image}
-                  priority
-                />
+                <Slider {...sliderSettings}>
+                  {item.images.map((image) => {
+                    return (
+                      <Image
+                        src={image.image}
+                        alt={item.title}
+                        className={styles.image}
+                        priority
+                        key={JSON.stringify(image)}
+                      />
+                    );
+                  })}
+                </Slider>
               </div>
               <div>
                 <p className={styles.title}>{item.title}</p>
@@ -93,7 +165,7 @@ const Work = () => {
                   })}
                 </ul>
               </div>
-            </a>
+            </div>
           );
         })}
     </div>
