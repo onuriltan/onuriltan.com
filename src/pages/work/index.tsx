@@ -140,10 +140,10 @@ const Work = () => {
                   {item.images.map((image) => {
                     return (
                       <Image
+                        priority
                         src={image.image}
                         alt={item.title}
                         className={styles.image}
-                        priority
                         key={JSON.stringify(image)}
                       />
                     );

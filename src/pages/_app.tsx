@@ -20,7 +20,11 @@ import Header from "@components/header";
 import Footer from "@components/footer";
 import { ThemeContextProvider } from "@/store/ThemeContext";
 
-const font = Vollkorn({ subsets: ["latin"], weight: ["400", "600", "900"] });
+const font = Vollkorn({
+  subsets: ["latin"],
+  weight: ["400", "600", "900"],
+  display: "swap",
+});
 
 const App = ({ Component, pageProps }: AppProps) => {
   const switchIcon = (
