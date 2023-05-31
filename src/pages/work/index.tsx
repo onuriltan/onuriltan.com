@@ -19,13 +19,17 @@ const RightArrow: IconDefinition = findIconDefinition({
   prefix: "fas",
   iconName: "chevron-right",
 });
+const DotIcon: IconDefinition = findIconDefinition({
+  prefix: "fas",
+  iconName: "circle",
+});
 
 const NextArrow = (props: any) => {
   const { onClick, style, className } = props;
   return (
     <div
       className={`${className} ${styles.arrow}`}
-      style={{ ...style, zIndex: 20 }}
+      style={{ ...style, zIndex: 10 }}
       onClick={onClick}
     >
       <FontAwesomeIcon icon={RightArrow} />
@@ -38,10 +42,18 @@ const PrevArrow = (props: any) => {
   return (
     <div
       className={`${className} ${styles.arrow}`}
-      style={{ ...style, zIndex: 20 }}
+      style={{ ...style, zIndex: 10 }}
       onClick={onClick}
     >
       <FontAwesomeIcon icon={LeftArrow} />
+    </div>
+  );
+};
+const Dot = (props: any) => {
+  const { onClick } = props;
+  return (
+    <div className={styles.dot} onClick={onClick}>
+      <FontAwesomeIcon icon={DotIcon} />
     </div>
   );
 };
@@ -54,6 +66,7 @@ const defaultSliderSettings = {
   dots: true,
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />,
+  customPaging: () => <Dot />,
 };
 
 const Work = () => {
@@ -68,12 +81,12 @@ const Work = () => {
       <style jsx global>
         {`
           .slick-prev {
-            left: -24px;
+            left: -30px;
             top: 50%;
           }
           .slick-next {
             top: 50%;
-            right: -32px;
+            right: -34px;
           }
           .slick-prev:before,
           .slick-next:before {
