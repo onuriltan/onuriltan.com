@@ -29,7 +29,6 @@
 .select {
   outline: 0;
 }
-
 .container {
   width: 100%;
   display: grid;
@@ -41,7 +40,6 @@
   border-bottom: 0.5px solid rgb(var(--foreground-color));
   transition: background-color 0.3s ease;
 }
-
 .left {
   display: flex;
   justify-content: center;
@@ -49,14 +47,17 @@
   flex-direction: column;
   text-align: end;
 }
-
 .image_container {
   max-width: 500px;
   margin-left: 30px;
 }
+.image_wrapper {
+  width: 100%;
+}
 .image {
-  width: auto;
+  width: 100%;
   height: 100%;
+  object-fit: contain;
 }
 
 .title {
@@ -80,9 +81,13 @@
   }
   .image_container {
     margin-left: 0px;
-    max-width: 350px;
+    max-width: 330px;
     margin: 0 auto;
     margin-bottom: 30px;
+  }
+  .image_wrapper {
+    width: 100%;
+    height: unset;
   }
   .image {
     height: 100%;

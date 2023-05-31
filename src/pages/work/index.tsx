@@ -54,23 +54,13 @@ const Work = () => {
     <div className={styles.main}>
       <style jsx global>
         {`
-          .slick-slide {
-            margin: 100%px;
-          }
-          .slick-slide > div {
-            margin: 10px;
-          }
-          .slick-slide > div > div {
-            height: 400px;
-          }
-          // .slick-list {
-          //   margin: -25px;
-          // }
           .slick-prev {
-            left: -15px;
+            left: -24px;
+            top: 50%;
           }
           .slick-next {
-            right: -22px;
+            top: 50%;
+            right: -32px;
           }
           .slick-prev:before,
           .slick-next:before {
@@ -128,24 +118,25 @@ const Work = () => {
         )
         .map((item) => {
           return (
-            <div
-              key={JSON.stringify(item)}
-              className={styles.container}
-              // href={item.url}
-              // target="_blank"
-              // rel="noreferrer"
-            >
+            <div key={JSON.stringify(item)} className={styles.container}>
               <div className={styles.image_container}>
                 <Slider {...sliderSettings}>
                   {item.images.map((image) => {
                     return (
-                      <Image
-                        priority
-                        src={image.image}
-                        alt={item.title}
-                        className={styles.image}
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noreferrer"
                         key={JSON.stringify(image)}
-                      />
+                        className={styles.image_wrapper}
+                      >
+                        <Image
+                          priority
+                          src={image.image}
+                          alt={item.title}
+                          className={styles.image}
+                        />
+                      </a>
                     );
                   })}
                 </Slider>
