@@ -1,21 +1,34 @@
 import { TechnologyType, WorkType } from "@app-types/index";
-import styles from "./index.module.css";
+import styles from "./index.module.scss";
 import Config from "@/config";
 import Badge from "@components/badge";
 import Image from "next/image";
 import { useState } from "react";
 import Slider from "react-slick";
-import Icons from "@/assets/icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  IconDefinition,
+  findIconDefinition,
+} from "@fortawesome/fontawesome-svg-core";
+
+const LeftArrow: IconDefinition = findIconDefinition({
+  prefix: "fas",
+  iconName: "chevron-left",
+});
+const RightArrow: IconDefinition = findIconDefinition({
+  prefix: "fas",
+  iconName: "chevron-right",
+});
 
 const NextArrow = (props: any) => {
   const { onClick, style, className } = props;
   return (
     <div
-      className={className}
+      className={`${className} ${styles.arrow}`}
       style={{ ...style, zIndex: 20 }}
       onClick={onClick}
     >
-      <Image src={Icons.ArrowRight} alt="ArrowRight" />
+      <FontAwesomeIcon icon={RightArrow} />
     </div>
   );
 };
@@ -24,11 +37,11 @@ const PrevArrow = (props: any) => {
   const { onClick, style, className } = props;
   return (
     <div
-      className={className}
+      className={`${className} ${styles.arrow}`}
       style={{ ...style, zIndex: 20 }}
       onClick={onClick}
     >
-      <Image src={Icons.ArrowLeft} alt="ArrowLeft" />
+      <FontAwesomeIcon icon={LeftArrow} />
     </div>
   );
 };

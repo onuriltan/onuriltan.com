@@ -1,7 +1,6 @@
 import styles from "./index.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Vollkorn } from "@next/font/google";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   IconDefinition,
