@@ -60,12 +60,13 @@ const Home = () => {
         <div className={styles.description_2}>
           Hello, I&apos;m a Software Engineer and enthusiast who enjoys writing
           clean and maintainable code with new and mature technologies. My
-          expertise are{" "}
+          expertise are
           <span className={styles.description_2_highlight}>
-            creating web apps end to end, Javascript, Typescript React.js,
-            Node.js, MongoDB and SQL.
+            {" "}
+            creating web apps end to end, Javascript, Typescript, React.js,
+            Node.js, MongoDB and SQL{" "}
           </span>
-          Lets get to know each other better! If you have any questions, feel
+          .Lets get to know each other better! If you have any questions, feel
           free to contact me from my links below.
         </div>
         <div className={styles.links}>

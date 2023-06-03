@@ -142,7 +142,7 @@ const Work = () => {
                   {item.images.map((image) => {
                     return (
                       <a
-                        href={item.url}
+                        href={image.url}
                         target="_blank"
                         rel="noreferrer"
                         key={JSON.stringify(image)}

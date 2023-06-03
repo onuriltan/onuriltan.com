@@ -31,11 +31,13 @@ const Config: ConfigType = {
     {
       title: "Rota Optimizasyonu",
       description:
-        "Website for route optimization company. Rotamat is a company where you optimize your routes if you are a large distribution company.",
+        "Rotamat is a company where you optimize your routes if you are a large distribution company.",
       technologies: [
         TechnologyType.REACT,
         TechnologyType.NEXTJS,
+        TechnologyType.SCSS,
         TechnologyType.CSSMODULES,
+        TechnologyType.LEAFLETMAPAPI,
       ],
       url: "https://rotaoptimizasyonu.com/",
       images: [
@@ -44,8 +46,12 @@ const Config: ConfigType = {
           url: "https://rotaoptimizasyonu.com/",
         },
         {
-          image: Assets.Images.RotaOptimizasyonu,
-          url: "https://rotaoptimizasyonu.com/",
+          image: Assets.Images.RotaOptimizasyonuDashboard,
+          url: "https://web.rotaoptimizasyonu.com/kontrol-paneli",
+        },
+        {
+          image: Assets.Images.RotaOptimizasyonuSimulation,
+          url: "https://simulasyon.rotaoptimizasyonu.com",
         },
       ],
       type: WorkType.FREELANCE,
@@ -63,12 +69,8 @@ const Config: ConfigType = {
         TechnologyType.DISCORDAPI,
         TechnologyType.POSTGRESQL,
       ],
-      url: "https://stage-gate.eternity.io",
+      url: "https://tokens.eternity.io",
       images: [
-        {
-          image: Assets.Images.VerificationGate,
-          url: "https://tokens.eternity.io",
-        },
         {
           image: Assets.Images.VerificationGate,
           url: "https://tokens.eternity.io",
@@ -93,10 +95,6 @@ const Config: ConfigType = {
           image: Assets.Images.NuriOnboarding,
           url: "https://app.nuri.com/onboarding",
         },
-        {
-          image: Assets.Images.NuriOnboarding,
-          url: "https://app.nuri.com/onboarding",
-        },
       ],
       type: WorkType.CORPORATE,
     },
@@ -114,10 +112,6 @@ const Config: ConfigType = {
       ],
       url: "https://www.trendyol.com/yardim/sorular/liveChat=True",
       images: [
-        {
-          image: Assets.Images.TrendyolAsistan,
-          url: "https://www.trendyol.com/yardim/sorular/liveChat=True",
-        },
         {
           image: Assets.Images.TrendyolAsistan,
           url: "https://www.trendyol.com/yardim/sorular/liveChat=True",
@@ -161,10 +155,6 @@ const Config: ConfigType = {
           image: Assets.Images.CustomPremint,
           url: "https://custompremint.onuriltan.com",
         },
-        {
-          image: Assets.Images.CustomPremint,
-          url: "https://custompremint.onuriltan.com",
-        },
       ],
       type: WorkType.HOBBY,
     },
@@ -187,8 +177,8 @@ const Config: ConfigType = {
           url: "https://notemanager.onuriltan.com",
         },
         {
-          image: Assets.Images.Notemanager,
-          url: "https://notemanager.onuriltan.com",
+          image: Assets.Images.NotemanagerDashboard,
+          url: "https://notemanager.onuriltan.com/dashboard",
         },
       ],
       type: WorkType.HOBBY,

@@ -40,6 +40,7 @@ export enum TechnologyType {
   DISCORDAPI = "Discord API",
   GOOGLEAPI = "Google API",
   FACEBOOKAPI = "Facebook API",
+  LEAFLETMAPAPI = "Leaflet Map API",
   CSSMODULES = "CSS Modules",
   APOLLOGRAPHQL = "Apollo GraphQL",
   SCSS = "SCSS",
