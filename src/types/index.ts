@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image";
 import { HTMLAttributes } from "react";
 
 export type TagType = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span";
@@ -50,3 +51,21 @@ export enum TechnologyType {
   POSTGRESQL = "Postgre SQL",
   ALL = "All",
 }
+
+type ProjectImage = {
+  image: StaticImageData;
+  url: string;
+};
+type Project = {
+  title: string;
+  description: string;
+  technologies: TechnologyType[];
+  url: string;
+  images: ProjectImage[];
+  type: WorkType;
+};
+export type ConfigType = {
+  name: string;
+  surname: string;
+  projects: Project[];
+};

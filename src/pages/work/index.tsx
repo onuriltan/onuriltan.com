@@ -49,24 +49,16 @@ const PrevArrow = (props: any) => {
     </div>
   );
 };
-const Dot = (props: any) => {
-  const { onClick } = props;
-  return (
-    <div className={styles.dot} onClick={onClick}>
-      <FontAwesomeIcon icon={DotIcon} />
-    </div>
-  );
-};
+
 const defaultSliderSettings = {
   infinite: true,
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
   adaptiveHeight: true,
-  dots: true,
+  dots: false,
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />,
-  customPaging: () => <Dot />,
 };
 
 const Work = () => {

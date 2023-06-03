@@ -1,7 +1,7 @@
 import Assets from "@/assets";
-import { TechnologyType, WorkType } from "@app-types/index";
+import { ConfigType, TechnologyType, WorkType } from "@app-types/index";
 
-const Config = {
+const Config: ConfigType = {
   name: "V. Onur",
   surname: "Iltan",
   projects: [
@@ -18,8 +18,8 @@ const Config = {
       url: "https://cryptio.co",
       images: [
         {
-          image: Assets.Images.CryptioColossal,
-          url: "https://cryptio.co/colossal",
+          image: Assets.Images.CryptioLanding,
+          url: "https://cryptio.co",
         },
         {
           image: Assets.Images.CryptioColossal,
@@ -67,11 +67,11 @@ const Config = {
       images: [
         {
           image: Assets.Images.VerificationGate,
-          url: "https://stage-gate.eternity.io",
+          url: "https://tokens.eternity.io",
         },
         {
           image: Assets.Images.VerificationGate,
-          url: "https://stage-gate.eternity.io",
+          url: "https://tokens.eternity.io",
         },
       ],
       type: WorkType.FREELANCE,
