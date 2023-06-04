@@ -7,6 +7,7 @@ import {
 } from "@fortawesome/fontawesome-svg-core";
 
 import Config from "@/config";
+import Link from "next/link";
 
 const githubIcon: IconDefinition = findIconDefinition({
   prefix: "fab",
@@ -71,18 +72,31 @@ const Home = () => {
         </div>
         <div className={styles.links}>
           {links.map((link) => {
-            return (
-              <a
-                className={styles.link}
-                key={JSON.stringify(link)}
-                target={link.url === "/work" ? "_self" : "_blank"}
-                rel="noreferrer"
-                href={link.url}
-              >
-                <span className={styles.linkIcon}>{link.icon}</span>
-                <span className={styles.linkName}>{link.name}</span>
-              </a>
-            );
+            if (link.url.includes("https")) {
+              return (
+                <a
+                  className={styles.link}
+                  key={JSON.stringify(link)}
+                  target="_blank"
+                  rel="noreferrer"
+                  href={link.url}
+                >
+                  <span className={styles.linkIcon}>{link.icon}</span>
+                  <span className={styles.linkName}>{link.name}</span>
+                </a>
+              );
+            } else {
+              return (
+                <Link
+                  className={styles.link}
+                  key={JSON.stringify(link)}
+                  href={link.url}
+                >
+                  <span className={styles.linkIcon}>{link.icon}</span>
+                  <span className={styles.linkName}>{link.name}</span>
+                </Link>
+              );
+            }
           })}
         </div>
       </div>
