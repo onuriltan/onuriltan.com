@@ -153,6 +153,8 @@ const Work = () => {
                           src={image.image}
                           alt={item.title}
                           className={styles.image}
+                          width={500}
+                          height={500}
                         />
                       </a>
                     );

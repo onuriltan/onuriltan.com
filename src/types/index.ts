@@ -54,7 +54,7 @@ export enum TechnologyType {
 }
 
 type ProjectImage = {
-  image: StaticImageData;
+  image: StaticImageData | string;
   url: string;
 };
 type Project = {

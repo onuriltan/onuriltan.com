@@ -18,18 +18,20 @@ const Config: ConfigType = {
       url: "https://cryptio.co",
       images: [
         {
-          image: Assets.Images.CryptioLanding,
+          image:
+            "https://drive.google.com/uc?id=1w2gSD4V8c_bWdLOsmm2vdDyeO4Drp9nK",
           url: "https://cryptio.co",
         },
         {
-          image: Assets.Images.CryptioColossal,
+          image:
+            "https://drive.google.com/uc?id=1eeKWFgeDWR2hqUUfpaoEFqdGbREIQ-uS",
           url: "https://cryptio.co/colossal",
         },
       ],
       type: WorkType.FREELANCE,
     },
     {
-      title: "Rota Optimizasyonu",
+      title: "Rotamat",
       description:
         "Rotamat is a company where you optimize your routes if you are a large distribution company.",
       technologies: [
