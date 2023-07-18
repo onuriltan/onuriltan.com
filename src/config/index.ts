@@ -1,4 +1,3 @@
-import Assets from "@/assets";
 import { ConfigType, TechnologyType, WorkType } from "@app-types/index";
 
 const Config: ConfigType = {
@@ -19,12 +18,22 @@ const Config: ConfigType = {
       images: [
         {
           image:
-            "https://drive.google.com/uc?id=1w2gSD4V8c_bWdLOsmm2vdDyeO4Drp9nK",
+            "https://drive.google.com/uc?id=1s2H_2SVyKGNt8-SEfv-K763wZtD3luIq",
           url: "https://cryptio.co",
         },
         {
           image:
-            "https://drive.google.com/uc?id=1eeKWFgeDWR2hqUUfpaoEFqdGbREIQ-uS",
+            "https://drive.google.com/uc?id=1VA370mkJG2yvEMjC89RjaDSojgRJg7x0",
+          url: "https://cryptio.co/use-cases/wallet",
+        },
+        {
+          image:
+            "https://drive.google.com/uc?id=1IOEkXscwHKwXh6qtsgJzYQVhIP56AHFr",
+          url: "https://cryptofinanceforum.nyc",
+        },
+        {
+          image:
+            "https://drive.google.com/uc?id=1xGPEu5uGPcTcGTRuwiHqNWeY2TkG4Axa",
           url: "https://cryptio.co/colossal",
         },
       ],
@@ -44,15 +53,18 @@ const Config: ConfigType = {
       url: "https://rotaoptimizasyonu.com/",
       images: [
         {
-          image: Assets.Images.RotaOptimizasyonu,
+          image:
+            "https://drive.google.com/uc?id=1SzhUpJaQ5h7uFwgHBnZ9Lue5i_f9rfhb",
           url: "https://rotaoptimizasyonu.com/",
         },
         {
-          image: Assets.Images.RotaOptimizasyonuDashboard,
+          image:
+            "https://drive.google.com/uc?id=12wdWPZAwEfQ546WmBOWoVD1y-l451pnH",
           url: "https://web.rotaoptimizasyonu.com/kontrol-paneli",
         },
         {
-          image: Assets.Images.RotaOptimizasyonuSimulation,
+          image:
+            "https://drive.google.com/uc?id=1X7LXoYQncuohtuiaT0nrW2z3kh2hpEhj",
           url: "https://simulasyon.rotaoptimizasyonu.com",
         },
       ],
@@ -74,7 +86,8 @@ const Config: ConfigType = {
       url: "https://tokens.eternity.io",
       images: [
         {
-          image: Assets.Images.VerificationGate,
+          image:
+            "https://drive.google.com/uc?id=15aQjKszFCQ8ycgooUGgeT-fEy3Q-g9hi",
           url: "https://tokens.eternity.io",
         },
       ],
@@ -94,7 +107,8 @@ const Config: ConfigType = {
       url: "https://app.nuri.com/onboarding",
       images: [
         {
-          image: Assets.Images.NuriOnboarding,
+          image:
+            "https://drive.google.com/uc?id=19oi8uLf91UQkD5SGbUnqdUiO2H6uxnPW",
           url: "https://app.nuri.com/onboarding",
         },
       ],
@@ -115,7 +129,8 @@ const Config: ConfigType = {
       url: "https://www.trendyol.com/yardim/sorular/liveChat=True",
       images: [
         {
-          image: Assets.Images.TrendyolAsistan,
+          image:
+            "https://drive.google.com/uc?id=1ZCvJigsZ6BJWktkpDgSR1l5uQVAd-4RK",
           url: "https://www.trendyol.com/yardim/sorular/liveChat=True",
         },
       ],
@@ -135,7 +150,11 @@ const Config: ConfigType = {
       ],
       url: "https://app.cyberfolio.xyz",
       images: [
-        { image: Assets.Images.Cyberfolio, url: "https://app.cyberfolio.xyz" },
+        {
+          image:
+            "https://drive.google.com/uc?id=1gjbFuGuPN2GQpAVhtXiCj-jmRXSa1vHj",
+          url: "https://app.cyberfolio.xyz",
+        },
       ],
       type: WorkType.HOBBY,
     },
@@ -154,7 +173,8 @@ const Config: ConfigType = {
       url: "https://custompremint.onuriltan.com",
       images: [
         {
-          image: Assets.Images.CustomPremint,
+          image:
+            "https://drive.google.com/uc?id=1Lgt4OZkgXaMjc3yTFq9pSbbaWv6l99sA",
           url: "https://custompremint.onuriltan.com",
         },
       ],
@@ -175,11 +195,13 @@ const Config: ConfigType = {
       url: "https://notemanager.onuriltan.com",
       images: [
         {
-          image: Assets.Images.Notemanager,
+          image:
+            "https://drive.google.com/uc?id=1-rWIbyEMcPHFaa2KXM06SnTjtb84ag3g",
           url: "https://notemanager.onuriltan.com",
         },
         {
-          image: Assets.Images.NotemanagerDashboard,
+          image:
+            "https://drive.google.com/uc?id=1yA2gak_7svafqD-MFJPoZa6lc9Ftc1FJ",
           url: "https://notemanager.onuriltan.com/dashboard",
         },
       ],

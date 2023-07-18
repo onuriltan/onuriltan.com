@@ -2,10 +2,6 @@
 
 module.exports = {
   reactStrictMode: true,
-  // images: {
-  //   loader: "akamai",
-  //   path: "/",
-  // },
   images: {
     remotePatterns: [
       {
@@ -13,6 +9,5 @@ module.exports = {
         hostname: "drive.google.com",
       },
     ],
-    domains: ["drive.google.com"],
   },
 };

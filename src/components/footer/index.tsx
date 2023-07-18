@@ -1,6 +1,6 @@
 import styles from "./index.module.css";
 import Config from "@/config";
-import { Vollkorn } from "@next/font/google";
+import { Vollkorn } from "next/font/google";
 
 const Footer = () => {
   return (

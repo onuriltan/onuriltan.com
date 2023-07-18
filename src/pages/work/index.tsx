@@ -19,10 +19,6 @@ const RightArrow: IconDefinition = findIconDefinition({
   prefix: "fas",
   iconName: "chevron-right",
 });
-const DotIcon: IconDefinition = findIconDefinition({
-  prefix: "fas",
-  iconName: "circle",
-});
 
 const NextArrow = (props: any) => {
   const { onClick, style, className } = props;
@@ -153,8 +149,9 @@ const Work = () => {
                           src={image.image}
                           alt={item.title}
                           className={styles.image}
-                          width={500}
-                          height={500}
+                          width={100}
+                          height={50}
+                          unoptimized
                         />
                       </a>
                     );
