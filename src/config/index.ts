@@ -5,6 +5,40 @@ const Config: ConfigType = {
   surname: "Iltan",
   projects: [
     {
+      title: "PlanetQuest Marketplace",
+      description:
+        "NFT Marketplace project on IMX blockchain for PlanetQuest game's NFTs to engage community to the game itself.",
+      technologies: [
+        TechnologyType.IMXSDK,
+        TechnologyType.TYPESCRIPT,
+        TechnologyType.REACT,
+        TechnologyType.TAILWINDCSS,
+        TechnologyType.NODEJS,
+        TechnologyType.EXPRESSJS,
+        TechnologyType.ETHERSJS,
+        TechnologyType.POSTGRESQL,
+      ],
+      url: "https://marketplace.planetquest.io",
+      images: [
+        {
+          image:
+            "https://drive.google.com/uc?id=1EO-FSMpZEDCJhrsW3fZohGRVkYSO_pfg",
+          url: "https://marketplace.planetquest.io",
+        },
+        {
+          image:
+            "https://drive.google.com/uc?id=1imfDa_Z9F9jvNogDZJ2qBNm-NOnjsd-X",
+          url: "https://marketplace.planetquest.io/planets",
+        },
+        {
+          image:
+            "https://drive.google.com/uc?id=185r1L1fcctP_mdRkbjSYTotzSeU0ZxcX",
+          url: "https://marketplace.planetquest.io/planets/318243",
+        },
+      ],
+      type: WorkType.CORPORATE,
+    },
+    {
       title: "Cryptio Website",
       description:
         "Maintaining and adding new features to the website of Cryptio.",
