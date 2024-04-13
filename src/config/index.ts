@@ -1,7 +1,8 @@
+import Images from "@/assets/images";
 import { ConfigType, TechnologyType, WorkType } from "@app-types/index";
 
 const Config: ConfigType = {
-  name: "V. Onur",
+  name: "Onur",
   surname: "Iltan",
   projects: [
     {
@@ -21,18 +22,15 @@ const Config: ConfigType = {
       url: "https://marketplace.planetquest.io",
       images: [
         {
-          image:
-            "https://drive.google.com/uc?id=1EO-FSMpZEDCJhrsW3fZohGRVkYSO_pfg",
+          image: Images.Marketplace,
           url: "https://marketplace.planetquest.io",
         },
         {
-          image:
-            "https://drive.google.com/uc?id=1imfDa_Z9F9jvNogDZJ2qBNm-NOnjsd-X",
+          image: Images.MarketplacePlanets,
           url: "https://marketplace.planetquest.io/planets",
         },
         {
-          image:
-            "https://drive.google.com/uc?id=185r1L1fcctP_mdRkbjSYTotzSeU0ZxcX",
+          image: Images.MarketplaceDetails,
           url: "https://marketplace.planetquest.io/planets/318243",
         },
       ],
@@ -51,23 +49,19 @@ const Config: ConfigType = {
       url: "https://cryptio.co",
       images: [
         {
-          image:
-            "https://drive.google.com/uc?id=1s2H_2SVyKGNt8-SEfv-K763wZtD3luIq",
+          image: Images.Cryptio,
           url: "https://cryptio.co",
         },
         {
-          image:
-            "https://drive.google.com/uc?id=1VA370mkJG2yvEMjC89RjaDSojgRJg7x0",
+          image: Images.CryptioComparisonTable,
           url: "https://cryptio.co/use-cases/wallet",
         },
         {
-          image:
-            "https://drive.google.com/uc?id=1IOEkXscwHKwXh6qtsgJzYQVhIP56AHFr",
+          image: Images.CryptiofinanceForum,
           url: "https://cryptofinanceforum.nyc",
         },
         {
-          image:
-            "https://drive.google.com/uc?id=1xGPEu5uGPcTcGTRuwiHqNWeY2TkG4Axa",
+          image: Images.CryptioColossal,
           url: "https://cryptio.co/colossal",
         },
       ],
@@ -84,45 +78,19 @@ const Config: ConfigType = {
         TechnologyType.CSSMODULES,
         TechnologyType.LEAFLETMAPAPI,
       ],
-      url: "https://rotaoptimizasyonu.com/",
+      url: "https://web.rotaoptimizasyonu.com/",
       images: [
         {
-          image:
-            "https://drive.google.com/uc?id=1SzhUpJaQ5h7uFwgHBnZ9Lue5i_f9rfhb",
+          image: Images.Rotamat,
           url: "https://rotaoptimizasyonu.com/",
         },
         {
-          image:
-            "https://drive.google.com/uc?id=12wdWPZAwEfQ546WmBOWoVD1y-l451pnH",
+          image: Images.RotamatDashboard,
           url: "https://web.rotaoptimizasyonu.com/kontrol-paneli",
         },
         {
-          image:
-            "https://drive.google.com/uc?id=1X7LXoYQncuohtuiaT0nrW2z3kh2hpEhj",
+          image: Images.RotamatSimulation,
           url: "https://simulasyon.rotaoptimizasyonu.com",
-        },
-      ],
-      type: WorkType.FREELANCE,
-    },
-    {
-      title: "Verification Gate",
-      description:
-        "Verification Gate is an app which people can connect via Metamask and connect their Twitter and Discord accounts to get free tokens to play in play.eternity.io. Also app header image and icon and the twitter, discord and email verification are customizable by the admin app.",
-      technologies: [
-        TechnologyType.REACT,
-        TechnologyType.NODEJS,
-        TechnologyType.TYPESCRIPT,
-        TechnologyType.ETHERSJS,
-        TechnologyType.TWITTERAPI,
-        TechnologyType.DISCORDAPI,
-        TechnologyType.POSTGRESQL,
-      ],
-      url: "https://tokens.eternity.io",
-      images: [
-        {
-          image:
-            "https://drive.google.com/uc?id=15aQjKszFCQ8ycgooUGgeT-fEy3Q-g9hi",
-          url: "https://tokens.eternity.io",
         },
       ],
       type: WorkType.FREELANCE,
@@ -141,8 +109,7 @@ const Config: ConfigType = {
       url: "https://app.nuri.com/onboarding",
       images: [
         {
-          image:
-            "https://drive.google.com/uc?id=19oi8uLf91UQkD5SGbUnqdUiO2H6uxnPW",
+          image: Images.NuriOnboarding,
           url: "https://app.nuri.com/onboarding",
         },
       ],
@@ -163,8 +130,7 @@ const Config: ConfigType = {
       url: "https://www.trendyol.com/yardim/sorular/liveChat=True",
       images: [
         {
-          image:
-            "https://drive.google.com/uc?id=1ZCvJigsZ6BJWktkpDgSR1l5uQVAd-4RK",
+          image: Images.TrendyolAsistan,
           url: "https://www.trendyol.com/yardim/sorular/liveChat=True",
         },
       ],
@@ -182,38 +148,37 @@ const Config: ConfigType = {
         TechnologyType.SCSS,
         TechnologyType.MONGODB,
       ],
-      url: "https://app.cyberfolio.xyz",
+      url: "https://app.cyberfolio.co",
       images: [
         {
-          image:
-            "https://drive.google.com/uc?id=1gjbFuGuPN2GQpAVhtXiCj-jmRXSa1vHj",
-          url: "https://app.cyberfolio.xyz",
+          image: Images.Cyberfolio,
+          url: "https://app.cyberfolio.co",
         },
       ],
       type: WorkType.HOBBY,
     },
-    {
-      title: "Custom Premint",
-      description:
-        "Custom Premint is an app for NFT Projects which people can connect via Metamask and connect their Twitter and Discord accounts to get special roles in Discord Server and checks if people are following projects official Twitter accounts.",
-      technologies: [
-        TechnologyType.REACT,
-        TechnologyType.NODEJS,
-        TechnologyType.ETHERSJS,
-        TechnologyType.TWITTERAPI,
-        TechnologyType.DISCORDAPI,
-        TechnologyType.MONGODB,
-      ],
-      url: "https://custompremint.onuriltan.com",
-      images: [
-        {
-          image:
-            "https://drive.google.com/uc?id=1Lgt4OZkgXaMjc3yTFq9pSbbaWv6l99sA",
-          url: "https://custompremint.onuriltan.com",
-        },
-      ],
-      type: WorkType.HOBBY,
-    },
+    // {
+    //   title: "Custom Premint",
+    //   description:
+    //     "Custom Premint is an app for NFT Projects which people can connect via Metamask and connect their Twitter and Discord accounts to get special roles in Discord Server and checks if people are following projects official Twitter accounts.",
+    //   technologies: [
+    //     TechnologyType.REACT,
+    //     TechnologyType.NODEJS,
+    //     TechnologyType.ETHERSJS,
+    //     TechnologyType.TWITTERAPI,
+    //     TechnologyType.DISCORDAPI,
+    //     TechnologyType.MONGODB,
+    //   ],
+    //   url: "https://custompremint.onuriltan.com",
+    //   images: [
+    //     {
+    //       image:
+    //         "https://drive.google.com/uc?id=1Lgt4OZkgXaMjc3yTFq9pSbbaWv6l99sA",
+    //       url: "https://custompremint.onuriltan.com",
+    //     },
+    //   ],
+    //   type: WorkType.HOBBY,
+    // },
     {
       title: "Notemanager",
       description:
@@ -229,13 +194,11 @@ const Config: ConfigType = {
       url: "https://notemanager.onuriltan.com",
       images: [
         {
-          image:
-            "https://drive.google.com/uc?id=1-rWIbyEMcPHFaa2KXM06SnTjtb84ag3g",
+          image: Images.Notemanager,
           url: "https://notemanager.onuriltan.com",
         },
         {
-          image:
-            "https://drive.google.com/uc?id=1yA2gak_7svafqD-MFJPoZa6lc9Ftc1FJ",
+          image: Images.NotemanagerDashboard,
           url: "https://notemanager.onuriltan.com/dashboard",
         },
       ],
