@@ -148,11 +148,11 @@ const Config: ConfigType = {
         TechnologyType.SCSS,
         TechnologyType.MONGODB,
       ],
-      url: "https://app.cyberfolio.co",
+      url: "https://cyberfolio.onuriltan.com",
       images: [
         {
           image: Images.Cyberfolio,
-          url: "https://app.cyberfolio.co",
+          url: "https://cyberfolio.onuriltan.com",
         },
       ],
       type: WorkType.HOBBY,
