@@ -15,7 +15,7 @@
   font-weight: 600;
   margin: 0;
   text-align: center;
-  margin-bottom: 70px;
+  margin-bottom: 40px;
 }
 
 .surname {
@@ -38,11 +38,13 @@
   color: rgb(var(--foreground-color-secondary));
   font-weight: 700;
 }
+
 .list {
   text-align: left;
   list-style-type: disc;
   margin-left: 30px;
 }
+
 .links {
   display: grid;
   justify-items: center;
@@ -50,18 +52,22 @@
   column-gap: 1rem;
   margin-top: 2rem;
 }
+
 .link {
   display: flex;
   align-items: center;
   transition: color 0.3s ease;
 }
+
 .link:hover {
   color: rgb(var(--foreground-color-secondary));
 }
+
 .linkIcon {
   font-size: 1.5rem;
   margin-right: 6px;
 }
+
 .linkName {
   font-size: 1rem;
 }
@@ -70,22 +76,27 @@
   .main {
     padding: 2rem;
   }
+
   .title {
     margin-top: 5rem;
     font-size: 3rem;
   }
+
   .description {
     font-size: 1.1rem;
   }
+
   .links {
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(2, 1fr);
     row-gap: 30px;
     column-gap: 60px;
   }
+
   .linkIcon {
     font-size: 1.2rem;
   }
+
   .linkName {
     font-size: 0.8rem;
   }

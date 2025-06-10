@@ -1,10 +1,7 @@
 import styles from "./index.module.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  IconDefinition,
-  findIconDefinition,
-} from "@fortawesome/fontawesome-svg-core";
+import { IconDefinition, findIconDefinition } from "@fortawesome/fontawesome-svg-core";
 
 import Config from "@/config";
 import Link from "next/link";
@@ -59,39 +56,29 @@ const Home = () => {
         </div>
         <div className={styles.description}>Senior Sofware Engineer</div>
         <div className={styles.description_2}>
-          Hello, I&apos;m a Software Engineer and enthusiast who enjoys writing
-          clean and maintainable code with new and mature technologies. My
-          expertise are
+          Hi, I’m Onur Iltan, a software engineer who splits his time between Istanbul and Southeast Asia. I build full
+          stack web applications from start to finish. I write clean and maintainable code with modern and well
+          established tools, and I am proficient in{" "}
           <span className={styles.description_2_highlight}>
-            {" "}
-            creating web apps end to end, Javascript, Typescript, React.js,
-            Node.js, MongoDB and SQL{" "}
+            JavaScript, TypeScript, React.js, Node.js, MongoDB and SQL.
           </span>
-          .Lets get to know each other better! If you have any questions, feel
-          free to contact me from my links below.
+          <br />
+          <br />I enjoy solving complex problems, working with remote teams and learning new technologies. When I am not
+          coding you will find me lifting weights, capturing portraits or planning my next adventure. If you’d like to
+          connect or discuss a project, feel free to reach out through the links below.
         </div>
         <div className={styles.links}>
           {links.map((link) => {
             if (link.url.includes("https")) {
               return (
-                <a
-                  className={styles.link}
-                  key={JSON.stringify(link)}
-                  target="_blank"
-                  rel="noreferrer"
-                  href={link.url}
-                >
+                <a className={styles.link} key={JSON.stringify(link)} target="_blank" rel="noreferrer" href={link.url}>
                   <span className={styles.linkIcon}>{link.icon}</span>
                   <span className={styles.linkName}>{link.name}</span>
                 </a>
               );
             } else {
               return (
-                <Link
-                  className={styles.link}
-                  key={JSON.stringify(link)}
-                  href={link.url}
-                >
+                <Link className={styles.link} key={JSON.stringify(link)} href={link.url}>
                   <span className={styles.linkIcon}>{link.icon}</span>
                   <span className={styles.linkName}>{link.name}</span>
                 </Link>

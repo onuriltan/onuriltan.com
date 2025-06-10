@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import Script from "next/script";
-import { Vollkorn } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 
 import "@fortawesome/fontawesome-free";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -20,18 +20,14 @@ import Header from "@components/header";
 import Footer from "@components/footer";
 import { ThemeContextProvider } from "@/store/ThemeContext";
 
-const font = Vollkorn({
+const font = Noto_Sans({
   subsets: ["latin"],
   weight: ["400", "600", "900"],
   display: "swap",
 });
 
 const App = ({ Component, pageProps }: AppProps) => {
-  const switchIcon = (
-    usesDarkMode: boolean,
-    favicon: HTMLLinkElement,
-    manifest: HTMLLinkElement
-  ) => {
+  const switchIcon = (usesDarkMode: boolean, favicon: HTMLLinkElement, manifest: HTMLLinkElement) => {
     if (!favicon || !manifest) return;
 
     if (usesDarkMode) {
@@ -44,14 +40,9 @@ const App = ({ Component, pageProps }: AppProps) => {
   };
 
   useEffect(() => {
-    const usesDarkMode =
-      window.matchMedia("(prefers-color-scheme: dark)").matches || false;
-    const favicon = document.getElementById(
-      "favicon"
-    ) as HTMLLinkElement | null;
-    const manifest = document.getElementById(
-      "manifest"
-    ) as HTMLLinkElement | null;
+    const usesDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches || false;
+    const favicon = document.getElementById("favicon") as HTMLLinkElement | null;
+    const manifest = document.getElementById("manifest") as HTMLLinkElement | null;
     if (!favicon || !manifest) {
       alert("There is no favicon or manifest.");
       return;
@@ -59,9 +50,7 @@ const App = ({ Component, pageProps }: AppProps) => {
     switchIcon(usesDarkMode, favicon, manifest);
     window
       .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", (e) =>
-        switchIcon(e.matches, favicon, manifest)
-      );
+      .addEventListener("change", (e) => switchIcon(e.matches, favicon, manifest));
   }, []);
 
   return (
@@ -71,11 +60,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta name="description" content="Onur Iltan" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon-dark/favicon.ico" id="favicon" />
-        <link
-          rel="manifest"
-          href="/favicon-dark/site.webmanifest"
-          id="manifest"
-        />
+        <link rel="manifest" href="/favicon-dark/site.webmanifest" id="manifest" />
       </Head>
       <Header />
       <main className={font.className}>

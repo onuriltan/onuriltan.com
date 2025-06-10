@@ -6,6 +6,52 @@ const Config: ConfigType = {
   surname: "Iltan",
   projects: [
     {
+      title: "Cryptio Website",
+      description: "Maintaining and adding new features to the website of Cryptio.",
+      technologies: [TechnologyType.REACT, TechnologyType.NEXTJS, TechnologyType.TYPESCRIPT, TechnologyType.CSSMODULES],
+      url: "https://cryptio.co",
+      images: [
+        {
+          image: Images.Cryptio,
+          url: "https://cryptio.co",
+        },
+        {
+          image: Images.CryptioComparisonTable,
+          url: "https://cryptio.co/use-cases/wallet",
+        },
+        {
+          image: Images.CryptiofinanceForum,
+          url: "https://cryptofinanceforum.nyc",
+        },
+        {
+          image: Images.CryptioColossal,
+          url: "https://cryptio.co/colossal",
+        },
+      ],
+      type: WorkType.FREELANCE,
+    },
+    {
+      title: "Cyberfolio",
+      description:
+        "Cyberfolio is an app where you can connect with Metamask and track your tokens and coins in different chains. You can also add Centralized Exchanges like Binance to your account as well.",
+      technologies: [
+        TechnologyType.REACT,
+        TechnologyType.NODEJS,
+        TechnologyType.TYPESCRIPT,
+        TechnologyType.ETHERSJS,
+        TechnologyType.SCSS,
+        TechnologyType.MONGODB,
+      ],
+      url: "https://cyberfolio.onuriltan.com",
+      images: [
+        {
+          image: Images.Cyberfolio,
+          url: "https://cyberfolio.onuriltan.com",
+        },
+      ],
+      type: WorkType.HOBBY,
+    },
+    {
       title: "PlanetQuest Marketplace",
       description:
         "NFT Marketplace project on IMX blockchain for PlanetQuest game's NFTs to engage community to the game itself.",
@@ -37,40 +83,8 @@ const Config: ConfigType = {
       type: WorkType.CORPORATE,
     },
     {
-      title: "Cryptio Website",
-      description:
-        "Maintaining and adding new features to the website of Cryptio.",
-      technologies: [
-        TechnologyType.REACT,
-        TechnologyType.NEXTJS,
-        TechnologyType.TYPESCRIPT,
-        TechnologyType.CSSMODULES,
-      ],
-      url: "https://cryptio.co",
-      images: [
-        {
-          image: Images.Cryptio,
-          url: "https://cryptio.co",
-        },
-        {
-          image: Images.CryptioComparisonTable,
-          url: "https://cryptio.co/use-cases/wallet",
-        },
-        {
-          image: Images.CryptiofinanceForum,
-          url: "https://cryptofinanceforum.nyc",
-        },
-        {
-          image: Images.CryptioColossal,
-          url: "https://cryptio.co/colossal",
-        },
-      ],
-      type: WorkType.FREELANCE,
-    },
-    {
       title: "Rotamat",
-      description:
-        "Rotamat is a company where you optimize your routes if you are a large distribution company.",
+      description: "Rotamat is a company where you optimize your routes if you are a large distribution company.",
       technologies: [
         TechnologyType.REACT,
         TechnologyType.NEXTJS,
@@ -135,27 +149,6 @@ const Config: ConfigType = {
         },
       ],
       type: WorkType.CORPORATE,
-    },
-    {
-      title: "Cyberfolio",
-      description:
-        "Cyberfolio is an app where you can connect with Metamask and track your tokens and coins in different chains. You can also add Centralized Exchanges like Binance to your account as well.",
-      technologies: [
-        TechnologyType.REACT,
-        TechnologyType.NODEJS,
-        TechnologyType.TYPESCRIPT,
-        TechnologyType.ETHERSJS,
-        TechnologyType.SCSS,
-        TechnologyType.MONGODB,
-      ],
-      url: "https://cyberfolio.onuriltan.com",
-      images: [
-        {
-          image: Images.Cyberfolio,
-          url: "https://cyberfolio.onuriltan.com",
-        },
-      ],
-      type: WorkType.HOBBY,
     },
     // {
     //   title: "Custom Premint",

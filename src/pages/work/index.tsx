@@ -6,10 +6,7 @@ import Image from "next/image";
 import { useState } from "react";
 import Slider from "react-slick";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  IconDefinition,
-  findIconDefinition,
-} from "@fortawesome/fontawesome-svg-core";
+import { IconDefinition, findIconDefinition } from "@fortawesome/fontawesome-svg-core";
 
 const LeftArrow: IconDefinition = findIconDefinition({
   prefix: "fas",
@@ -23,11 +20,7 @@ const RightArrow: IconDefinition = findIconDefinition({
 const NextArrow = (props: any) => {
   const { onClick, style, className } = props;
   return (
-    <div
-      className={`${className} ${styles.arrow}`}
-      style={{ ...style, zIndex: 10 }}
-      onClick={onClick}
-    >
+    <div className={`${className} ${styles.arrow}`} style={{ ...style, zIndex: 10 }} onClick={onClick}>
       <FontAwesomeIcon icon={RightArrow} />
     </div>
   );
@@ -36,11 +29,7 @@ const NextArrow = (props: any) => {
 const PrevArrow = (props: any) => {
   const { onClick, style, className } = props;
   return (
-    <div
-      className={`${className} ${styles.arrow}`}
-      style={{ ...style, zIndex: 10 }}
-      onClick={onClick}
-    >
+    <div className={`${className} ${styles.arrow}`} style={{ ...style, zIndex: 10 }} onClick={onClick}>
       <FontAwesomeIcon icon={LeftArrow} />
     </div>
   );
@@ -59,9 +48,7 @@ const defaultSliderSettings = {
 
 const Work = () => {
   const [workType, setWorkType] = useState<WorkType>(WorkType.ALL);
-  const [technology, setTechnology] = useState<TechnologyType>(
-    TechnologyType.ALL
-  );
+  const [technology, setTechnology] = useState<TechnologyType>(TechnologyType.ALL);
   const [sliderSettings, setSliderSettings] = useState(defaultSliderSettings);
 
   return (
@@ -104,7 +91,7 @@ const Work = () => {
         </div>
         <div className={styles.header_item}>
           <label htmlFor="technology" className={styles.select_label}>
-            Technology Type
+            Technology
           </label>
           <select
             value={technology}
@@ -125,14 +112,17 @@ const Work = () => {
 
       {Config.projects
         .filter((item) => item.type === workType || workType === WorkType.ALL)
-        .filter(
-          (item) =>
-            item.technologies.includes(technology) ||
-            technology === TechnologyType.ALL
-        )
-        .map((item) => {
+        .filter((item) => item.technologies.includes(technology) || technology === TechnologyType.ALL)
+        .map((item, index) => {
+          const itemCount = Config.projects
+            .filter((project) => project.type === workType || workType === WorkType.ALL)
+            .filter((project) => project.technologies.includes(technology) || technology === TechnologyType.ALL).length;
+
           return (
-            <div key={JSON.stringify(item)} className={styles.container}>
+            <div
+              key={JSON.stringify(item)}
+              className={index === itemCount - 1 ? styles.container__noborder : styles.container}
+            >
               <div className={styles.image_container}>
                 <Slider {...sliderSettings}>
                   {item.images.map((image) => {
