@@ -124,31 +124,41 @@ const Work = () => {
               className={index === itemCount - 1 ? styles.container__noborder : styles.container}
             >
               <div className={styles.image_container}>
-                <Slider {...sliderSettings}>
-                  {item.images.map((image) => {
-                    return (
-                      <a
-                        href={image.url}
-                        target="_blank"
-                        rel="noreferrer"
-                        key={JSON.stringify(image)}
-                        className={styles.image_wrapper}
-                      >
-                        <Image
-                          priority
-                          src={image.image}
-                          alt={item.title}
-                          className={styles.image}
-                          width={100}
-                          height={50}
-                          unoptimized
-                          placeholder="blur"
-                          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAyCAQAAAAAPLY1AAAAQUlEQVR42u3PQREAAAwCoNm/9DL49aABuREREREREREREREREREREREREREREREREREREREREREREREREREREWk8EJEAM6x+0l8AAAAASUVORK5CYII="
-                        />
-                      </a>
-                    );
-                  })}
-                </Slider>
+                <div>
+                  <Slider {...sliderSettings}>
+                    {item.images.map((image) => {
+                      return (
+                        <a
+                          href={image.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          key={JSON.stringify(image)}
+                          className={styles.image_wrapper}
+                        >
+                          <Image
+                            priority
+                            src={image.image}
+                            alt={item.title}
+                            className={styles.image}
+                            width={100}
+                            height={50}
+                            unoptimized
+                            placeholder="blur"
+                            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAyCAQAAAAAPLY1AAAAQUlEQVR42u3PQREAAAwCoNm/9DL49aABuREREREREREREREREREREREREREREREREREREREREREREREREREREWk8EJEAM6x+0l8AAAAASUVORK5CYII="
+                          />
+                        </a>
+                      );
+                    })}
+                  </Slider>
+                </div>
+                {item.githubUrl && (
+                  <a href={item.githubUrl} target="_blank" rel="noreferrer">
+                    <div className={styles.github_link}>
+                      <p>See Github Repository</p>
+                      <FontAwesomeIcon icon={["fab", "github"]} />
+                    </div>
+                  </a>
+                )}
               </div>
               <div>
                 <p className={styles.title}>{item.title}</p>

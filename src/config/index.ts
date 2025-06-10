@@ -49,6 +49,7 @@ const Config: ConfigType = {
           url: "https://cyberfolio.onuriltan.com",
         },
       ],
+      githubUrl: "https://github.com/cyberfolio",
       type: WorkType.HOBBY,
     },
     {
