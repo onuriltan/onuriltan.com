@@ -72,7 +72,7 @@ const Work = () => {
       <div className={styles.header}>
         <div className={styles.header_item}>
           <label htmlFor="active-tab" className={styles.select_label}>
-            Work Type
+            Work
           </label>
           <select
             value={workType}
@@ -135,6 +135,10 @@ const Work = () => {
                           key={JSON.stringify(image)}
                           className={styles.image_wrapper}
                         >
+                          <div className={styles.see_live_project_button}>
+                            <p>See Live Project</p>
+                            <FontAwesomeIcon icon={["fas", "external-link-alt"]} />
+                          </div>
                           <Image
                             priority
                             src={image.image}
@@ -150,22 +154,37 @@ const Work = () => {
                       );
                     })}
                   </Slider>
+
+                  <div className={styles.github_links_wrapper}>
+                    {item.githubUrl && (
+                      <a href={item.githubUrl} target="_blank" rel="noreferrer" className={styles.github_link}>
+                        <p>See Github Repository</p>
+                        <FontAwesomeIcon icon={["fab", "github"]} />
+                      </a>
+                    )}
+                    {item.githubFrontendUrl && (
+                      <a href={item.githubFrontendUrl} target="_blank" rel="noreferrer" className={styles.github_link}>
+                        <p>See Frontend Repository</p>
+                        <FontAwesomeIcon icon={["fab", "github"]} />
+                      </a>
+                    )}
+                    {item.githubBackendUrl && (
+                      <a href={item.githubBackendUrl} target="_blank" rel="noreferrer" className={styles.github_link}>
+                        <p>See Backend Repository</p>
+                        <FontAwesomeIcon icon={["fab", "github"]} />
+                      </a>
+                    )}
+                  </div>
                 </div>
-                {item.githubUrl && (
-                  <a href={item.githubUrl} target="_blank" rel="noreferrer">
-                    <div className={styles.github_link}>
-                      <p>See Github Repository</p>
-                      <FontAwesomeIcon icon={["fab", "github"]} />
-                    </div>
-                  </a>
-                )}
               </div>
-              <div>
-                <p className={styles.title}>{item.title}</p>
-                <div className={styles.type}>
-                  <Badge text={item.type} />
+              <div className={styles.content}>
+                <div>
+                  <p className={styles.title}>{item.title}</p>
+                  <div className={styles.type}>
+                    <Badge text={item.type} />
+                  </div>
+                  <p>{item.description}</p>
                 </div>
-                <p>{item.description}</p>
               </div>
               <div className={styles.left}>
                 <p className={styles.title}>Technologies</p>

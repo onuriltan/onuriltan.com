@@ -48,46 +48,44 @@ const links = [
 
 const Home = () => {
   return (
-    <>
-      <div className={styles.main}>
-        <div className={styles.title}>
-          {Config.name}
-          <span className={styles.surname}> {Config.surname}</span>
-        </div>
-        <div className={styles.description}>Senior Sofware Engineer</div>
-        <div className={styles.description_2}>
-          Hi, I’m Onur Iltan, a software engineer who splits his time between Istanbul and Southeast Asia. I build full
-          stack web applications from start to finish. I write clean and maintainable code with modern and well
-          established tools, and I am proficient in{" "}
-          <span className={styles.description_2_highlight}>
-            JavaScript, TypeScript, React.js, Node.js, MongoDB and SQL.
-          </span>
-          <br />
-          <br />I enjoy solving complex problems, working with remote teams and learning new technologies. When I am not
-          coding you will find me lifting weights, capturing portraits or planning my next adventure. If you’d like to
-          connect or discuss a project, feel free to reach out through the links below.
-        </div>
-        <div className={styles.links}>
-          {links.map((link) => {
-            if (link.url.includes("https")) {
-              return (
-                <a className={styles.link} key={JSON.stringify(link)} target="_blank" rel="noreferrer" href={link.url}>
-                  <span className={styles.linkIcon}>{link.icon}</span>
-                  <span className={styles.linkName}>{link.name}</span>
-                </a>
-              );
-            } else {
-              return (
-                <Link className={styles.link} key={JSON.stringify(link)} href={link.url}>
-                  <span className={styles.linkIcon}>{link.icon}</span>
-                  <span className={styles.linkName}>{link.name}</span>
-                </Link>
-              );
-            }
-          })}
-        </div>
+    <div className={styles.main}>
+      <div className={styles.title}>
+        {Config.name}
+        <span className={styles.surname}> {Config.surname}</span>
       </div>
-    </>
+      <div className={styles.job_title}>Senior Sofware Engineer</div>
+      <div className={styles.description}>
+        Hi, I’m Onur Iltan, a software engineer who splits his time between Istanbul and Southeast Asia. I build full
+        stack web applications from start to finish. I write clean and maintainable code with modern and well
+        established tools, and I am proficient in{" "}
+        <span className={styles.description_highlight}>
+          JavaScript, TypeScript, React.js, Node.js, MongoDB and SQL.
+        </span>
+        <br />
+        <br />I enjoy creating smooth user experiences, working with remote teams, and learning new technologies. When
+        I’m not coding, I’m usually lifting weights, taking portraits, or planning my next trip. If you’d like to
+        connect or talk about a project, feel free to reach out through the links below.
+      </div>
+      <div className={styles.links}>
+        {links.map((link) => {
+          if (link.url.includes("https")) {
+            return (
+              <a className={styles.link} key={JSON.stringify(link)} target="_blank" rel="noreferrer" href={link.url}>
+                <span className={styles.linkIcon}>{link.icon}</span>
+                <span className={styles.linkName}>{link.name}</span>
+              </a>
+            );
+          } else {
+            return (
+              <Link className={styles.link} key={JSON.stringify(link)} href={link.url}>
+                <span className={styles.linkIcon}>{link.icon}</span>
+                <span className={styles.linkName}>{link.name}</span>
+              </Link>
+            );
+          }
+        })}
+      </div>
+    </div>
   );
 };
 

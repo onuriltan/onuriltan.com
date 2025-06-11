@@ -196,6 +196,8 @@ const Config: ConfigType = {
           url: "https://notemanager.onuriltan.com/dashboard",
         },
       ],
+      githubFrontendUrl: "https://github.com/onuriltan/note-manager-web",
+      githubBackendUrl: "https://github.com/onuriltan/notemanager-server",
       type: WorkType.HOBBY,
     },
   ],

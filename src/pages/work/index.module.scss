@@ -64,6 +64,7 @@
   margin-bottom: 8px;
   color: rgb(var(--foreground-color-secondary));
   transition: all 0.2s ease-in;
+
   &:hover {
     color: rgb(var(--foreground-color)) !important;
   }
@@ -71,18 +72,49 @@
 
 .image_container {
   max-width: 500px;
+  height: 320px;
   margin-left: 30px;
 }
 
 .image_wrapper {
+  position: relative;
   width: 100%;
   height: 100%;
+
+  &:hover {
+    .image {
+      filter: blur(2px);
+    }
+    .see_live_project_button {
+      z-index: 1;
+      opacity: 1;
+    }
+  }
+}
+
+.see_live_project_button {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 5px 8px;
+  border: 1px solid rgb(var(--foreground-color-secondary));
+  font-size: 14px;
+  color: rgb(var(--foreground-color-secondary));
+  background-color: rgb(var(--background-color));
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .image {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  transition: all 0.2s ease-in-out;
 }
 
 .title {
@@ -94,15 +126,26 @@
   margin: 8px 0 16px 0;
 }
 
-.github_link {
+.github_links_wrapper {
+  margin-top: 7px;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+}
+
+.github_link {
+  width: 100%;
+  display: flex;
+  justify-content: center;
   align-items: center;
   background-color: rgb(var(--foreground-color-secondary));
   transition: background-color 0.2s ease-in-out;
   color: white;
-  width: fit-content;
-  padding: 5px;
+  padding: 5px 8px;
   border-radius: 4px;
+  font-size: 14px;
 
   p {
     margin-right: 5px;
@@ -113,30 +156,61 @@
   }
 }
 
-@media only screen and (max-width: 768px) and (min-width: 0px) {
+.content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 0px) {
   .main {
     padding: 0rem;
     width: 90%;
     margin: 0 auto;
     margin-top: 5rem;
   }
+
   .container {
     grid-template-columns: 1fr;
   }
+
   .image_container {
     margin-left: 0px;
     max-width: 310px;
+    height: 200px;
     margin: 0 auto;
     margin-bottom: 30px;
   }
+
   .image_wrapper {
     width: 100%;
     height: unset;
   }
+
   .image {
     height: 100%;
     object-fit: contain;
   }
+
+  .content {
+    margin-bottom: 20px;
+  }
+
+  .github_link {
+    font-size: 12px;
+    width: 100%;
+    justify-content: center;
+    margin-top: 5px;
+  }
+
+  .github_links_wrapper {
+    margin-top: 0px;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
   .left {
     align-items: flex-start;
     text-align: start;

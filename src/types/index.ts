@@ -68,6 +68,8 @@ type Project = {
   images: ProjectImage[];
   type: WorkType;
   githubUrl?: string;
+  githubFrontendUrl?: string;
+  githubBackendUrl?: string;
 };
 export type ConfigType = {
   name: string;
