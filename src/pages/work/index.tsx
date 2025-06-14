@@ -155,13 +155,15 @@ const Work = () => {
                     })}
                   </Slider>
 
-                  <div className={styles.github_links_wrapper}>
-                    {item.githubUrl && (
+                  {item.githubUrl && (
+                    <div className={styles.github_link_wrapper}>
                       <a href={item.githubUrl} target="_blank" rel="noreferrer" className={styles.github_link}>
                         <p>See Github Repository</p>
                         <FontAwesomeIcon icon={["fab", "github"]} />
                       </a>
-                    )}
+                    </div>
+                  )}
+                  <div className={styles.github_links_wrapper}>
                     {item.githubFrontendUrl && (
                       <a href={item.githubFrontendUrl} target="_blank" rel="noreferrer" className={styles.github_link}>
                         <p>See Frontend Repository</p>

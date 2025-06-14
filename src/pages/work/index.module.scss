@@ -126,8 +126,16 @@
   margin: 8px 0 16px 0;
 }
 
+.github_link_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+}
+
 .github_links_wrapper {
-  margin-top: 7px;
+  margin-top: 5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
