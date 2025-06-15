@@ -44,11 +44,7 @@ const Dropdown = ({ options, selected, onSelect, placeholder }: DropdownProps): 
               onSelect(option);
               setOpen(false);
             }}
-            style={{
-              padding: "10px",
-              cursor: "pointer",
-              background: selected?.value === option.value ? "#f0f0f0" : "#fff",
-            }}
+            className={styles.option}
           >
             {option.label}
           </div>

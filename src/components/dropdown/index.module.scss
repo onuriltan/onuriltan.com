@@ -4,11 +4,11 @@
 }
 
 .wrapper {
-  border: 1px solid #ccc;
+  border: 1px solid rgb(var(--foreground-color));
   padding: 5px;
   cursor: pointer;
   border-radius: 4px;
-  background: #fff;
+  color: rgb(var(--foreground-color));
 }
 
 .dropdown_open {
@@ -16,9 +16,9 @@
   top: 100%;
   left: 0;
   right: 0;
-  background: #fff;
-  border: 1px solid #ccc;
-  z-index: 1000;
+  background-color: rgb(var(--background-color)) !important;
+  border: 1px solid rgb(var(--foreground-color));
+  z-index: 10;
   border-radius: 4px;
   margin-top: 4px;
   overflow: hidden;
@@ -41,6 +41,7 @@
   transform: translateY(-50%);
   transition: transform 0.2s ease-in-out;
   pointer-events: none;
+  color: rgb(var(--foreground-color));
 }
 
 .caret_wrapper_open {
@@ -49,6 +50,19 @@
 
 .caret_wrapper_closed {
   transform: translateY(-50%) rotate(0deg);
+}
+
+.option {
+  padding: 10px;
+  cursor: pointer;
+  color: rgb(var(--foreground-color));
+  background-color: rgb(var(--background-color-third));
+  transition: background-color 0.15s ease-in-out;
+
+  &:hover {
+    background-color: rgb(var(--foreground-color-secondary));
+    color: rgb(var(--background-color));
+  }
 }
 
 @media only screen and (max-width: 768px) {

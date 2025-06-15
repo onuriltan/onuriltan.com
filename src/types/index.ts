@@ -25,12 +25,13 @@ export type Typography = (HeadingType | ParagraphType | SpanType) & {
 };
 
 export enum WorkType {
+  ALL = "All",
   CORPORATE = "Corporate",
   FREELANCE = "Freelance",
   HOBBY = "Hobby",
-  ALL = "All",
 }
 export enum TechnologyType {
+  ALL = "All",
   REACT = "React.js",
   VUEJS = "Vue.js",
   NEXTJS = "Next.js",
@@ -53,7 +54,6 @@ export enum TechnologyType {
   NODEJS = "Node.js",
   MONGODB = "MongoDB",
   POSTGRESQL = "Postgre SQL",
-  ALL = "All",
 }
 
 type ProjectImage = {
