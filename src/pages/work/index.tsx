@@ -1,12 +1,13 @@
 import { TechnologyType, WorkType } from "@app-types/index";
 import styles from "./index.module.scss";
-import Config from "@/config";
 import Badge from "@components/badge";
 import Image from "next/image";
 import { useState } from "react";
 import Slider from "react-slick";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition, findIconDefinition } from "@fortawesome/fontawesome-svg-core";
+import AppConfig from "@/config";
+import AppComponents from "@components/index";
 
 const LeftArrow: IconDefinition = findIconDefinition({
   prefix: "fas",
@@ -51,6 +52,11 @@ const Work = () => {
   const [technology, setTechnology] = useState<TechnologyType>(TechnologyType.ALL);
   const [sliderSettings, setSliderSettings] = useState(defaultSliderSettings);
 
+  const workTypeOptions = Object.values(WorkType).map((value) => ({
+    label: value.charAt(0).toUpperCase() + value.slice(1), // Optional: capitalize
+    value,
+  }));
+
   return (
     <div className={styles.main}>
       <style jsx global>
@@ -74,47 +80,40 @@ const Work = () => {
           <label htmlFor="active-tab" className={styles.select_label}>
             Work
           </label>
-          <select
-            value={workType}
-            className={styles.select}
-            onChange={(e) => setWorkType(e.target.value as WorkType)}
-            id="active-tab"
-          >
-            {Object.values(WorkType).map((item) => {
-              return (
-                <option value={item} key={item}>
-                  {item}
-                </option>
-              );
-            })}
-          </select>
+          <AppComponents.Dropdown
+            options={workTypeOptions}
+            onSelect={(option) => setWorkType(option.value as WorkType)}
+            placeholder="Select Work Type"
+            selected={{
+              label: workType.charAt(0).toUpperCase() + workType.slice(1), // Optional: capitalize
+              value: workType,
+            }}
+          />
         </div>
         <div className={styles.header_item}>
           <label htmlFor="technology" className={styles.select_label}>
             Technology
           </label>
-          <select
-            value={technology}
-            className={styles.select}
-            onChange={(e) => setTechnology(e.target.value as TechnologyType)}
-            id="technology"
-          >
-            {Object.values(TechnologyType).map((item) => {
-              return (
-                <option value={item} key={item}>
-                  {item}
-                </option>
-              );
-            })}
-          </select>
+          <AppComponents.Dropdown
+            options={Object.values(TechnologyType).map((item) => ({
+              label: item.charAt(0).toUpperCase() + item.slice(1),
+              value: item,
+            }))}
+            onSelect={(option) => setTechnology(option.value as TechnologyType)}
+            placeholder="Select Technology"
+            selected={{
+              label: technology.charAt(0).toUpperCase() + technology.slice(1),
+              value: technology,
+            }}
+          />
         </div>
       </div>
 
-      {Config.projects
+      {AppConfig.projects
         .filter((item) => item.type === workType || workType === WorkType.ALL)
         .filter((item) => item.technologies.includes(technology) || technology === TechnologyType.ALL)
         .map((item, index) => {
-          const itemCount = Config.projects
+          const itemCount = AppConfig.projects
             .filter((project) => project.type === workType || workType === WorkType.ALL)
             .filter((project) => project.technologies.includes(technology) || technology === TechnologyType.ALL).length;
 
@@ -159,7 +158,7 @@ const Work = () => {
                     <div className={styles.github_link_wrapper}>
                       <a href={item.githubUrl} target="_blank" rel="noreferrer" className={styles.github_link}>
                         <p>See Github Repository</p>
-                        <FontAwesomeIcon icon={["fab", "github"]} />
+                        <i className="fa-brands fa-github"></i>
                       </a>
                     </div>
                   )}
@@ -167,13 +166,13 @@ const Work = () => {
                     {item.githubFrontendUrl && (
                       <a href={item.githubFrontendUrl} target="_blank" rel="noreferrer" className={styles.github_link}>
                         <p>See Frontend Repository</p>
-                        <FontAwesomeIcon icon={["fab", "github"]} />
+                        <i className="fa-brands fa-github"></i>
                       </a>
                     )}
                     {item.githubBackendUrl && (
                       <a href={item.githubBackendUrl} target="_blank" rel="noreferrer" className={styles.github_link}>
                         <p>See Backend Repository</p>
-                        <FontAwesomeIcon icon={["fab", "github"]} />
+                        <i className="fa-brands fa-github"></i>
                       </a>
                     )}
                   </div>

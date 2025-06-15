@@ -1,7 +1,7 @@
 import Images from "@/assets/images";
 import { ConfigType, TechnologyType, WorkType } from "@app-types/index";
 
-const Config: ConfigType = {
+const AppConfig: ConfigType = {
   name: "Onur",
   surname: "Iltan",
   projects: [
@@ -203,4 +203,4 @@ const Config: ConfigType = {
   ],
 };
 
-export default Config;
+export default AppConfig;
