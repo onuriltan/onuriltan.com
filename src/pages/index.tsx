@@ -55,16 +55,15 @@ const Home = () => {
       </div>
       <div className={styles.job_title}>Senior Sofware Engineer</div>
       <div className={styles.description}>
-        Hi, I’m Onur Iltan, a software engineer who splits his time between Istanbul and Southeast Asia. I build full
-        stack web applications from start to finish. I write clean and maintainable code with modern and well
-        established tools, and I am proficient in{" "}
+        Hi, I’m Onur Iltan, a software engineer based in Istanbul. I build full stack web applications from start to
+        finish. I write clean and maintainable code with modern and well-established tools, and I am proficient in{" "}
         <span className={styles.description_highlight}>
           JavaScript, TypeScript, React.js, Node.js, MongoDB and SQL.
         </span>
         <br />
         <br />I enjoy creating smooth user experiences, working with remote teams, and learning new technologies. When
-        I’m not coding, I’m usually lifting weights, taking portraits, or planning my next trip. If you’d like to
-        connect or talk about a project, feel free to reach out through the links below.
+        I’m not coding, I’m usually taking portraits or traveling in my free time. If you’d like to connect or talk
+        about a project, feel free to reach out through the links below.
       </div>
       <div className={styles.links}>
         {links.map((link) => {
