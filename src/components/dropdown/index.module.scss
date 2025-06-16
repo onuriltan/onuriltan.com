@@ -11,13 +11,16 @@
   color: rgb(var(--foreground-color));
 }
 
+.dropdown_border {
+  border: 1px solid rgb(var(--foreground-color));
+}
+
 .dropdown_open {
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
   background-color: rgb(var(--background-color)) !important;
-  border: 1px solid rgb(var(--foreground-color));
   z-index: 10;
   border-radius: 4px;
   margin-top: 4px;
@@ -30,8 +33,7 @@
 .dropdown_closed {
   @extend .dropdown_open;
   max-height: 0;
-  border-color: transparent;
-  background-color: transparent;
+  overflow: hidden;
 }
 
 .caret_wrapper {
