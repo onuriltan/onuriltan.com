@@ -111,9 +111,9 @@ const AppConfig: ConfigType = {
       type: WorkType.FREELANCE,
     },
     {
-      title: "Nuri Onboarding",
+      title: "Bitwala Onboarding",
       description:
-        "Nuri Onboarding is the signup application that users see before they are using Nuri's banking and crypto products. We are collecting users information, identify them via KYC(Know Your Customer) third party service and eventually create account for them.",
+        "Bitwala Onboarding is the signup application that users see before they are using Bitwala's banking and crypto products. We are collecting users information, identify them via KYC(Know Your Customer) third party service and eventually create account for them.",
       technologies: [
         TechnologyType.REACT,
         TechnologyType.NODEJS,
@@ -121,11 +121,11 @@ const AppConfig: ConfigType = {
         TechnologyType.APOLLOGRAPHQL,
         TechnologyType.MONGODB,
       ],
-      url: "https://app.nuri.com/onboarding",
+      url: "https://app.bitwala.com/onboarding",
       images: [
         {
           image: Images.NuriOnboarding,
-          url: "https://app.nuri.com/onboarding",
+          url: "https://app.bitwala.com/onboarding",
         },
       ],
       type: WorkType.CORPORATE,
