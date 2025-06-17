@@ -1,3 +1,5 @@
+"use client";
+
 import { createContext, ReactElement, useEffect, useState } from "react";
 
 const ThemeContext = createContext({
@@ -57,11 +59,7 @@ export function ThemeContextProvider(props: ThemePropsInterface): ReactElement {
     }
   };
 
-  return (
-    <ThemeContext.Provider value={{ isDarkTheme, toggleThemeHandler }}>
-      {props.children}
-    </ThemeContext.Provider>
-  );
+  return <ThemeContext.Provider value={{ isDarkTheme, toggleThemeHandler }}>{props.children}</ThemeContext.Provider>;
 }
 
 export default ThemeContext;

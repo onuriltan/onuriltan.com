@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./index.module.scss";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import "@fortawesome/fontawesome-free/css/all.min.css"; // Ensure FontAwesome styles are loaded
 type Option = {
   label: string;
   value: string;
@@ -46,7 +48,7 @@ const Dropdown = ({ options, selected, onSelect, placeholder }: DropdownProps): 
         {selected ? selected.label : placeholder || "Select..."}
       </div>
       <div className={`${styles.caret_wrapper} ${open ? styles.caret_wrapper_open : styles.caret_wrapper_closed}`}>
-        <i className={`fa-solid fa-caret-down`} />
+        <FontAwesomeIcon icon={faCaretDown} />
       </div>
       <div
         className={`${styles.dropdown_border} ${open ? styles.dropdown_open : styles.dropdown_closed}`}

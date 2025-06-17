@@ -15,7 +15,7 @@ export type BlogEntry = {
 };
 
 const Blogs = {
-  1: {
+  "login-with-ethereum": {
     title: "How to authenticate users without storing their name and password",
     date: "03-05-2023",
     content: [
@@ -240,6 +240,6 @@ app.post('/login/validate-signature', async (req: express.Request, res: express.
       },
     ],
   },
-} as { [key: number]: BlogEntry };
+} as { [key: string]: BlogEntry };
 
 export default Blogs;

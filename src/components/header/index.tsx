@@ -1,41 +1,25 @@
+"use client";
+
 import styles from "./index.module.css";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  IconDefinition,
-  findIconDefinition,
-} from "@fortawesome/fontawesome-svg-core";
 import classNames from "classnames";
 import { useContext, useEffect, useState } from "react";
 import ThemeContext from "@/store/ThemeContext";
 import Sidebar from "../sidebar";
+import { faHamburger, faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   const getTime = () => {
     const shouldAddZero = new Date().getMinutes() < 10;
-    return `${new Date().getHours()}${":"}${
-      shouldAddZero ? "0" : ""
-    }${new Date().getMinutes()}`;
+    return `${new Date().getHours()}${":"}${shouldAddZero ? "0" : ""}${new Date().getMinutes()}`;
   };
 
-  const router = useRouter();
+  const pathname = usePathname();
   const [time, setTime] = useState(getTime());
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [timezone, setTimezone] = useState("");
-
-  const hamburgerIcon: IconDefinition = findIconDefinition({
-    prefix: "fas",
-    iconName: "bars",
-  });
-  const sunIcon: IconDefinition = findIconDefinition({
-    prefix: "fas",
-    iconName: "sun",
-  });
-  const moonIcon: IconDefinition = findIconDefinition({
-    prefix: "fas",
-    iconName: "moon",
-  });
 
   const themeCtx = useContext(ThemeContext);
 
@@ -68,37 +52,19 @@ const Header = () => {
     <header className={`${styles.header}`}>
       <div className={styles.container}>
         <div className={styles.left}>
-          <span
-            className={styles.hamburger}
-            onClick={() => onHamburgerClick({ value: undefined })}
-          >
-            <FontAwesomeIcon icon={hamburgerIcon} />
+          <span className={styles.hamburger} onClick={() => onHamburgerClick({ value: undefined })}>
+            <FontAwesomeIcon icon={faHamburger} />
           </span>
         </div>
         <div className={styles.middle}>
           <ul className={styles.links}>
-            <li
-              className={classNames(
-                styles.link,
-                router.pathname == "/" ? styles.activelink : ""
-              )}
-            >
+            <li className={classNames(styles.link, pathname == "/" ? styles.activelink : "")}>
               <Link href="/">Home</Link>
             </li>
-            <li
-              className={classNames(
-                styles.link,
-                router.pathname == "/work" ? styles.activelink : ""
-              )}
-            >
+            <li className={classNames(styles.link, pathname == "/work" ? styles.activelink : "")}>
               <Link href="/work">Work</Link>
             </li>
-            <li
-              className={classNames(
-                styles.link,
-                router.pathname == "/blog" ? styles.activelink : ""
-              )}
-            >
+            <li className={classNames(styles.link, pathname == "/blog" ? styles.activelink : "")}>
               <Link href="/blog">Blog</Link>
             </li>
           </ul>
@@ -107,9 +73,7 @@ const Header = () => {
           <button className={styles.right_item} onClick={toggleThemeHandler}>
             <div className={styles.sun_btn}>
               <span className={styles.sun_icon}>
-                <FontAwesomeIcon
-                  icon={themeCtx.isDarkTheme ? moonIcon : sunIcon}
-                />
+                <FontAwesomeIcon icon={themeCtx.isDarkTheme ? faMoon : faSun} />
               </span>
             </div>
             <div className={styles.timezone}>
@@ -119,10 +83,7 @@ const Header = () => {
           </button>
         </div>
       </div>
-      <Sidebar
-        open={sidebarOpen}
-        onClose={() => onHamburgerClick({ value: false })}
-      />
+      <Sidebar open={sidebarOpen} onClose={() => onHamburgerClick({ value: false })} />
     </header>
   );
 };

@@ -1,46 +1,30 @@
 import styles from "./index.module.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconDefinition, findIconDefinition } from "@fortawesome/fontawesome-svg-core";
 
-import Config from "@/config";
 import Link from "next/link";
-
-const githubIcon: IconDefinition = findIconDefinition({
-  prefix: "fab",
-  iconName: "github",
-});
-const linkedInIcon: IconDefinition = findIconDefinition({
-  prefix: "fab",
-  iconName: "linkedin",
-});
-const stackoverflowIcon: IconDefinition = findIconDefinition({
-  prefix: "fab",
-  iconName: "stack-overflow",
-});
-const workIcon: IconDefinition = findIconDefinition({
-  prefix: "fas",
-  iconName: "building",
-});
+import AppConfig from "@config/index";
+import { faGithub, faLinkedin, faStackOverflow } from "@fortawesome/free-brands-svg-icons";
+import { faBuilding } from "@fortawesome/free-solid-svg-icons";
 
 const links = [
   {
-    icon: <FontAwesomeIcon icon={githubIcon} />,
+    icon: <FontAwesomeIcon icon={faGithub} />,
     name: "Github",
     url: "https://github.com/onuriltan",
   },
   {
-    icon: <FontAwesomeIcon icon={linkedInIcon} />,
+    icon: <FontAwesomeIcon icon={faLinkedin} />,
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/onur-iltan/",
   },
   {
-    icon: <FontAwesomeIcon icon={stackoverflowIcon} />,
+    icon: <FontAwesomeIcon icon={faStackOverflow} />,
     name: "Stackoverflow",
     url: "https://stackoverflow.com/users/3756237/onuriltan",
   },
   {
-    icon: <FontAwesomeIcon icon={workIcon} />,
+    icon: <FontAwesomeIcon icon={faBuilding} />,
     name: "My Work",
     url: "/work",
   },
@@ -50,8 +34,8 @@ const Home = () => {
   return (
     <div className={styles.main}>
       <div className={styles.title}>
-        {Config.name}
-        <span className={styles.surname}> {Config.surname}</span>
+        {AppConfig.name}
+        <span className={styles.surname}>{AppConfig.surname}</span>
       </div>
       <div className={styles.job_title}>Senior Sofware Engineer</div>
       <div className={styles.description}>

@@ -1,6 +1,6 @@
 const BlogList = [
   {
-    id: 1,
+    id: "login-with-ethereum",
     title: "How to authenticate users without storing their name and password",
     description:
       "In this aricticle, I explained how you can authenticate users without knowing their identity or getting their personal data.",

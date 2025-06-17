@@ -1,13 +1,10 @@
 import styles from "./index.module.css";
 
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import classNames from "classnames";
-import {
-  IconDefinition,
-  findIconDefinition,
-} from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 type Props = {
   open: boolean;
@@ -15,41 +12,25 @@ type Props = {
 };
 
 const Sidebar = ({ open, onClose }: Props) => {
-  const router = useRouter();
-  const CloseIcon: IconDefinition = findIconDefinition({
-    prefix: "fas",
-    iconName: "close",
-  });
+  const pathname = usePathname();
 
   return (
     <div className={`${open && styles.open} ${styles.container}`}>
       <span className={styles.closebtn} onClick={onClose}>
-        <FontAwesomeIcon icon={CloseIcon} />
+        <FontAwesomeIcon icon={faXmark} />
       </span>
       <ul className={styles.links}>
-        <li
-          className={classNames(
-            router.pathname == "/" ? styles.activelink : styles.link
-          )}
-        >
+        <li className={classNames(pathname == "/" ? styles.activelink : styles.link)}>
           <Link href="/" onClick={onClose}>
             Home
           </Link>
         </li>
-        <li
-          className={classNames(
-            router.pathname == "/work" ? styles.activelink : styles.link
-          )}
-        >
+        <li className={classNames(pathname == "/work" ? styles.activelink : styles.link)}>
           <Link href="/work" onClick={onClose}>
             Work
           </Link>
         </li>
-        <li
-          className={classNames(
-            router.pathname == "/blog" ? styles.activelink : styles.link
-          )}
-        >
+        <li className={classNames(pathname == "/blog" ? styles.activelink : styles.link)}>
           <Link href="/blog" onClick={onClose}>
             Blog
           </Link>

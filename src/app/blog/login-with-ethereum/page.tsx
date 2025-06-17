@@ -1,24 +1,24 @@
+import { notFound } from "next/navigation";
 import { BlogEntry } from "@constants/blogs";
-import Constants from "@constants/index";
-import styles from "./[id].module.scss";
-
-export async function getStaticProps({ params }: { params: any }) {
-  const blog = Constants.Blogs[Number(params?.id)];
-  return { props: { blog } };
-}
-
-export async function getStaticPaths() {
-  const paths = Object.keys(Constants.Blogs).map((id) => ({
-    params: { id: String(id) },
-  }));
-  return { paths, fallback: false };
-}
+import AppConstants from "@constants/index";
+import styles from "./index.module.scss";
 
 type Props = {
-  blog: BlogEntry;
+  params: {
+    slug: string;
+  };
 };
 
-const Blog = ({ blog }: Props) => {
+export function generateStaticParams() {
+  const asd = Object.keys(AppConstants.Blogs).map((slug) => ({ slug }));
+  return asd;
+}
+
+export default function BlogPage({ params }: Props) {
+  // TODO: Fix why params comes as promise
+  const blog: BlogEntry | undefined = AppConstants.Blogs["login-with-ethereum"];
+  if (!blog) notFound();
+
   return (
     <>
       <div className={styles.main}>
@@ -31,7 +31,7 @@ const Blog = ({ blog }: Props) => {
                 year: "numeric",
                 month: "long",
                 day: "2-digit",
-              }).format(new Date(blog.date))
+              }).format(new Date(blog.date)),
             )}
           </p>
         </div>
@@ -44,14 +44,9 @@ const Blog = ({ blog }: Props) => {
             if (parentClassName && subClassName && CustomTag2) {
               return (
                 // @ts-ignore
-                <CustomTag
-                  key={JSON.stringify(content)}
-                  className={content.parentClassName}
-                >
+                <CustomTag key={JSON.stringify(content)} className={content.parentClassName}>
                   {/* @ts-ignore */}
-                  <CustomTag2 className={content.subClassName}>
-                    {content.text}
-                  </CustomTag2>
+                  <CustomTag2 className={content.subClassName}>{content.text}</CustomTag2>
                 </CustomTag>
               );
             }
@@ -59,9 +54,7 @@ const Blog = ({ blog }: Props) => {
               // @ts-ignore
               <CustomTag
                 key={JSON.stringify(content)}
-                className={
-                  content.parentClassName ? content.parentClassName : ""
-                }
+                className={content.parentClassName ? content.parentClassName : ""}
               >
                 {content.text}
               </CustomTag>
@@ -71,6 +64,4 @@ const Blog = ({ blog }: Props) => {
       </div>
     </>
   );
-};
-
-export default Blog;
+}

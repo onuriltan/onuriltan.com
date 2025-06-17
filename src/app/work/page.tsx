@@ -1,3 +1,5 @@
+"use client";
+
 import { TechnologyType, WorkType } from "@app-types/index";
 import styles from "./index.module.scss";
 import Badge from "@components/badge";
@@ -5,24 +7,16 @@ import Image from "next/image";
 import { useState } from "react";
 import Slider from "react-slick";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconDefinition, findIconDefinition } from "@fortawesome/fontawesome-svg-core";
 import AppConfig from "@/config";
 import AppComponents from "@components/index";
-
-const LeftArrow: IconDefinition = findIconDefinition({
-  prefix: "fas",
-  iconName: "chevron-left",
-});
-const RightArrow: IconDefinition = findIconDefinition({
-  prefix: "fas",
-  iconName: "chevron-right",
-});
+import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 const NextArrow = (props: any) => {
   const { onClick, style, className } = props;
   return (
     <div className={`${className} ${styles.arrow}`} style={{ ...style, zIndex: 10 }} onClick={onClick}>
-      <FontAwesomeIcon icon={RightArrow} />
+      <FontAwesomeIcon icon={faChevronRight} />
     </div>
   );
 };
@@ -31,7 +25,7 @@ const PrevArrow = (props: any) => {
   const { onClick, style, className } = props;
   return (
     <div className={`${className} ${styles.arrow}`} style={{ ...style, zIndex: 10 }} onClick={onClick}>
-      <FontAwesomeIcon icon={LeftArrow} />
+      <FontAwesomeIcon icon={faChevronLeft} />
     </div>
   );
 };
@@ -136,7 +130,7 @@ const Work = () => {
                         >
                           <div className={styles.see_live_project_button}>
                             <p>See Live Project</p>
-                            <FontAwesomeIcon icon={["fas", "external-link-alt"]} />
+                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
                           </div>
                           <Image
                             priority
