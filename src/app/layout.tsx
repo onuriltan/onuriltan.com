@@ -52,8 +52,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang="en" className={font.className}>
       <ThemeContextProvider>
         <head>
-          <title>Onur Iltan</title>
-          <meta name="description" content="Onur Iltan" />
+          <title>V. Onur Iltan</title>
+          <meta name="description" content="V. Onur Iltan" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/favicon-dark/favicon.ico" id="favicon" />
           <link rel="manifest" href="/favicon-dark/site.webmanifest" id="manifest" />
