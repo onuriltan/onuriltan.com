@@ -46,6 +46,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       --foreground-color: ${foreground};
       --foreground-color-secondary: ${foregroundSecondary};
       --foreground-color-third: ${foregrounTertiary}
+      --mode: ${isBefore6PM ? "dark" : "light"}
     }
   `;
   return (

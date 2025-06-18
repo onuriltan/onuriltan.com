@@ -76,7 +76,7 @@ const Header = () => {
           <button className={styles.right_item} onClick={toggleThemeHandler}>
             <div className={styles.sun_btn}>
               <span className={styles.sun_icon}>
-                {themeCtx && <FontAwesomeIcon icon={themeCtx.isDarkTheme ? faMoon : faSun} />}
+                {themeCtx.isDarkTheme !== undefined && <FontAwesomeIcon icon={themeCtx.isDarkTheme ? faMoon : faSun} />}
               </span>
             </div>
             <div className={styles.timezone_wrapper}>
