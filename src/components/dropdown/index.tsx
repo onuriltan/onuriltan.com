@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./index.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
-import "@fortawesome/fontawesome-free/css/all.min.css"; // Ensure FontAwesome styles are loaded
+
 type Option = {
   label: string;
   value: string;
@@ -31,17 +31,6 @@ const Dropdown = ({ options, selected, onSelect, placeholder }: DropdownProps): 
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  React.useEffect(() => {
-    if (open && dropdownRef.current) {
-      dropdownRef.current.scrollTop = 0; // Reset scroll position when dropdown opens
-    }
-    if (!open && dropdownRef.current) {
-      setTimeout(() => {
-        dropdownRef.current?.classList.remove(styles.dropdown_border);
-      }, 200); // Delay to allow dropdown to close before removing class
-    }
-  }, [open]);
-
   return (
     <div ref={ref} className={styles.container}>
       <div onClick={() => setOpen(!open)} className={styles.wrapper}>
@@ -50,10 +39,7 @@ const Dropdown = ({ options, selected, onSelect, placeholder }: DropdownProps): 
       <div className={`${styles.caret_wrapper} ${open ? styles.caret_wrapper_open : styles.caret_wrapper_closed}`}>
         <FontAwesomeIcon icon={faCaretDown} />
       </div>
-      <div
-        className={`${styles.dropdown_border} ${open ? styles.dropdown_open : styles.dropdown_closed}`}
-        ref={dropdownRef}
-      >
+      <div className={`${open ? styles.dropdown_open : styles.dropdown_closed}`} ref={dropdownRef}>
         {options.map((option) => (
           <div
             key={option.value}

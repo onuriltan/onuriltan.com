@@ -1,6 +1,6 @@
 .container {
   position: relative;
-  width: 150px;
+  width: 160px;
 }
 
 .wrapper {
@@ -11,16 +11,12 @@
   color: rgb(var(--foreground-color));
 }
 
-.dropdown_border {
-  border: 1px solid rgb(var(--foreground-color));
-}
-
 .dropdown_open {
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
-  background-color: rgb(var(--background-color)) !important;
+  background-color: rgb(var(--foreground-color)) !important;
   z-index: 10;
   border-radius: 4px;
   margin-top: 4px;
@@ -32,8 +28,8 @@
 
 .dropdown_closed {
   @extend .dropdown_open;
-  max-height: 0;
   overflow: hidden;
+  max-height: 0;
 }
 
 .caret_wrapper {
@@ -57,7 +53,7 @@
 .option {
   padding: 10px;
   cursor: pointer;
-  color: rgb(var(--foreground-color));
+  color: rgb(var(--background-color));
   background-color: rgb(var(--background-color-third));
   transition: background-color 0.15s ease-in-out;
 
