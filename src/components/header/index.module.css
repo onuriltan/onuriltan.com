@@ -80,10 +80,15 @@
   align-items: center;
 }
 
-.timezone {
+.timezone_wrapper {
   margin-left: 4px;
   font-size: 0.8rem;
   margin-bottom: 7px;
+}
+
+.timezone {
+  height: 18px;
+  width: 50px;
 }
 
 @media only screen and (max-width: 600px) {

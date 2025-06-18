@@ -79,8 +79,8 @@ const Header = () => {
                 {themeCtx && <FontAwesomeIcon icon={themeCtx.isDarkTheme ? faMoon : faSun} />}
               </span>
             </div>
-            <div className={styles.timezone}>
-              <div> {timezone}</div>
+            <div className={styles.timezone_wrapper}>
+              <div className={styles.timezone}>{timezone}</div>
               <div>{time}</div>
             </div>
           </button>
