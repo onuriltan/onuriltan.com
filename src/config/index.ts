@@ -1,8 +1,23 @@
 import Images from "@/assets/images";
 import { ConfigType, TechnologyType, WorkType } from "@app-types/index";
 
+const theme = {
+  dark: {
+    backgroundColor: "36, 52, 71",
+    foregroundColor: "255, 255, 255",
+    foregroundSecondaryColor: "238, 206, 26",
+    foregroundTertiaryColor: "245, 222, 179",
+  },
+  light: {
+    backgroundColor: "245, 222, 179",
+    foregroundColor: "0, 0, 0",
+    foregroundSecondaryColor: "128, 0, 128",
+    foregroundTertiaryColor: "245, 222, 179",
+  },
+};
+
 const AppConfig: ConfigType = {
-  name: "Onur",
+  name: "V. Onur",
   surname: "Iltan",
   projects: [
     {
@@ -201,6 +216,7 @@ const AppConfig: ConfigType = {
       type: WorkType.HOBBY,
     },
   ],
+  theme,
 };
 
 export default AppConfig;

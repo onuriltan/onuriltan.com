@@ -13,7 +13,8 @@ import { faHamburger, faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 const Header = () => {
   const getTime = () => {
     const shouldAddZero = new Date().getMinutes() < 10;
-    return `${new Date().getHours()}${":"}${shouldAddZero ? "0" : ""}${new Date().getMinutes()}`;
+    const shouldAddZeroToHours = new Date().getHours() < 10;
+    return `${shouldAddZeroToHours ? "0" : ""}${new Date().getHours()}${":"}${shouldAddZero ? "0" : ""}${new Date().getMinutes()}`;
   };
 
   const pathname = usePathname();
@@ -39,10 +40,12 @@ const Header = () => {
 
   useEffect(() => {
     setTimeZoneCity();
+
     const interval = setInterval(() => {
       setTimeZoneCity();
       setTime(getTime());
-    }, 1000);
+    }, 10000);
+
     return () => {
       clearInterval(interval);
     };

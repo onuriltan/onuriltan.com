@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./index.module.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -34,8 +35,7 @@ const Home = () => {
   return (
     <div className={styles.main}>
       <div className={styles.title}>
-        {AppConfig.name}
-        <span className={styles.surname}>{AppConfig.surname}</span>
+        {AppConfig.name} <span className={styles.surname}>{AppConfig.surname}</span>
       </div>
       <div className={styles.job_title}>Senior Sofware Engineer</div>
       <div className={styles.description}>

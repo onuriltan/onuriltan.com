@@ -19,6 +19,7 @@ library.add(far, fas, fab);
 import { ThemeContextProvider } from "@/store/ThemeContext";
 import AppComponents from "@components/index";
 import Script from "next/script";
+import AppConfig from "@config/index";
 
 const font = Noto_Sans({
   subsets: ["latin"],
@@ -26,33 +27,27 @@ const font = Noto_Sans({
   display: "swap",
 });
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
-  const switchIcon = (usesDarkMode: boolean, favicon: HTMLLinkElement, manifest: HTMLLinkElement) => {
-    if (!favicon || !manifest) return;
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
+  const now = new Date();
+  const isBefore6PM = now.getHours() < 18;
 
-    if (usesDarkMode) {
-      favicon.href = "/favicon-dark/favicon.ico";
-      manifest.href = "/favicon-dark/site.webmanifest";
-    } else {
-      favicon.href = "/favicon-light/favicon.ico";
-      manifest.href = "/favicon-light/site.webmanifest";
+  const background = isBefore6PM ? AppConfig.theme.light.backgroundColor : AppConfig.theme.dark.backgroundColor;
+  const foreground = isBefore6PM ? AppConfig.theme.light.foregroundColor : AppConfig.theme.dark.foregroundColor;
+  const foregroundSecondary = isBefore6PM
+    ? AppConfig.theme.light.foregroundSecondaryColor
+    : AppConfig.theme.dark.foregroundSecondaryColor;
+  const foregrounTertiary = isBefore6PM
+    ? AppConfig.theme.light.foregroundTertiaryColor
+    : AppConfig.theme.dark.foregroundTertiaryColor;
+
+  const themeStyle = `
+    :root {
+      --background-color: ${background};
+      --foreground-color: ${foreground};
+      --foreground-color-secondary: ${foregroundSecondary};
+      --foreground-color-third: ${foregrounTertiary}
     }
-  };
-
-  // useEffect(() => {
-  //   const usesDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches || false;
-  //   const favicon = document.getElementById("favicon") as HTMLLinkElement | null;
-  //   const manifest = document.getElementById("manifest") as HTMLLinkElement | null;
-  //   if (!favicon || !manifest) {
-  //     alert("There is no favicon or manifest.");
-  //     return;
-  //   }
-  //   switchIcon(usesDarkMode, favicon, manifest);
-  //   window
-  //     .matchMedia("(prefers-color-scheme: dark)")
-  //     .addEventListener("change", (e) => switchIcon(e.matches, favicon, manifest));
-  // }, []);
-
+  `;
   return (
     <html lang="en" className={font.className}>
       <ThemeContextProvider>
@@ -62,6 +57,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/favicon-dark/favicon.ico" id="favicon" />
           <link rel="manifest" href="/favicon-dark/site.webmanifest" id="manifest" />
+          <style dangerouslySetInnerHTML={{ __html: themeStyle }} />
           <Script src="/prism.js" strategy="afterInteractive" />
         </head>
         <body>
@@ -74,4 +70,4 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default Layout;
+export default RootLayout;

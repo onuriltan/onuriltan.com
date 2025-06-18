@@ -71,8 +71,23 @@ type Project = {
   githubFrontendUrl?: string;
   githubBackendUrl?: string;
 };
+
 export type ConfigType = {
   name: string;
   surname: string;
   projects: Project[];
+  theme: {
+    dark: {
+      backgroundColor: string;
+      foregroundColor: string;
+      foregroundSecondaryColor: string;
+      foregroundTertiaryColor: string;
+    };
+    light: {
+      backgroundColor: string;
+      foregroundColor: string;
+      foregroundSecondaryColor: string;
+      foregroundTertiaryColor: string;
+    };
+  };
 };
