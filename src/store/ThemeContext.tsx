@@ -4,13 +4,13 @@ import React, { createContext, ReactElement, useState } from "react";
 type Theme = "light" | "dark";
 
 type ThemeContextType = {
-  theme: Theme;
+  theme: Theme | undefined;
   isDarkTheme: boolean | undefined;
   toggleThemeHandler: () => void;
 };
 
 const ThemeContext = createContext<ThemeContextType>({
-  theme: "light",
+  theme: undefined,
   isDarkTheme: true,
   toggleThemeHandler: () => {},
 });
