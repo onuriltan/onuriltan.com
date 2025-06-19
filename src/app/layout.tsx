@@ -29,14 +29,14 @@ const font = Noto_Sans({
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   const now = new Date();
-  const isBefore6PM = now.getHours() < 18;
+  const isDayTime = now.getHours() < 19 && now.getHours() > 6;
 
-  const background = isBefore6PM ? AppConfig.theme.light.backgroundColor : AppConfig.theme.dark.backgroundColor;
-  const foreground = isBefore6PM ? AppConfig.theme.light.foregroundColor : AppConfig.theme.dark.foregroundColor;
-  const foregroundSecondary = isBefore6PM
+  const background = isDayTime ? AppConfig.theme.light.backgroundColor : AppConfig.theme.dark.backgroundColor;
+  const foreground = isDayTime ? AppConfig.theme.light.foregroundColor : AppConfig.theme.dark.foregroundColor;
+  const foregroundSecondary = isDayTime
     ? AppConfig.theme.light.foregroundSecondaryColor
     : AppConfig.theme.dark.foregroundSecondaryColor;
-  const foregrounTertiary = isBefore6PM
+  const foregrounTertiary = isDayTime
     ? AppConfig.theme.light.foregroundTertiaryColor
     : AppConfig.theme.dark.foregroundTertiaryColor;
 
@@ -46,7 +46,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       --foreground-color: ${foreground};
       --foreground-color-secondary: ${foregroundSecondary};
       --foreground-color-third: ${foregrounTertiary};
-      --mode: ${isBefore6PM ? "light" : "dark"};
+      --mode: ${isDayTime ? "light" : "dark"};
       --hour: ${now.getHours()};
     }
   `;
