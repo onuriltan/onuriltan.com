@@ -31,8 +31,6 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   const now = new Date();
   const isBefore6PM = now.getHours() < 18;
 
-  console.log(now.getHours());
-
   const background = isBefore6PM ? AppConfig.theme.light.backgroundColor : AppConfig.theme.dark.backgroundColor;
   const foreground = isBefore6PM ? AppConfig.theme.light.foregroundColor : AppConfig.theme.dark.foregroundColor;
   const foregroundSecondary = isBefore6PM
@@ -49,6 +47,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       --foreground-color-secondary: ${foregroundSecondary};
       --foreground-color-third: ${foregrounTertiary};
       --mode: ${isBefore6PM ? "light" : "dark"};
+      --hour: ${now.getHours()};
     }
   `;
   return (
