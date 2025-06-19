@@ -20,6 +20,7 @@ import { ThemeContextProvider } from "@/store/ThemeContext";
 import AppComponents from "@components/index";
 import Script from "next/script";
 import AppConfig from "@config/index";
+import { headers } from "next/headers";
 
 const font = Noto_Sans({
   subsets: ["latin"],
@@ -27,9 +28,15 @@ const font = Noto_Sans({
   display: "swap",
 });
 
-const RootLayout = ({ children }: { children: React.ReactNode }) => {
+const RootLayout = async ({ children }: { children: React.ReactNode }) => {
   const now = new Date();
+  // TODO: this gives server's now. We need to get clients now somehow from their ip
   const isDayTime = now.getHours() < 19 && now.getHours() > 6;
+
+  // const headersList = await headers();
+  // console.log(JSON.stringify(headersList, null, 2));
+  // const ip = headersList.get("x-forwarded-for")?.split(",")[0];
+  // console.log("cleint ip: ", ip);
 
   const background = isDayTime ? AppConfig.theme.light.backgroundColor : AppConfig.theme.dark.backgroundColor;
   const foreground = isDayTime ? AppConfig.theme.light.foregroundColor : AppConfig.theme.dark.foregroundColor;
