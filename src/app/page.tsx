@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import styles from "./index.module.css";
 
@@ -32,6 +34,11 @@ const links = [
 ];
 
 const Home = () => {
+  React.useEffect(() => {
+    const hour = new Date().getHours();
+    document.cookie = `hour=${hour}; path=/; max-age=86400`;
+  }, []);
+
   return (
     <div className={styles.main}>
       <div className={styles.title}>
