@@ -28,22 +28,21 @@ const font = Noto_Sans({
   display: "swap",
 });
 
-const RootLayout = async ({ children }: { children: React.ReactNode }) => {
+export const dynamic = "force-dynamic";
+
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const now = new Date();
-  // TODO: this gives server's now. We need to get clients now somehow from their ip
-  const isDayTime = now.getHours() < 19 && now.getHours() > 6;
+  const headersList = await headers();
+  const theme = headersList.get("x-theme");
 
-  // const headersList = await headers();
-  // console.log(JSON.stringify(headersList, null, 2));
-  // const ip = headersList.get("x-forwarded-for")?.split(",")[0];
-  // console.log("cleint ip: ", ip);
+  const isLightTheme = theme === "light";
 
-  const background = isDayTime ? AppConfig.theme.light.backgroundColor : AppConfig.theme.dark.backgroundColor;
-  const foreground = isDayTime ? AppConfig.theme.light.foregroundColor : AppConfig.theme.dark.foregroundColor;
-  const foregroundSecondary = isDayTime
+  const background = isLightTheme ? AppConfig.theme.light.backgroundColor : AppConfig.theme.dark.backgroundColor;
+  const foreground = isLightTheme ? AppConfig.theme.light.foregroundColor : AppConfig.theme.dark.foregroundColor;
+  const foregroundSecondary = isLightTheme
     ? AppConfig.theme.light.foregroundSecondaryColor
     : AppConfig.theme.dark.foregroundSecondaryColor;
-  const foregrounTertiary = isDayTime
+  const foregrounTertiary = isLightTheme
     ? AppConfig.theme.light.foregroundTertiaryColor
     : AppConfig.theme.dark.foregroundTertiaryColor;
 
@@ -53,7 +52,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
       --foreground-color: ${foreground};
       --foreground-color-secondary: ${foregroundSecondary};
       --foreground-color-third: ${foregrounTertiary};
-      --mode: ${isDayTime ? "light" : "dark"};
+      --mode: ${isLightTheme ? "light" : "dark"};
       --hour: ${now.getHours()};
     }
   `;
@@ -77,6 +76,4 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
       </ThemeContextProvider>
     </html>
   );
-};
-
-export default RootLayout;
+}
