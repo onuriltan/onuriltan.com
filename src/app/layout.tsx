@@ -28,8 +28,6 @@ const font = Noto_Sans({
   display: "swap",
 });
 
-export const dynamic = "force-dynamic";
-
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const now = new Date();
   const headersList = await headers();
