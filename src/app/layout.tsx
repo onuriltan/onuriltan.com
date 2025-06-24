@@ -134,7 +134,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           />
           <link rel="manifest" href="/favicon-light/site.webmanifest" media="(prefers-color-scheme: light)" />
           <style dangerouslySetInnerHTML={{ __html: themeStyle }} />
-          <Script src="/prism.js" strategy="afterInteractive" />
         </head>
         <body>
           <AppComponents.Header />

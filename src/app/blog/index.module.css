@@ -4,6 +4,7 @@
   padding-top: calc(20px + var(--header-height));
   padding-left: 20px;
   padding-right: 20px;
+  padding-bottom: 20px;
   min-height: calc(100vh - var(--header-height));
   display: flex;
   justify-content: flex-start;

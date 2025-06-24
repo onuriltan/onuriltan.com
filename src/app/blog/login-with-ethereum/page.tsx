@@ -1,20 +1,19 @@
-import { notFound } from "next/navigation";
-import { BlogEntry } from "@constants/blogs";
-import AppConstants from "@constants/index";
 import styles from "./index.module.scss";
+
+import { Highlight, themes } from "prism-react-renderer";
+import { notFound } from "next/navigation";
+
+import AppConstants from "@constants/index";
+import { BlogEntry } from "@constants/blogs";
 
 type Params = Promise<{ slug: string[] }>;
 
 export function generateStaticParams() {
   const asd = Object.keys(AppConstants.Blogs).map((slug) => ({ slug }));
-  console.log(asd);
   return asd;
 }
 
-export default async function Page({ params }: { params: Params }) {
-  const theparams = await params;
-  console.log(theparams);
-
+export default function Page({ params }: { params: Params }) {
   const blog: BlogEntry | undefined = AppConstants.Blogs["login-with-ethereum"];
   if (!blog) notFound();
 
@@ -44,7 +43,27 @@ export default async function Page({ params }: { params: Params }) {
               // @ts-ignore
               <CustomTag key={JSON.stringify(content)} className={content.parentClassName}>
                 {/* @ts-ignore */}
-                <CustomTag2 className={content.subClassName}>{content.text}</CustomTag2>
+                {CustomTag2 === "code" ? (
+                  <Highlight code={content.text.trim()} language="javascript" theme={themes.dracula}>
+                    {({ className, style, tokens, getLineProps, getTokenProps }) => (
+                      <pre
+                        className={className}
+                        style={{ ...style, padding: "16px", borderRadius: 8, lineHeight: 1.5 }}
+                      >
+                        {tokens.map((line, i) => (
+                          <div key={i} {...getLineProps({ line, key: i })}>
+                            {line.map((token, key) => (
+                              <span key={key} {...getTokenProps({ token, key })} />
+                            ))}
+                          </div>
+                        ))}
+                      </pre>
+                    )}
+                  </Highlight>
+                ) : (
+                  // @ts-ignore
+                  <CustomTag2 className={content.subClassName}>{content.text}</CustomTag2>
+                )}
               </CustomTag>
             );
           }
