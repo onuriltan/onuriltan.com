@@ -28,10 +28,23 @@ const font = Noto_Sans({
   display: "swap",
 });
 
+// Force dynamic rendering so headers() can be used and the theme is always up to date
+const dynamic = "force-dynamic";
+
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const now = new Date();
   const headersList = await headers();
-  const theme = headersList.get("x-theme");
+  /*
+  Theme is set in middleware using a cookie called `hour`, 
+  which the client sets like this:
+
+    const hour = new Date().getHours();
+    document.cookie = `hour=${hour}; path=/; max-age=86400`;
+
+  The middleware reads that cookie and sets the `x-theme` header accordingly.
+  We read it here from the request headers to apply the appropriate theme.
+ */
+  const theme = headersList.get("x-theme") ?? "dark";
 
   const isLightTheme = theme === "light";
 
@@ -61,8 +74,65 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <title>V. Onur Iltan</title>
           <meta name="description" content="V. Onur Iltan" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="icon" href="/favicon-dark/favicon.ico" id="favicon" />
-          <link rel="manifest" href="/favicon-dark/site.webmanifest" id="manifest" />
+          {/* Dark Theme Icons */}
+          <link
+            rel="icon"
+            href="/favicon-dark/favicon.ico"
+            type="image/x-icon"
+            media="(prefers-color-scheme: no-preference), (prefers-color-scheme: dark)"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-dark/favicon-16x16.png"
+            media="(prefers-color-scheme: no-preference), (prefers-color-scheme: dark)"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-dark/favicon-32x32.png"
+            media="(prefers-color-scheme: no-preference), (prefers-color-scheme: dark)"
+          />
+          <link
+            rel="apple-touch-icon"
+            href="/favicon-dark/apple-touch-icon.png"
+            media="(prefers-color-scheme: no-preference), (prefers-color-scheme: dark)"
+          />
+          <link
+            rel="manifest"
+            href="/favicon-dark/site.webmanifest"
+            media="(prefers-color-scheme: no-preference), (prefers-color-scheme: dark)"
+          />
+
+          {/* Light Theme Icons */}
+          <link
+            rel="icon"
+            href="/favicon-light/favicon.ico"
+            type="image/x-icon"
+            media="(prefers-color-scheme: light)"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-light/favicon-16x16.png"
+            media="(prefers-color-scheme: light)"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-light/favicon-32x32.png"
+            media="(prefers-color-scheme: light)"
+          />
+          <link
+            rel="apple-touch-icon"
+            href="/favicon-light/apple-touch-icon.png"
+            media="(prefers-color-scheme: light)"
+          />
+          <link rel="manifest" href="/favicon-light/site.webmanifest" media="(prefers-color-scheme: light)" />
           <style dangerouslySetInnerHTML={{ __html: themeStyle }} />
           <Script src="/prism.js" strategy="afterInteractive" />
         </head>
