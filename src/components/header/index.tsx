@@ -8,7 +8,7 @@ import classNames from "classnames";
 import { useContext, useEffect, useState } from "react";
 import ThemeContext from "@/store/ThemeContext";
 import Sidebar from "../sidebar";
-import { faHamburger, faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
+import { faSun, faMoon, faBars } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   const getTime = () => {
@@ -56,7 +56,7 @@ const Header = () => {
       <div className={styles.container}>
         <div className={styles.left}>
           <span className={styles.hamburger} onClick={() => onHamburgerClick({ value: undefined })}>
-            <FontAwesomeIcon icon={faHamburger} />
+            <FontAwesomeIcon icon={faBars} />
           </span>
         </div>
         <div className={styles.middle}>

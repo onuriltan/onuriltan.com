@@ -9,7 +9,7 @@ const theme = {
     foregroundTertiaryColor: "245, 222, 179",
   },
   light: {
-    backgroundColor: "245, 222, 179",
+    backgroundColor: "231, 240, 245",
     foregroundColor: "0, 0, 0",
     foregroundSecondaryColor: "128, 0, 128",
     foregroundTertiaryColor: "245, 222, 179",
@@ -44,6 +44,47 @@ const AppConfig: ConfigType = {
         },
       ],
       type: WorkType.FREELANCE,
+    },
+    {
+      title: "Trendyol Asistan",
+      description:
+        "Trendyol Asistan is an app which uses Chatbot and Livechat to understand and give solutions to customers' problems about their orders and general questions. You need to be logged in to your Trendyol account to see the chat app when you click the link.",
+      technologies: [
+        TechnologyType.REACT,
+        TechnologyType.NODEJS,
+        TechnologyType.SCSS,
+        TechnologyType.JEST,
+        TechnologyType.REACTTESTINGLIBRARY,
+        TechnologyType.SONARQUBE,
+      ],
+      url: "https://www.trendyol.com/yardim/sorular/liveChat=True",
+      images: [
+        {
+          image: Images.TrendyolAsistan,
+          url: "https://www.trendyol.com/yardim/sorular/liveChat=True",
+        },
+      ],
+      type: WorkType.CORPORATE,
+    },
+    {
+      title: "Bitwala Onboarding",
+      description:
+        "Bitwala Onboarding is the signup application that users see before they are using Bitwala's banking and crypto products. We are collecting users information, identify them via KYC(Know Your Customer) third party service and eventually create account for them.",
+      technologies: [
+        TechnologyType.REACT,
+        TechnologyType.NODEJS,
+        TechnologyType.TYPESCRIPT,
+        TechnologyType.APOLLOGRAPHQL,
+        TechnologyType.MONGODB,
+      ],
+      url: "https://app.bitwala.com/onboarding",
+      images: [
+        {
+          image: Images.NuriOnboarding,
+          url: "https://app.bitwala.com/onboarding",
+        },
+      ],
+      type: WorkType.CORPORATE,
     },
     {
       title: "Cyberfolio",
@@ -125,47 +166,7 @@ const AppConfig: ConfigType = {
       ],
       type: WorkType.FREELANCE,
     },
-    {
-      title: "Bitwala Onboarding",
-      description:
-        "Bitwala Onboarding is the signup application that users see before they are using Bitwala's banking and crypto products. We are collecting users information, identify them via KYC(Know Your Customer) third party service and eventually create account for them.",
-      technologies: [
-        TechnologyType.REACT,
-        TechnologyType.NODEJS,
-        TechnologyType.TYPESCRIPT,
-        TechnologyType.APOLLOGRAPHQL,
-        TechnologyType.MONGODB,
-      ],
-      url: "https://app.bitwala.com/onboarding",
-      images: [
-        {
-          image: Images.NuriOnboarding,
-          url: "https://app.bitwala.com/onboarding",
-        },
-      ],
-      type: WorkType.CORPORATE,
-    },
-    {
-      title: "Trendyol Assistant",
-      description:
-        "Trendyol Assistant is an app which uses Chatbot and Livechat to understand and give solutions to customers' problems about their orders and general questions. You need to be logged in to your Trendyol account to see the chat app when you click the link.",
-      technologies: [
-        TechnologyType.REACT,
-        TechnologyType.NODEJS,
-        TechnologyType.SCSS,
-        TechnologyType.JEST,
-        TechnologyType.REACTTESTINGLIBRARY,
-        TechnologyType.SONARQUBE,
-      ],
-      url: "https://www.trendyol.com/yardim/sorular/liveChat=True",
-      images: [
-        {
-          image: Images.TrendyolAsistan,
-          url: "https://www.trendyol.com/yardim/sorular/liveChat=True",
-        },
-      ],
-      type: WorkType.CORPORATE,
-    },
+
     // {
     //   title: "Custom Premint",
     //   description:

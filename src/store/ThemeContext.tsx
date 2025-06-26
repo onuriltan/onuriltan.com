@@ -1,5 +1,6 @@
 "use client";
 
+import AppConfig from "@config/index";
 import React, { createContext, ReactElement, useState } from "react";
 type Theme = "light" | "dark";
 
@@ -37,16 +38,16 @@ export function ThemeContextProvider(props: ThemePropsInterface): ReactElement {
       if (isDarkMode) {
         setIsDarkTheme(false);
         localStorage.setItem("theme", "light");
-        r.style.setProperty("--background-color", "245, 222, 179");
-        r.style.setProperty("--foreground-color", "0, 0, 0");
-        r.style.setProperty("--foreground-color-secondary", "128, 0, 128");
+        r.style.setProperty("--background-color", AppConfig.theme.light.backgroundColor);
+        r.style.setProperty("--foreground-color", AppConfig.theme.light.foregroundColor);
+        r.style.setProperty("--foreground-color-secondary", AppConfig.theme.light.foregroundSecondaryColor);
         r.style.setProperty("--mode", "light");
       } else {
         setIsDarkTheme(true);
         localStorage.setItem("theme", "dark");
-        r.style.setProperty("--background-color", "36, 52, 71");
-        r.style.setProperty("--foreground-color", "255, 255, 255");
-        r.style.setProperty("--foreground-color-secondary", "238, 206, 26");
+        r.style.setProperty("--background-color", AppConfig.theme.dark.backgroundColor);
+        r.style.setProperty("--foreground-color", AppConfig.theme.dark.foregroundColor);
+        r.style.setProperty("--foreground-color-secondary", AppConfig.theme.dark.foregroundSecondaryColor);
         r.style.setProperty("--mode", "dark");
       }
     }
