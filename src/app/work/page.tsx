@@ -9,8 +9,10 @@ import Slider from "react-slick";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AppConfig from "@/config";
 import AppComponents from "@components/index";
-import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft, faChevronRight, faGlobe, faWebAwesome } from "@fortawesome/free-solid-svg-icons";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import Link from "next/link";
 
 const NextArrow = (props: any) => {
   const { onClick, style, className } = props;
@@ -121,17 +123,52 @@ const Work = () => {
                   <Slider {...sliderSettings}>
                     {item.images.map((image) => {
                       return (
-                        <a
-                          href={image.url}
-                          target="_blank"
-                          rel="noreferrer"
-                          key={JSON.stringify(image)}
-                          className={styles.image_wrapper}
-                        >
-                          <div className={styles.see_live_project_button}>
-                            <p>See Live Project</p>
-                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                        <div key={JSON.stringify(image)} className={styles.image_wrapper}>
+                          <div className={styles.image_actions_wrapper}>
+                            <Link
+                              href={image.url}
+                              target="_blank"
+                              rel="noreferrer"
+                              className={styles.see_live_project_button}
+                            >
+                              <p>See Live Project</p>
+                              <FontAwesomeIcon icon={faGlobe} />
+                            </Link>
+                            {item.githubUrl && (
+                              <Link
+                                href={item.githubUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                                className={styles.see_live_project_button}
+                              >
+                                <p>See Github Repo</p>
+                                <FontAwesomeIcon icon={faGithub} />
+                              </Link>
+                            )}
+                            {item.githubFrontendUrl && (
+                              <Link
+                                href={item.githubFrontendUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                                className={styles.see_live_project_button}
+                              >
+                                <p>See Frontend Repository</p>
+                                <FontAwesomeIcon icon={faGithub} />
+                              </Link>
+                            )}
+                            {item.githubBackendUrl && (
+                              <Link
+                                href={item.githubBackendUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                                className={styles.see_live_project_button}
+                              >
+                                <p>See Backend Repository</p>
+                                <FontAwesomeIcon icon={faGithub} />
+                              </Link>
+                            )}
                           </div>
+
                           <Image
                             priority
                             src={image.image}
@@ -143,33 +180,10 @@ const Work = () => {
                             placeholder="blur"
                             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAyCAQAAAAAPLY1AAAAQUlEQVR42u3PQREAAAwCoNm/9DL49aABuREREREREREREREREREREREREREREREREREREREREREREREREREREWk8EJEAM6x+0l8AAAAASUVORK5CYII="
                           />
-                        </a>
+                        </div>
                       );
                     })}
                   </Slider>
-
-                  {item.githubUrl && (
-                    <div className={styles.github_link_wrapper}>
-                      <a href={item.githubUrl} target="_blank" rel="noreferrer" className={styles.github_link}>
-                        <p>See Github Repository</p>
-                        <i className="fa-brands fa-github"></i>
-                      </a>
-                    </div>
-                  )}
-                  <div className={styles.github_links_wrapper}>
-                    {item.githubFrontendUrl && (
-                      <a href={item.githubFrontendUrl} target="_blank" rel="noreferrer" className={styles.github_link}>
-                        <p>See Frontend Repository</p>
-                        <i className="fa-brands fa-github"></i>
-                      </a>
-                    )}
-                    {item.githubBackendUrl && (
-                      <a href={item.githubBackendUrl} target="_blank" rel="noreferrer" className={styles.github_link}>
-                        <p>See Backend Repository</p>
-                        <i className="fa-brands fa-github"></i>
-                      </a>
-                    )}
-                  </div>
                 </div>
               </div>
               <div className={styles.content}>
