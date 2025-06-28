@@ -36,7 +36,24 @@ const links = [
 const Home = () => {
   React.useEffect(() => {
     const hour = new Date().getHours();
+    const url = new URL(window.location.href);
+    const hasHourParam = url.searchParams.has("h");
+    const cookieAlreadySet = document.cookie.includes("hour=");
+
+    // Always set cookie on every page load
     document.cookie = `hour=${hour}; path=/; max-age=86400`;
+
+    // If no cookie and no param, this is the first ever request
+    if (!cookieAlreadySet && !hasHourParam) {
+      url.searchParams.set("h", String(hour));
+      window.location.replace(url.toString());
+    }
+
+    // If we came back with h param, clean the URL now
+    if (hasHourParam) {
+      url.searchParams.delete("h");
+      window.history.replaceState(null, "", url.pathname);
+    }
   }, []);
 
   return (

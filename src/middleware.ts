@@ -1,16 +1,20 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export function middleware(request: NextRequest) {
-  const hourValue = request.cookies.get("hour")?.value;
+  const cookieHour = request.cookies.get("hour")?.value;
+  const urlHour = request.nextUrl.searchParams.get("h");
+
+  const hourValue = cookieHour || urlHour;
   const hour = hourValue ? Number(hourValue) : null;
 
-  const isDark = !hour ? true : (hour !== null && hour >= 18) || hour < 6;
+  const isDark = hour === null ? true : hour >= 18 || hour < 6;
 
   const response = NextResponse.next();
   response.headers.set("x-theme", isDark ? "dark" : "light");
+
   return response;
 }
 
 export const config = {
-  matcher: ["/", "/((?!_next|favicon.ico).*)"],
+  matcher: ["/", "/work", "/blog", "/blog/:path*"],
 };
