@@ -48,6 +48,7 @@ export enum TechnologyType {
   APOLLOGRAPHQL = "Apollo GraphQL",
   SCSS = "SCSS",
   TAILWINDCSS = "Tailwind CSS",
+  CHAKRAUI = "Chakra UI",
   JEST = "Jest",
   REACTTESTINGLIBRARY = "React Testing Library",
   SONARQUBE = "SonarQube",

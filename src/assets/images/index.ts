@@ -1,4 +1,3 @@
-import CryptioColossal from "./src/cryptio-colossal.png";
 import CryptioComparisonTable from "./src/cryptio-comparison-table.png";
 import Cryptio from "./src/cryptio.png";
 import CryptiofinanceForum from "./src/cryptio-finance-forum.png";
@@ -11,13 +10,12 @@ import Notemanager from "./src/notemanager.png";
 import NotemanagerDashboard from "./src/notemanager-dashboard.png";
 import NuriOnboarding from "./src/nuri-onboarding.png";
 import RotamatDashboard from "./src/rotamat-dashboard.png";
-import RotamatSimulation from "./src/rotamat-simulation.png";
-import Rotamat from "./src/rotamat.png";
+import RotamatRoutes from "./src/rotamat-routes.png";
 import TrendyolAsistan from "./src/trendyol-asistan.png";
 import Cyberfolio from "./src/cyberfolio.png";
+import Mezo from "./src/mezo.png";
 
 const Images = {
-  CryptioColossal,
   CryptioComparisonTable,
   Cryptio,
   CryptiofinanceForum,
@@ -30,10 +28,10 @@ const Images = {
   NotemanagerDashboard,
   NuriOnboarding,
   RotamatDashboard,
-  RotamatSimulation,
-  Rotamat,
+  RotamatRoutes,
   TrendyolAsistan,
   Cyberfolio,
+  Mezo,
 };
 
 export default Images;

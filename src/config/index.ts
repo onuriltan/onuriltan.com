@@ -1,4 +1,4 @@
-import Images from "@/assets/images";
+import AppAssets from "@/assets/index";
 import { ConfigType, TechnologyType, WorkType } from "@app-types/index";
 
 const theme = {
@@ -21,26 +21,31 @@ const AppConfig: ConfigType = {
   surname: "Iltan",
   projects: [
     {
+      title: "Mezo Website",
+      description: "Maintaining and adding new features to the website of Mezo.",
+      technologies: [TechnologyType.REACT, TechnologyType.TYPESCRIPT, TechnologyType.CHAKRAUI],
+      url: "https://cryptio.co",
+      images: [
+        {
+          image: AppAssets.Images.Mezo,
+          url: "https://mezo.org",
+        },
+      ],
+      type: WorkType.FREELANCE,
+    },
+    {
       title: "Cryptio Website",
       description: "Maintaining and adding new features to the website of Cryptio.",
       technologies: [TechnologyType.REACT, TechnologyType.NEXTJS, TechnologyType.TYPESCRIPT, TechnologyType.CSSMODULES],
       url: "https://cryptio.co",
       images: [
         {
-          image: Images.Cryptio,
+          image: AppAssets.Images.Cryptio,
           url: "https://cryptio.co",
         },
         {
-          image: Images.CryptioComparisonTable,
-          url: "https://cryptio.co/use-cases/wallet",
-        },
-        {
-          image: Images.CryptiofinanceForum,
+          image: AppAssets.Images.CryptiofinanceForum,
           url: "https://cryptofinanceforum.nyc",
-        },
-        {
-          image: Images.CryptioColossal,
-          url: "https://cryptio.co/colossal",
         },
       ],
       type: WorkType.FREELANCE,
@@ -60,7 +65,7 @@ const AppConfig: ConfigType = {
       url: "https://www.trendyol.com/yardim/sorular/liveChat=True",
       images: [
         {
-          image: Images.TrendyolAsistan,
+          image: AppAssets.Images.TrendyolAsistan,
           url: "https://www.trendyol.com/yardim/sorular/liveChat=True",
         },
       ],
@@ -80,7 +85,7 @@ const AppConfig: ConfigType = {
       url: "https://app.bitwala.com/onboarding",
       images: [
         {
-          image: Images.NuriOnboarding,
+          image: AppAssets.Images.NuriOnboarding,
           url: "https://app.bitwala.com/onboarding",
         },
       ],
@@ -101,7 +106,7 @@ const AppConfig: ConfigType = {
       url: "https://cyberfolio.onuriltan.com",
       images: [
         {
-          image: Images.Cyberfolio,
+          image: AppAssets.Images.Cyberfolio,
           url: "https://cyberfolio.onuriltan.com",
         },
       ],
@@ -125,15 +130,15 @@ const AppConfig: ConfigType = {
       url: "https://marketplace.planetquest.io",
       images: [
         {
-          image: Images.Marketplace,
+          image: AppAssets.Images.Marketplace,
           url: "https://marketplace.planetquest.io",
         },
         {
-          image: Images.MarketplacePlanets,
+          image: AppAssets.Images.MarketplacePlanets,
           url: "https://marketplace.planetquest.io/planets",
         },
         {
-          image: Images.MarketplaceDetails,
+          image: AppAssets.Images.MarketplaceDetails,
           url: "https://marketplace.planetquest.io/planets/318243",
         },
       ],
@@ -152,16 +157,12 @@ const AppConfig: ConfigType = {
       url: "https://web.rotaoptimizasyonu.com/",
       images: [
         {
-          image: Images.Rotamat,
-          url: "https://rotaoptimizasyonu.com/",
-        },
-        {
-          image: Images.RotamatDashboard,
+          image: AppAssets.Images.RotamatDashboard,
           url: "https://web.rotaoptimizasyonu.com/kontrol-paneli",
         },
         {
-          image: Images.RotamatSimulation,
-          url: "https://simulasyon.rotaoptimizasyonu.com",
+          image: AppAssets.Images.RotamatRoutes,
+          url: "https://web.rotaoptimizasyonu.com/rotalar/a68f47a5-1c80-4ba2-b296-347f5289c034",
         },
       ],
       type: WorkType.FREELANCE,
@@ -204,11 +205,11 @@ const AppConfig: ConfigType = {
       url: "https://notemanager.onuriltan.com",
       images: [
         {
-          image: Images.Notemanager,
+          image: AppAssets.Images.Notemanager,
           url: "https://notemanager.onuriltan.com",
         },
         {
-          image: Images.NotemanagerDashboard,
+          image: AppAssets.Images.NotemanagerDashboard,
           url: "https://notemanager.onuriltan.com/dashboard",
         },
       ],
