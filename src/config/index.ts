@@ -45,7 +45,7 @@ const AppConfig: ConfigType = {
         },
         {
           image: AppAssets.Images.CryptiofinanceForum,
-          url: "https://cryptofinanceforum.nyc",
+          url: "https://cryptofinanceforum.nyc/london",
         },
       ],
       type: WorkType.FREELANCE,
@@ -147,13 +147,7 @@ const AppConfig: ConfigType = {
     {
       title: "Rotamat",
       description: "Rotamat is a company where you optimize your routes if you are a large distribution company.",
-      technologies: [
-        TechnologyType.REACT,
-        TechnologyType.NEXTJS,
-        TechnologyType.SCSS,
-        TechnologyType.CSSMODULES,
-        TechnologyType.LEAFLETMAPAPI,
-      ],
+      technologies: [TechnologyType.REACT, TechnologyType.NEXTJS, TechnologyType.SCSS, TechnologyType.LEAFLETMAPAPI],
       url: "https://web.rotaoptimizasyonu.com/",
       images: [
         {
