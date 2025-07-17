@@ -55,6 +55,8 @@ export enum TechnologyType {
   NODEJS = "Node.js",
   MONGODB = "MongoDB",
   POSTGRESQL = "Postgre SQL",
+  SANITY_CMS = "Sanity CMS",
+  FRAMER_MOTION = "Framer Motion",
 }
 
 type ProjectImage = {

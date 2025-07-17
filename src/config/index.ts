@@ -23,7 +23,13 @@ const AppConfig: ConfigType = {
     {
       title: "Mezo Website",
       description: "Maintaining and adding new features to the website of Mezo.",
-      technologies: [TechnologyType.REACT, TechnologyType.TYPESCRIPT, TechnologyType.CHAKRAUI],
+      technologies: [
+        TechnologyType.REACT,
+        TechnologyType.TYPESCRIPT,
+        TechnologyType.CHAKRAUI,
+        TechnologyType.SANITY_CMS,
+        TechnologyType.FRAMER_MOTION,
+      ],
       url: "https://cryptio.co",
       images: [
         {
