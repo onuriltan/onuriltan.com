@@ -8,7 +8,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AppConfig from "@/config";
 import AppComponents from "@components/index";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 
 const Work = () => {
@@ -76,30 +75,10 @@ const Work = () => {
                   images={item.images}
                   title={item.title}
                   renderOverlay={(url) => (
-                    <>
-                      <Link href={url} target="_blank" rel="noreferrer" className={styles.see_live_project_button}>
-                        <p>See Live Project</p>
-                        <FontAwesomeIcon icon={faGlobe} />
-                      </Link>
-                      {item.githubUrl && (
-                        <Link href={item.githubUrl} target="_blank" rel="noreferrer" className={styles.see_live_project_button}>
-                          <p>See Github Repo</p>
-                          <FontAwesomeIcon icon={faGithub} />
-                        </Link>
-                      )}
-                      {item.githubFrontendUrl && (
-                        <Link href={item.githubFrontendUrl} target="_blank" rel="noreferrer" className={styles.see_live_project_button}>
-                          <p>See Frontend Repository</p>
-                          <FontAwesomeIcon icon={faGithub} />
-                        </Link>
-                      )}
-                      {item.githubBackendUrl && (
-                        <Link href={item.githubBackendUrl} target="_blank" rel="noreferrer" className={styles.see_live_project_button}>
-                          <p>See Backend Repository</p>
-                          <FontAwesomeIcon icon={faGithub} />
-                        </Link>
-                      )}
-                    </>
+                    <Link href={url} target="_blank" rel="noreferrer" className={styles.see_live_project_button}>
+                      <p>See Live Project</p>
+                      <FontAwesomeIcon icon={faGlobe} />
+                    </Link>
                   )}
                 />
               </div>
@@ -119,43 +98,6 @@ const Work = () => {
                     <p key={tech}>{tech}</p>
                   ))}
                 </div>
-                {(item.githubUrl || item.githubFrontendUrl || item.githubBackendUrl) && (
-                  <div className={styles.github_link_wrapper}>
-                    {item.githubUrl && (
-                      <Link
-                        href={item.githubUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className={styles.github_link}
-                      >
-                        <p>Github</p>
-                        <FontAwesomeIcon icon={faGithub} />
-                      </Link>
-                    )}
-                    {item.githubFrontendUrl && (
-                      <Link
-                        href={item.githubFrontendUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className={styles.github_link}
-                      >
-                        <p>Frontend</p>
-                        <FontAwesomeIcon icon={faGithub} />
-                      </Link>
-                    )}
-                    {item.githubBackendUrl && (
-                      <Link
-                        href={item.githubBackendUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className={styles.github_link}
-                      >
-                        <p>Backend</p>
-                        <FontAwesomeIcon icon={faGithub} />
-                      </Link>
-                    )}
-                  </div>
-                )}
               </div>
             </div>
           );
