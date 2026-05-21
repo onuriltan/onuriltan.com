@@ -14,6 +14,9 @@ import RotamatRoutes from "./src/rotamat-routes.png";
 import TrendyolAsistan from "./src/trendyol-asistan.png";
 import Cyberfolio from "./src/cyberfolio.png";
 import Mezo from "./src/mezo.png";
+import MezoMobile from "./src/mezo-mobile.png";
+import MezoMobileRewards from "./src/mezo-mobile-rewards.png";
+import MezoMobileVaults from "./src/mezo-mpbile-vaults.png";
 
 const Images = {
   CryptioComparisonTable,
@@ -32,6 +35,9 @@ const Images = {
   TrendyolAsistan,
   Cyberfolio,
   Mezo,
+  MezoMobile,
+  MezoMobileRewards,
+  MezoMobileVaults,
 };
 
 export default Images;

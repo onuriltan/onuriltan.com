@@ -21,6 +21,36 @@ const AppConfig: ConfigType = {
   surname: "Iltan",
   projects: [
     {
+      title: "Mezo Mobile",
+      description:
+        "eMezo Mobile is a mobile first DeFi web app for the Mezo network, an EVM compatible chain with Bitcoin as its native currency. It is designed to work seamlessly with mobile wallets inside a mobile browser. It lets users connect their EVM wallets, bridge assets between Ethereum and Mezo, swap tokens, deposit into yield bearing vaults, and provide liquidity to pools, all from a responsive UI designed for mobile browsers.",
+      technologies: [
+        TechnologyType.REACT,
+        TechnologyType.TYPESCRIPT,
+        TechnologyType.SCSS,
+        TechnologyType.FRAMER_MOTION,
+        TechnologyType.WORMHOLE_SDK,
+        TechnologyType.WAGMI,
+        TechnologyType.WALLETCONNECT,
+      ],
+      url: "https://mobile.mezo.org",
+      images: [
+        {
+          image: AppAssets.Images.MezoMobile,
+          url: "https://mobile.mezo.org",
+        },
+        {
+          image: AppAssets.Images.MezoMobileRewards,
+          url: "https://mobile.mezo.org",
+        },
+        {
+          image: AppAssets.Images.MezoMobileVaults,
+          url: "https://mobile.mezo.org",
+        },
+      ],
+      type: WorkType.FREELANCE,
+    },
+    {
       title: "Mezo Website",
       description: "Maintaining and adding new features to the website of Mezo.",
       technologies: [

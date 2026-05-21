@@ -57,6 +57,9 @@ export enum TechnologyType {
   POSTGRESQL = "Postgre SQL",
   SANITY_CMS = "Sanity CMS",
   FRAMER_MOTION = "Framer Motion",
+  WORMHOLE_SDK = "Wormhole SDK",
+  WAGMI = "Wagmi",
+  WALLETCONNECT = "WalletConnect",
 }
 
 type ProjectImage = {
