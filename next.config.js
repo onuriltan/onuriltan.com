@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
+module.exports = (phase) => {
+  return {
+    reactStrictMode: true,
+    distDir: phase === "phase-development-server" ? ".next-dev" : ".next",
+  };
 };
-
-module.exports = nextConfig;

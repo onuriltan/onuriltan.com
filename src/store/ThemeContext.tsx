@@ -1,28 +1,29 @@
 "use client";
 
 import AppConfig from "@config/index";
-import React, { createContext, ReactElement, useEffect, useState } from "react";
+import React, { createContext, ReactElement, useState } from "react";
 
 type Theme = "light" | "dark";
 
 type ThemeContextType = {
-  theme: Theme | undefined;
-  isDarkTheme: boolean | undefined;
+  theme: Theme;
+  isDarkTheme: boolean;
   toggleThemeHandler: () => void;
 };
 
 const ThemeContext = createContext<ThemeContextType>({
-  theme: undefined,
+  theme: "dark",
   isDarkTheme: true,
   toggleThemeHandler: () => {},
 });
 
 interface ThemePropsInterface {
-  children?: JSX.Element | Array<JSX.Element>;
+  children: React.ReactNode;
+  initialTheme: Theme;
 }
 
 export function ThemeContextProvider(props: ThemePropsInterface): ReactElement {
-  const [isDarkTheme, setIsDarkTheme] = useState<boolean | undefined>(undefined);
+  const [theme, setTheme] = useState<Theme>(props.initialTheme);
 
   const applyTheme = (theme: Theme) => {
     const r = document.documentElement;
@@ -37,27 +38,19 @@ export function ThemeContextProvider(props: ThemePropsInterface): ReactElement {
     r.style.setProperty("--mode", theme);
 
     r.setAttribute("data-theme", theme);
-    setIsDarkTheme(theme === "dark");
+    setTheme(theme);
   };
 
-  useEffect(() => {
-    // Read initial theme from server-rendered :root variable
-    const rootStyles = getComputedStyle(document.documentElement);
-    const mode = rootStyles.getPropertyValue("--mode").trim() as Theme;
-    const initialTheme = mode === "light" ? "light" : "dark";
-    applyTheme(initialTheme);
-  }, []);
-
   const toggleThemeHandler = () => {
-    const newTheme = isDarkTheme ? "light" : "dark";
+    const newTheme = theme === "dark" ? "light" : "dark";
     applyTheme(newTheme);
   };
 
   return (
     <ThemeContext.Provider
       value={{
-        theme: isDarkTheme ? "dark" : "light",
-        isDarkTheme,
+        theme,
+        isDarkTheme: theme === "dark",
         toggleThemeHandler,
       }}
     >

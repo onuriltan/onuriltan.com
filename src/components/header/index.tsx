@@ -39,7 +39,9 @@ const Header = () => {
   };
 
   useEffect(() => {
-    setTimeZoneCity();
+    const timeout = setTimeout(() => {
+      setTimeZoneCity();
+    }, 0);
 
     const interval = setInterval(() => {
       setTimeZoneCity();
@@ -47,6 +49,7 @@ const Header = () => {
     }, 10000);
 
     return () => {
+      clearTimeout(timeout);
       clearInterval(interval);
     };
   }, []);

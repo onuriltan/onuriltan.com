@@ -18,7 +18,6 @@ library.add(far, fas, fab);
 
 import { ThemeContextProvider } from "@/store/ThemeContext";
 import AppComponents from "@components/index";
-import Script from "next/script";
 import AppConfig from "@config/index";
 import { headers } from "next/headers";
 
@@ -29,7 +28,7 @@ const font = Noto_Sans({
 });
 
 // Force dynamic rendering so headers() can be used and the theme is always up to date
-const dynamic = "force-dynamic";
+export const dynamic = "force-dynamic";
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const headersList = await headers();
@@ -113,7 +112,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link rel="manifest" href="/favicon-light/site.webmanifest" media="(prefers-color-scheme: light)" />
       </head>
       <body>
-        <ThemeContextProvider>
+        <ThemeContextProvider initialTheme={isLightTheme ? "light" : "dark"}>
           <AppComponents.Header />
           <main>{children}</main>
           <AppComponents.Footer />
