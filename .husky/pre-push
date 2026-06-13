@@ -1,1 +1,2 @@
+printf "\033[1;35m▲ Building before push\033[0m\n"
 yarn build
