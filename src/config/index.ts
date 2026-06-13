@@ -27,11 +27,11 @@ const AppConfig: ConfigType = {
       technologies: [
         TechnologyType.REACT,
         TechnologyType.TYPESCRIPT,
-        TechnologyType.SCSS,
-        TechnologyType.FRAMER_MOTION,
         TechnologyType.WORMHOLE_SDK,
         TechnologyType.WAGMI,
         TechnologyType.WALLETCONNECT,
+        TechnologyType.SCSS,
+        TechnologyType.FRAMER_MOTION,
       ],
       url: "https://mobile.mezo.org",
       images: [
@@ -72,7 +72,13 @@ const AppConfig: ConfigType = {
     {
       title: "Cryptio Website",
       description: "Maintaining and adding new features to the website of Cryptio.",
-      technologies: [TechnologyType.REACT, TechnologyType.NEXTJS, TechnologyType.TYPESCRIPT, TechnologyType.CSSMODULES],
+      technologies: [
+        TechnologyType.REACT,
+        TechnologyType.NEXTJS,
+        TechnologyType.TYPESCRIPT,
+        TechnologyType.CSSMODULES,
+        TechnologyType.FRAMER_MOTION,
+      ],
       url: "https://cryptio.co",
       images: [
         {
@@ -92,9 +98,11 @@ const AppConfig: ConfigType = {
       technologies: [
         TechnologyType.REACT,
         TechnologyType.NEXTJS,
-        TechnologyType.STYLED_COMPONENTS,
+        TechnologyType.TYPESCRIPT,
         TechnologyType.LEAFLETMAPAPI,
         TechnologyType.MAPBOX,
+        TechnologyType.STYLED_COMPONENTS,
+        TechnologyType.FRAMER_MOTION,
       ],
       url: "https://web.rotaoptimizasyonu.com/",
       images: [
