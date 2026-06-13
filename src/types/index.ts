@@ -47,6 +47,7 @@ export enum TechnologyType {
   CSSMODULES = "CSS Modules",
   APOLLOGRAPHQL = "Apollo GraphQL",
   SCSS = "SCSS",
+  STYLED_COMPONENTS = "Styled Components",
   TAILWINDCSS = "Tailwind CSS",
   CHAKRAUI = "Chakra UI",
   JEST = "Jest",
@@ -60,6 +61,7 @@ export enum TechnologyType {
   WORMHOLE_SDK = "Wormhole SDK",
   WAGMI = "Wagmi",
   WALLETCONNECT = "WalletConnect",
+  MAPBOX = "Mapbox",
 }
 
 type ProjectImage = {

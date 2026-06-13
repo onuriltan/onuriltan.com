@@ -87,6 +87,37 @@ const AppConfig: ConfigType = {
       type: WorkType.FREELANCE,
     },
     {
+      title: "Rotamat",
+      description: "Rotamat is a company where you optimize your routes if you are a large distribution company.",
+      technologies: [
+        TechnologyType.REACT,
+        TechnologyType.NEXTJS,
+        TechnologyType.STYLED_COMPONENTS,
+        TechnologyType.LEAFLETMAPAPI,
+        TechnologyType.MAPBOX,
+      ],
+      url: "https://web.rotaoptimizasyonu.com/",
+      images: [
+        {
+          image: AppAssets.Images.RotamatWebsite,
+          url: "https://www.rotaoptimizasyonu.com",
+        },
+        {
+          image: AppAssets.Images.RotamatEv,
+          url: "https://ev.rotaoptimizasyonu.com",
+        },
+        {
+          image: AppAssets.Images.RotamatDashboard,
+          url: "https://web.rotaoptimizasyonu.com/kontrol-paneli",
+        },
+        {
+          image: AppAssets.Images.RotamatRoutes,
+          url: "https://web.rotaoptimizasyonu.com/rotalar/a68f47a5-1c80-4ba2-b296-347f5289c034",
+        },
+      ],
+      type: WorkType.FREELANCE,
+    },
+    {
       title: "Trendyol Asistan",
       description:
         "Trendyol Asistan is an app which uses Chatbot and Livechat to understand and give solutions to customers' problems about their orders and general questions. You need to be logged in to your Trendyol account to see the chat app when you click the link.",
@@ -180,24 +211,6 @@ const AppConfig: ConfigType = {
       ],
       type: WorkType.CORPORATE,
     },
-    {
-      title: "Rotamat",
-      description: "Rotamat is a company where you optimize your routes if you are a large distribution company.",
-      technologies: [TechnologyType.REACT, TechnologyType.NEXTJS, TechnologyType.SCSS, TechnologyType.LEAFLETMAPAPI],
-      url: "https://web.rotaoptimizasyonu.com/",
-      images: [
-        {
-          image: AppAssets.Images.RotamatDashboard,
-          url: "https://web.rotaoptimizasyonu.com/kontrol-paneli",
-        },
-        {
-          image: AppAssets.Images.RotamatRoutes,
-          url: "https://web.rotaoptimizasyonu.com/rotalar/a68f47a5-1c80-4ba2-b296-347f5289c034",
-        },
-      ],
-      type: WorkType.FREELANCE,
-    },
-
     // {
     //   title: "Custom Premint",
     //   description:

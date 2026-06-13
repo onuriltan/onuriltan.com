@@ -17,8 +17,12 @@ import Mezo from "./src/mezo.png";
 import MezoMobile from "./src/mezo-mobile.png";
 import MezoMobileRewards from "./src/mezo-mobile-rewards.png";
 import MezoMobileVaults from "./src/mezo-mpbile-vaults.png";
+import RotamatWebsite from "./src/rotamat-website.png";
+import RotamatEv from "./src/rotamat-ev.png";
 
 const Images = {
+  RotamatEv,
+  RotamatWebsite,
   CryptioComparisonTable,
   Cryptio,
   CryptiofinanceForum,
